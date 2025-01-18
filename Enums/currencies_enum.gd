@@ -3,6 +3,7 @@ extends Node
 const Currencies = {
 	ORE = 'Ore',
 	HERB = 'Herb',
+	TREASURE = 'Treasure',
 	
 	#Coins
 	COIN_PLATINUM = 'Platinum Coin',
