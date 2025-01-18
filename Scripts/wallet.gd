@@ -4,7 +4,7 @@ const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 
 var wallet = {}
 
-signal currency_changed
+signal currency_changed(currency_name, new_ammount)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for currency in CurrenciesEnum.Currencies.values():
@@ -14,7 +14,7 @@ func _ready():
 	
 func add_currency(currency_name, count):
 	wallet[currency_name] += count
-	Wallet.currency_changed.emit()
+	Wallet.currency_changed.emit(currency_name, wallet[currency_name])
 	return wallet[currency_name]
 	
 	
