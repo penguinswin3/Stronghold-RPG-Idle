@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpeepw3lkf6hf"]
+
+[ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
+[ext_resource type="Script" path="res://Scenes/Game/ore_count_lable.gd" id="2_1x44d"]
+[ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
+
+[node name="GameCanvas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6jmd")
+
+[node name="NavBarContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 94.0
+
+[node name="BackButton" type="Button" parent="NavBarContainer"]
+layout_mode = 2
+text = "Back To Menu"
+
+[node name="ResourceContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 95.0
+offset_right = 209.0
+offset_bottom = 645.0
+
+[node name="OreCountLable" type="Label" parent="ResourceContainer"]
+layout_mode = 2
+text = "Ore Count:"
+script = ExtResource("2_1x44d")
+
+[node name="OreCountNumber" type="Label" parent="ResourceContainer/OreCountLable"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 1.0
+offset_right = 135.0
+offset_bottom = 24.0
+text = "0"
+
+[node name="HerbCountLable" type="Label" parent="ResourceContainer"]
+layout_mode = 2
+text = "Herb Count:"
+
+[node name="HerbCountNumber" type="Label" parent="ResourceContainer/HerbCountLable"]
+layout_mode = 0
+offset_left = 95.0
+offset_right = 135.0
+offset_bottom = 23.0
+text = "0"
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 2
+offset_top = 94.0
+offset_right = 209.0
+offset_bottom = 648.0
+color = Color(0.117647, 0.117647, 0.117647, 0.482353)
+
+[node name="ResourceTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 897.0
+offset_top = 94.0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.482353)
+
+[node name="MineButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 244.0
+offset_top = 118.0
+offset_right = 856.0
+offset_bottom = 730.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_6lpws")
+
+[node name="Herb Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 226.0
+offset_right = 854.0
+offset_bottom = 838.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_6lpws")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 93.0
+offset_right = 1150.0
+offset_bottom = 200.0
+
+[node name="Shop Container" type="VBoxContainer" parent="ScrollContainer"]
+z_index = 1
+layout_mode = 2
+
+[connection signal="pressed" from="NavBarContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]
+[connection signal="pressed" from="MineButton" to="." method="_on_mine_button_pressed"]
+[connection signal="pressed" from="Herb Button" to="." method="_on_herb_button_pressed"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://c35a7cb17m7dp"]
+
+[ext_resource type="Script" path="res://Scenes/Options/options_menu.gd" id="1_8bxpo"]
+
+[node name="OptionsMenu" type="Node2D"]
+script = ExtResource("1_8bxpo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 588.0
+offset_right = 1156.0
+offset_bottom = 636.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BackToMenuButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Back"
+
+[node name="ResetButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Reset to Default"
+
+[node name="LableBackgroundImageToggle" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 153.0
+offset_right = 232.0
+offset_bottom = 179.0
+text = "Toggle Background Image"
+
+[node name="MenuBackgroundToggle" type="CheckButton" parent="LableBackgroundImageToggle"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 3.0
+offset_right = 252.0
+offset_bottom = 27.0
+
+[node name="LableNumberFormat" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 187.0
+offset_right = 229.0
+offset_bottom = 213.0
+text = "Number Format"
+
+[node name="NumberFormatOptions" type="OptionButton" parent="LableNumberFormat"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.821
+anchor_top = -7.347
+anchor_right = -0.821
+anchor_bottom = -7.347
+offset_left = 247.625
+offset_top = 186.022
+offset_right = 417.625
+offset_bottom = 217.022
+item_count = 2
+selected = 0
+popup/item_0/text = "1,000k"
+popup/item_0/id = 0
+popup/item_1/text = "1M"
+popup/item_1/id = 1
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[connection signal="pressed" from="HBoxContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="toggled" from="LableBackgroundImageToggle/MenuBackgroundToggle" to="." method="_on_menu_background_toggle_toggled"]
+[connection signal="item_selected" from="LableNumberFormat/NumberFormatOptions" to="." method="_on_number_format_options_item_selected"]
