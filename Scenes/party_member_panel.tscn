@@ -16,6 +16,7 @@ script = ExtResource("1_f2f6t")
 
 [node name="DragMessageText" type="RichTextLabel" parent="."]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
 text = "Drag Stronghold Member to Add to Party"
 scroll_active = false
 
@@ -31,16 +32,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CharacterName" type="Label" parent="PartyMemberHContainer"]
+[node name="CharacterInformation" type="Label" parent="PartyMemberHContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CharacterLevel" type="Label" parent="PartyMemberHContainer"]
-unique_name_in_owner = true
-layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 

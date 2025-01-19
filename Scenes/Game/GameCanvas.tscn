@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpeepw3lkf6hf"]
+[gd_scene load_steps=5 format=3 uid="uid://dpeepw3lkf6hf"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
 [ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
 [ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
 [ext_resource type="PackedScene" uid="uid://cfrjkbbm6lib3" path="res://Scenes/party_member_panel.tscn" id="3_dtbcb"]
-[ext_resource type="PackedScene" uid="uid://dt2omg15a5wf8" path="res://Scenes/member_button.tscn" id="3_sete7"]
-[ext_resource type="Resource" uid="uid://b8ngv3uscq2v" path="res://Scripts/Character/CharacterResources/Combat/Fighter.tres" id="4_too8p"]
-[ext_resource type="Resource" uid="uid://bip61jcxiu1nr" path="res://Scripts/Character/CharacterResources/Social/Lord.tres" id="5_053bc"]
 
 [node name="GameCanvas" type="Control"]
 layout_mode = 3
@@ -227,9 +224,33 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MemberFilterPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
+[node name="FilterVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="MemberListLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer"]
+layout_mode = 2
+text = "Party List"
+horizontal_alignment = 1
+
+[node name="FilterHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FilterNameButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="FilterLevelButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level"
+
+[node name="FilteTypeButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type"
 
 [node name="MemberScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
 layout_mode = 2
@@ -237,18 +258,11 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 
 [node name="MemberList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 size_flags_stretch_ratio = 6.0
-
-[node name="MemberButton" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList" instance=ExtResource("3_sete7")]
-layout_mode = 2
-character = ExtResource("4_too8p")
-
-[node name="MemberButton2" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList" instance=ExtResource("3_sete7")]
-layout_mode = 2
-character = ExtResource("5_053bc")
 
 [node name="MemberDetailsPanel" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection"]
 layout_mode = 2

@@ -2,6 +2,8 @@ extends Node
 var CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var upgrade
 
+@onready var member_list: GridContainer = %MemberList
+var member_button = preload("res://Scenes/member_button.tscn")
 
 var ore_count_number_lable
 var herb_count_number_lable
@@ -69,6 +71,12 @@ func _ready() -> void:
 		button.set_text(Globals.upgrades[upgrade].name + '\n' + str(Globals.upgrades[upgrade].cost[0].amount) + ' ' + Globals.upgrades[upgrade].cost[0].currency + ' | +' + str(Globals.upgrades[upgrade].amplitude))
 		shop_container.add_child(button)
 		shop_buttons.insert(len(shop_buttons), button)
+
+	for character in Globals.owned_characters:
+		var new_member_button = member_button.instantiate()
+		new_member_button.character = load("res://Scripts/Character/CharacterResources/Combat/" + character + ".tres")
+		member_list.add_child(new_member_button)
+		
 	pass
 
 func _on_currency_change(currency_name, new_ammount):
