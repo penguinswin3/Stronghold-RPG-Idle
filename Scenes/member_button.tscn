@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt2omg15a5wf8"]
+
+[ext_resource type="Script" path="res://Scenes/member_button.gd" id="1_odosn"]
+
+[node name="MemberButton" type="Button"]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -1025.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_odosn")
+
+[node name="MemberPanel" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharacterImage" type="TextureRect" parent="MemberPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterName" type="Label" parent="MemberPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hiphen" type="Label" parent="MemberPanel"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterLevel" type="Label" parent="MemberPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
