@@ -1,9 +1,16 @@
 extends Node
 
-
+# Preloaded Scripts
 const OptionsEnum = preload('res://Enums/options_enum.gd')
 const Upgrade = preload('res://Scripts/upgrade.gd')
 const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
+
+# Preloaded Scenes
+const member_panel_scene = preload("res://Scenes/member_panel.tscn")
+
+# Path Strings
+const member_panel_scene_path = "res://Scenes/member_panel.tscn"
+const class_instances_path = "res://Scripts/Character/CharacterResources/ClassInstances/"
 
 var selected_options = {
 	"background_image" : OptionsEnum.BackgroundImages.FARM_BACKGROUND,

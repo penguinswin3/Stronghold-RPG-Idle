@@ -2,7 +2,7 @@ extends PanelContainer
 
 @export var character : Character
 @onready var character_information: Label = %CharacterInformation
-var member_button = preload("res://Scenes/member_button.tscn")
+var member_button = Globals.member_panel_scene
 
 
 # Called when the node enters the scene tree for the first time.

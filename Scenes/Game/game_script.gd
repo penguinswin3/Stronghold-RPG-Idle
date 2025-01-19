@@ -3,7 +3,6 @@ var CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var upgrade
 
 @onready var member_list: GridContainer = %MemberList
-var member_button = preload("res://Scenes/member_button.tscn")
 
 var ore_count_number_lable
 var herb_count_number_lable
@@ -72,10 +71,11 @@ func _ready() -> void:
 		shop_container.add_child(button)
 		shop_buttons.insert(len(shop_buttons), button)
 
+	# For every character in owned_characters, instantiate a member_button and load the class resource into the 
 	for character in Globals.owned_characters:
-		var new_member_button = member_button.instantiate()
-		new_member_button.character = load("res://Scripts/Character/CharacterResources/Combat/" + character + ".tres")
-		member_list.add_child(new_member_button)
+		var new_member_panel = Globals.member_panel_scene.instantiate()
+		new_member_panel.character = load(Globals.class_instances_path + character + ".tres")
+		member_list.add_child(new_member_panel)
 		
 	pass
 
