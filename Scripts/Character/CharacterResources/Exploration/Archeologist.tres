@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://bi7n4kahmp8xa"]
+
+[ext_resource type="Script" path="res://Scripts/Character/exploration_character.gd" id="1_i43r3"]
+
+[resource]
+script = ExtResource("1_i43r3")
+tool_type = "Trowel"
+display_name = "Archeologist"
+description = ""
+primary_skill = "Archeology"

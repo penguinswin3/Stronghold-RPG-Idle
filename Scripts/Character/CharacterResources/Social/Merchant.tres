@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://cqaxgj2spgvuk"]
+
+[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_oq111"]
+
+[resource]
+script = ExtResource("1_oq111")
+tool_type = "Money Pouch"
+structure_type = "Store"
+display_name = "Merchant"
+description = ""
+primary_skill = "Trading"

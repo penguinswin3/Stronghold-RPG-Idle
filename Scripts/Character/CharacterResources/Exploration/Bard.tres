@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://cn7v8f0epu8d3"]
+
+[ext_resource type="Script" path="res://Scripts/Character/exploration_character.gd" id="1_af6uh"]
+
+[resource]
+script = ExtResource("1_af6uh")
+tool_type = "Instrument"
+display_name = "Bard"
+description = ""
+primary_skill = "Charming"

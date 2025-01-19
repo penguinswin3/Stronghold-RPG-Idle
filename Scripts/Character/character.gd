@@ -1,0 +1,66 @@
+extends Resource
+class_name Character
+
+@export_enum(
+	# Combat
+	"Fighter", 
+	"Mage",
+	"Cleric", 
+	"Druid", 
+	"Barbarian", 
+	"Archer", 
+	"Occultist",
+	
+	# Exploration
+	"Hunter", 
+	"Bard", 
+	"Archeologist", 
+	"Pyromancer", 
+	"Miner", 
+	"Forester", 
+	"Diviner",
+	
+	# Social
+	"Lord", 
+	"Quartermaster", 
+	"Thief", 
+	"Artificer", 
+	"Merchant", 
+	"Blacksmith", 
+	"Entrepreneur", 
+	"Socialite"
+) var display_name : String
+
+@export_multiline var description : String
+@export var icon : Texture
+@export var picture : Texture
+
+@export_enum(
+	# Combat
+	"Melee",
+	"Arcane",
+	"Divine",
+	"Primal",
+	"Constitution",
+	"Ranged",
+	"Occult",
+	
+	# Exploration
+	"Hunting",
+	"Charming",
+	"Archeology",
+	"Firemaking",
+	"Mining",
+	"Woodcutting",
+	"Scrying",
+	
+	# Social
+	"Construction",
+	"Organization",
+	"Thievery",
+	"Enchantment",
+	"Trading",
+	"Crafting",
+	"Networking",
+	"Charisma"
+) var primary_skill : String

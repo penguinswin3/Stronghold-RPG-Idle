@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 Globals="*res://Scripts/globals.gd"
 Wallet="*res://Scripts/wallet.gd"
+CharacterEnums="*res://Scripts/Globals/character_enums.gd"
 
 [display]
 

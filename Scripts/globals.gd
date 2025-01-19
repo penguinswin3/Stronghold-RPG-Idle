@@ -18,4 +18,4 @@ func _ready():
 	upgrades['ore_per_second'] = Upgrade.new('Ore Per Second', 20, CurrenciesEnum.Currencies.ORE, 0, 1, true, 1.4)
 	upgrades['herb_per_click'] = Upgrade.new('Herb Per Click', 20, CurrenciesEnum.Currencies.HERB, 1, 1, true, 1.3)
 	upgrades['herb_per_second'] = Upgrade.new('Herb Per Second', 20, CurrenciesEnum.Currencies.HERB, 0, 1, true, 1.4)
-	pass 
+	pass

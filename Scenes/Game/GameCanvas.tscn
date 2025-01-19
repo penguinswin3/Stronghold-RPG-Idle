@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpeepw3lkf6hf"]
+[gd_scene load_steps=6 format=3 uid="uid://dpeepw3lkf6hf"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
 [ext_resource type="Script" path="res://Scenes/Game/ore_count_lable.gd" id="2_1x44d"]
 [ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
 [ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
+[ext_resource type="PackedScene" uid="uid://dt2omg15a5wf8" path="res://Scenes/member_panel.tscn" id="3_sete7"]
 
 [node name="GameCanvas" type="Control"]
 layout_mode = 3
@@ -247,11 +248,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 2
 size_flags_stretch_ratio = 6.0
 
-[node name="MemberPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
-custom_minimum_size = Vector2(0, 100)
+[node name="MemberPanel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList" instance=ExtResource("3_sete7")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="MemberPanel2" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
 custom_minimum_size = Vector2(0, 100)

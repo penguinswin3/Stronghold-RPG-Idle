@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://bmifciv1mlftk"]
+
+[ext_resource type="Script" path="res://Scripts/Character/exploration_character.gd" id="1_ennd1"]
+
+[resource]
+script = ExtResource("1_ennd1")
+tool_type = "Pickaxe"
+display_name = "Miner"
+description = ""
+primary_skill = "Mining"
