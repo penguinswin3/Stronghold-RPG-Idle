@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://c8576noaf87bn"]
+
+[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_tkldo"]
+
+[resource]
+script = ExtResource("1_tkldo")
+tool_type = "Hammer"
+structure_type = "Foundry"
+display_name = "Blacksmith"
+description = ""
+primary_skill = "Crafting"

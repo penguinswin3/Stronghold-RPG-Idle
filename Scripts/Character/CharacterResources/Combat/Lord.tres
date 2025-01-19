@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://bip61jcxiu1nr"]
+
+[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
+
+[resource]
+script = ExtResource("1_vqbg1")
+tool_type = "Scepter"
+structure_type = "Stronghold"
+display_name = "Lord"
+description = ""
+primary_skill = "Construction"
+level = 1
+xp = 0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://b1jonqmjrtu5a"]
+
+[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_rnr4n"]
+
+[resource]
+script = ExtResource("1_rnr4n")
+tool_type = "Codex"
+structure_type = "Tower"
+display_name = "Artificer"
+description = ""
+primary_skill = "Enchantment"

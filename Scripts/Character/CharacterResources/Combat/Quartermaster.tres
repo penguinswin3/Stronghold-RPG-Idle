@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://omtghofft0ox"]
+
+[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_fhf05"]
+
+[resource]
+script = ExtResource("1_fhf05")
+tool_type = "Clipboard"
+structure_type = "Warehouse"
+display_name = "Quartermaster"
+description = ""
+primary_skill = "Organization"
+level = 1
+xp = 0

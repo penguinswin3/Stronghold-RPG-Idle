@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://b8ngv3uscq2v"]
+
+[ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_0e6hy"]
+
+[resource]
+script = ExtResource("1_0e6hy")
+weapon_type = "Sword & Shield"
+display_name = "Fighter"
+description = ""
+primary_skill = "Melee"

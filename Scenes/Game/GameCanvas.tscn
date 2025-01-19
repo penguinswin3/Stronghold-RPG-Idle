@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpeepw3lkf6hf"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
-[ext_resource type="Script" path="res://Scenes/Game/ore_count_lable.gd" id="2_1x44d"]
 [ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
 [ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
+[ext_resource type="PackedScene" uid="uid://cfrjkbbm6lib3" path="res://Scenes/party_member_panel.tscn" id="3_dtbcb"]
 
 [node name="GameCanvas" type="Control"]
 layout_mode = 3
@@ -142,25 +142,17 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 columns = 2
 
-[node name="PartyMember1Panel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid"]
+[node name="PartyMemberPanel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="PartyMember2Panel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid"]
+[node name="PartyMemberPanel2" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="PartyMember3Panel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid"]
+[node name="PartyMemberPanel3" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="PartyMember4Panel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid"]
+[node name="PartyMemberPanel4" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="DetailsVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer"]
 layout_mode = 2
@@ -232,9 +224,33 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MemberFilterPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
+[node name="FilterVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="MemberListLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer"]
+layout_mode = 2
+text = "Party List"
+horizontal_alignment = 1
+
+[node name="FilterHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FilterNameButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="FilterLevelButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level"
+
+[node name="FilteTypeButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type"
 
 [node name="MemberScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
 layout_mode = 2
@@ -242,40 +258,11 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 
 [node name="MemberList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 size_flags_stretch_ratio = 6.0
-
-[node name="MemberPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MemberPanel2" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MemberPanel3" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MemberPanel4" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MemberPanel5" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer/MemberList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="MemberDetailsPanel" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection"]
 layout_mode = 2
@@ -485,30 +472,6 @@ offset_top = 95.0
 offset_right = 209.0
 offset_bottom = 645.0
 
-[node name="OreCountLable" type="Label" parent="ResourceContainer"]
-layout_mode = 2
-text = "Ore Count:"
-script = ExtResource("2_1x44d")
-
-[node name="OreCountNumber" type="Label" parent="ResourceContainer/OreCountLable"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 1.0
-offset_right = 135.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="HerbCountLable" type="Label" parent="ResourceContainer"]
-layout_mode = 2
-text = "Herb Count:"
-
-[node name="HerbCountNumber" type="Label" parent="ResourceContainer/HerbCountLable"]
-layout_mode = 0
-offset_left = 95.0
-offset_right = 135.0
-offset_bottom = 23.0
-text = "0"
-
 [node name="BackgroundImage" type="TextureRect" parent="."]
 visible = false
 z_index = -1
@@ -566,7 +529,7 @@ layout_mode = 0
 offset_left = 900.0
 offset_top = 93.0
 offset_right = 1150.0
-offset_bottom = 200.0
+offset_bottom = 644.0
 
 [node name="Shop Container" type="VBoxContainer" parent="ScrollContainer"]
 z_index = 1
