@@ -65,5 +65,5 @@ class_name Character
 	"Charisma"
 ) var primary_skill : String
 
-var level : int = 1
-var xp : int = 0
+@export var level : int = 1
+@export var xp : int = 0
