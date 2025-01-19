@@ -2,8 +2,8 @@ extends Node
 
 const Currencies = {
 	ORE = 'Ore',
-	COINS = 'Coins',
 	HERB = 'Herb',
+	TREASURE = 'Treasure',
 	
 	#Coins
 	COIN_PLATINUM = 'Platinum Coin',

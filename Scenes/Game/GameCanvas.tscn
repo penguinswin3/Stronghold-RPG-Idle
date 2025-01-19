@@ -466,30 +466,6 @@ offset_top = 95.0
 offset_right = 209.0
 offset_bottom = 645.0
 
-[node name="OreCountLable" type="Label" parent="ResourceContainer"]
-layout_mode = 2
-text = "Ore Count:"
-script = ExtResource("2_1x44d")
-
-[node name="OreCountNumber" type="Label" parent="ResourceContainer/OreCountLable"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 1.0
-offset_right = 135.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="HerbCountLable" type="Label" parent="ResourceContainer"]
-layout_mode = 2
-text = "Herb Count:"
-
-[node name="HerbCountNumber" type="Label" parent="ResourceContainer/HerbCountLable"]
-layout_mode = 0
-offset_left = 95.0
-offset_right = 135.0
-offset_bottom = 23.0
-text = "0"
-
 [node name="BackgroundImage" type="TextureRect" parent="."]
 visible = false
 z_index = -1
@@ -547,7 +523,7 @@ layout_mode = 0
 offset_left = 900.0
 offset_top = 93.0
 offset_right = 1150.0
-offset_bottom = 200.0
+offset_bottom = 644.0
 
 [node name="Shop Container" type="VBoxContainer" parent="ScrollContainer"]
 z_index = 1
