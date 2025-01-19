@@ -42,7 +42,7 @@ func _roll_weighted(options, quantity=1):
 	var rolled_values = []
 	for i in quantity:
 		rolled_values.append(rng.randi_range(0, total_weight))
-	rolled_values.sort()
+	#rolled_values.sort()
 	var consumed_weight = 0
 	for option in options:
 		selected_options[option.option] = rolled_values.filter(_is_less_than.bind(option.weight+consumed_weight)).size()
