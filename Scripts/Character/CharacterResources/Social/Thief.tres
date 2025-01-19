@@ -9,3 +9,5 @@ structure_type = "Den"
 display_name = "Thief"
 description = ""
 primary_skill = "Thievery"
+level = 1
+xp = 0

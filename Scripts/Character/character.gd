@@ -64,3 +64,6 @@ class_name Character
 	"Networking",
 	"Charisma"
 ) var primary_skill : String
+
+var level : int = 1
+var xp : int = 0

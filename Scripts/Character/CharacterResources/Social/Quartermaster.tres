@@ -9,3 +9,5 @@ structure_type = "Warehouse"
 display_name = "Quartermaster"
 description = ""
 primary_skill = "Organization"
+level = 1
+xp = 0

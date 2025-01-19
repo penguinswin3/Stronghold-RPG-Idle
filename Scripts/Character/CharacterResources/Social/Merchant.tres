@@ -9,3 +9,5 @@ structure_type = "Store"
 display_name = "Merchant"
 description = ""
 primary_skill = "Trading"
+level = 1
+xp = 0

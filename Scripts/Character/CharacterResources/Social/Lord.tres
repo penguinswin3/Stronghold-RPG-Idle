@@ -9,3 +9,5 @@ structure_type = "Stronghold"
 display_name = "Lord"
 description = ""
 primary_skill = "Construction"
+level = 1
+xp = 0
