@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://qhgihsuslfhu"]
+
+[ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_vofdv"]
+
+[resource]
+script = ExtResource("1_vofdv")
+weapon_type = "Bow"
+display_name = "Archer"
+description = ""
+primary_skill = "Ranged"

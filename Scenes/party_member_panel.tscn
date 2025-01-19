@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfrjkbbm6lib3"]
+
+[ext_resource type="Script" path="res://Scenes/party_member_panel.gd" id="1_f2f6t"]
+
+[node name="PartyMemberPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1154.0
+offset_bottom = -629.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_f2f6t")
+
+[node name="DragMessageText" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Drag Stronghold Member to Add to Party"
+scroll_active = false
+
+[node name="PartyMemberHContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CharacterImage" type="TextureRect" parent="PartyMemberHContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterInformation" type="Label" parent="PartyMemberHContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClearButton" type="Button" parent="PartyMemberHContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "X"
+
+[connection signal="pressed" from="PartyMemberHContainer/ClearButton" to="." method="_on_clear_button_pressed"]

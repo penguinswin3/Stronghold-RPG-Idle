@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://bkvb64moujar4"]
+
+[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_ss6ng"]
+
+[resource]
+script = ExtResource("1_ss6ng")
+tool_type = "Lockpicks"
+structure_type = "Den"
+display_name = "Thief"
+description = ""
+primary_skill = "Thievery"
+level = 1
+xp = 0
