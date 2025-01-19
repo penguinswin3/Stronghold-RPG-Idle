@@ -31,6 +31,17 @@ func _on_options_button_pressed():
 
 func _on_exit_button_pressed():
 	pass # Replace with function body.
+
+var LootTables = preload(\"res://Scripts/Rolling/loot_tables.gd\")
+
+func _on_button_pressed() -> void:
+	var roller = Roller.new()
+	var lootTables = LootTables.new()
+	#var weighted_options = [WeightedOption.new(\"Rare\", 5), WeightedOption.new(\"Uncommon\", 50), WeightedOption.new(\"Common\", 500)]
+	var weighted_options = lootTables.LootTables[\"monsters\"][\"drops\"]
+
+	print(roller._roll_weighted(weighted_options, 500))
+	pass # Replace with function body.
 "
 
 [node name="Control" type="Control"]
@@ -86,7 +97,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Exit"
 
+[node name="Button" type="Button" parent="MenuOptionContainer"]
+layout_mode = 2
+text = "Debug Button! "
+
 [connection signal="pressed" from="MenuOptionContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuOptionContainer/StartButton" to="MenuOptionContainer/ExitButton" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuOptionContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuOptionContainer/ExitButton" to="." method="_exit_button_pressed"]
+[connection signal="pressed" from="MenuOptionContainer/Button" to="." method="_on_button_pressed"]

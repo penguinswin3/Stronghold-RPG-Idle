@@ -5,16 +5,20 @@ const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var wallet = {}
 
 signal currency_changed(currency_name, new_ammount)
+signal currency_added(currency_name, amount_added, new_ammount)
+signal currency_removed(currency_name, amount_removed, new_ammount)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Registers enumerated currencies globally
 	for currency in CurrenciesEnum.Currencies.values():
 		print('adding currency key: ' + currency)
 		wallet[currency] = 0;
-	pass # Replace with function body.
+	return 
 	
 func add_currency(currency_name, count):
 	wallet[currency_name] += count
 	Wallet.currency_changed.emit(currency_name, wallet[currency_name])
+	Wallet.currency_added.emit(currency_name, count, wallet[currency_name])
 	return wallet[currency_name]
 	
 	
@@ -22,7 +26,8 @@ func add_currency(currency_name, count):
 func remove_currency(currency_name, count):
 	if validate_currency(currency_name, count):
 		wallet[currency_name] -= count
-		Wallet.currency_changed.emit()
+		Wallet.currency_changed.emit(currency_name, count, wallet[currency_name])
+		Wallet.currency_removed.emit(currency_name, count, wallet[currency_name])
 		return true
 	return false
 
@@ -30,11 +35,7 @@ func get_currency_count(currency_name):
 	return wallet[currency_name]
 	
 func validate_currency(currency_name, count):
-	if(wallet[currency_name] <  count):
+	if(wallet[currency_name] < count):
 		return false
-	return true
-	
-func upgrade_coins():
-	
 	return true
 	
