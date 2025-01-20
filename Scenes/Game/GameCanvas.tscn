@@ -111,6 +111,7 @@ size_flags_stretch_ratio = 12.0
 
 [node name="OverviewViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="VaultVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel"]
@@ -426,13 +427,16 @@ horizontal_alignment = 1
 
 [node name="StrongholdViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel"]
+[node name="StructureScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel"]
 layout_mode = 2
-text = "Stronghold"
-horizontal_alignment = 1
+
+[node name="StructureList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel/StructureScrollableContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="MarketViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
 unique_name_in_owner = true

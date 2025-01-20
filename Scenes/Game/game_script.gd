@@ -3,6 +3,7 @@ var CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var upgrade
 
 @onready var member_list: GridContainer = %MemberList
+@onready var structure_list: GridContainer = %StructureList
 
 var ore_count_number_lable
 var herb_count_number_lable
@@ -46,7 +47,6 @@ func _on_herb_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_node('BackgroundImage').set_texture(load(Globals.selected_options.background_image))
@@ -71,19 +71,26 @@ func _ready() -> void:
 		shop_container.add_child(button)
 		shop_buttons.insert(len(shop_buttons), button)
 
-	# For every character in owned_characters, instantiate a member_button and load the class resource into the 
+	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 	for character in Globals.owned_characters:
 		var new_member_panel = Globals.member_panel_scene.instantiate()
-		new_member_panel.character = load(Globals.class_instances_path + character + ".tres")
+		new_member_panel.character = load(Globals.character_resources_folder_path + character + ".tres")
 		member_list.add_child(new_member_panel)
-		
-	pass
+	
+	# For every structure, instantiate a structure_panel, set properties of panel, and add panel as child to structure_list
+	for structure in Globals.structures:
+		var new_structure_panel = Globals.sturcture_panel_scene.instantiate()
+		new_structure_panel.structure = load(Globals.structure_resources_folder_path + structure + ".tres")
+		structure_list.add_child(new_structure_panel)
+
 
 func _on_currency_change(currency_name, new_ammount):
 	resource_lables[currency_name].text = "{1}: {2}".format({"1" : currency_name, "2" : str(Wallet.get_currency_count(currency_name))})
 
+
 func _on_upgrade_property_change(upgrade_name):
 	pass
+
 
 func _on_resource_timer_timeout() -> void:
 	Wallet.add_currency(CurrenciesEnum.Currencies.ORE, Globals.upgrades['ore_per_second'].count * Globals.upgrades['ore_per_second'].amplitude)

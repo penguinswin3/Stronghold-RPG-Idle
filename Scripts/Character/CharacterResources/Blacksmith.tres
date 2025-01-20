@@ -9,3 +9,5 @@ structure_type = "Foundry"
 display_name = "Blacksmith"
 description = ""
 primary_skill = "Crafting"
+level = 1
+xp = 0

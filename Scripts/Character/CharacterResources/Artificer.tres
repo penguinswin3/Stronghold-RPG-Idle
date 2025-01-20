@@ -9,3 +9,5 @@ structure_type = "Tower"
 display_name = "Artificer"
 description = ""
 primary_skill = "Enchantment"
+level = 1
+xp = 0

@@ -7,10 +7,12 @@ const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 
 # Preloaded Scenes
 const member_panel_scene = preload("res://Scenes/member_panel.tscn")
+const sturcture_panel_scene = preload("res://Scenes/structure_panel.tscn")
 
 # Path Strings
 const member_panel_scene_path = "res://Scenes/member_panel.tscn"
-const class_instances_path = "res://Scripts/Character/CharacterResources/ClassInstances/"
+const character_resources_folder_path = "res://Scripts/Character/CharacterResources/"
+const structure_resources_folder_path = "res://Scripts/Structure/StructureResources/"
 
 var selected_options = {
 	"background_image" : OptionsEnum.BackgroundImages.FARM_BACKGROUND,
@@ -28,3 +30,17 @@ func _ready():
 	upgrades['perfected_herbalism'] = Upgrade.new(0, 'Perfect Herbalism', 500, CurrenciesEnum.Currencies.HERB, 0, 10, false, 0, ['enhanced_herbs'])
 
 var owned_characters = ["Lord", "Fighter"]
+var owned_sturctures = [
+	"Stronghold"
+]
+
+var structures = [
+	"Stronghold",
+	"Warehouse",
+	"Den",
+	"Tower",
+	"Store",
+	"Foundry",
+	"Tavern",
+	"Manor"
+]
