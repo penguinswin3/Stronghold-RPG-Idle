@@ -97,3 +97,7 @@ func _on_resource_timer_timeout() -> void:
 	Wallet.add_currency(CurrenciesEnum.Currencies.HERB, Globals.upgrades['herb_per_second'].count * Globals.upgrades['herb_per_second'].amplitude)
 
 	pass # Replace with function body.
+
+
+func _on_go_button_pressed() -> void:
+	Globals.members_on_adventure = true

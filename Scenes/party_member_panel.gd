@@ -1,6 +1,7 @@
 extends PanelContainer
 
 @export var character : Character
+@export var member_number : String
 @onready var character_information: Label = %CharacterInformation
 @onready var party_member_h_container: HBoxContainer = %PartyMemberHContainer
 @onready var drag_message_text: RichTextLabel = $DragMessageText
@@ -25,6 +26,7 @@ func _drop_data(_pos, data):
 	drag_message_text.hide()
 	clear_button.show()
 	character = data
+	Globals.members_in_party[member_number] = character
 	character_information.text = character.display_name + " - " + str(character.level)
 
 
@@ -32,4 +34,5 @@ func _on_clear_button_pressed() -> void:
 	character_information.text = ""
 	drag_message_text.show()
 	clear_button.hide()
+	Globals.members_in_party[member_number] = null
 	character = null
