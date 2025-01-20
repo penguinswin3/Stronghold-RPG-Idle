@@ -7,6 +7,6 @@
 script = ExtResource("1_q0yny")
 display_name = "Den"
 description = ""
-unlocked = false
+locked = true
 unlocked_class = ExtResource("2_fxoj3")
 unlock_requirements = {}

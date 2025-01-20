@@ -1,7 +1,7 @@
 extends PanelContainer
 
 @export var structure : Structure
-var resource_view = preload("res://Scenes/resource_view.tscn") 
+var currency_view = preload("res://Scenes/currency_view.tscn")
 var character_view = preload("res://Scenes/character_view.tscn")
 
 @onready var structure_name: Label = %StructureName
@@ -10,6 +10,8 @@ var character_view = preload("res://Scenes/character_view.tscn")
 @onready var unlock_v_container: VBoxContainer = %UnlockVContainer
 @onready var locked_label: Label = %LockedLabel
 @onready var unlock_details_v_container: VBoxContainer = %UnlockDetailsVContainer
+
+@export var currency_array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,12 +27,15 @@ func _ready() -> void:
 		unlock_details_v_container.add_child(new_character_view)
 	
 		for requirement in structure.unlock_requirements:
-			var new_resource_view = resource_view.instantiate()
-			new_resource_view.resource = load(Globals.resource_resources_folder_path + requirement + ".tres")
-			new_resource_view.count = structure.unlock_requirements[requirement]
-			unlock_details_v_container.add_child(new_resource_view)
+			var new_currency_view = currency_view.instantiate()
+			new_currency_view.currency = requirement as Currency
+			new_currency_view.count = structure.unlock_requirements[requirement]
+			currency_array.append(new_currency_view)
+			unlock_details_v_container.add_child(new_currency_view)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	#for currency_view in currency_array:
+		#if(!Wallet.validate_currency(currency_view.currency.display_name, currency_view.count)):

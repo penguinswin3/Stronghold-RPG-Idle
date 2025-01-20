@@ -1,10 +1,15 @@
-class_name Currency extends Object
+extends Resource
+class_name Currency
 
-var name
-var icon
-var type
+@export_enum(
+	"Ore",
+	"Herb",
+	"Treasure",
+	"Platinum Coin",
+	"Gold Coin",
+	"Silver Coin",
+	"Copper Coin"
+) var display_name : String
 
-func _init(name = null, icon = null, type = null):
-	self.name = name;
-	self.icon = icon;
-	self.type = type;
+@export var count : int
+@export var texture : Texture
