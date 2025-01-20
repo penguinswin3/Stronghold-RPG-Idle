@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bupe6ebjhc72x"]
+[gd_scene load_steps=6 format=3 uid="uid://bupe6ebjhc72x"]
 
 [ext_resource type="Texture2D" uid="uid://dd1316mjka6c7" path="res://Assets/clokc_face_icon.png" id="1_0x2dt"]
 [ext_resource type="Script" path="res://Scenes/resource_generator_tile.gd" id="1_7t8jr"]
-[ext_resource type="Texture2D" uid="uid://cu2skk3eg2rxj" path="res://Assets/leaf_icon.png" id="2_2ahp7"]
 [ext_resource type="Resource" uid="uid://dep3sr7qwbn1d" path="res://Scripts/Resources/resource_herb.tres" id="2_462ca"]
+[ext_resource type="PackedScene" uid="uid://phb8hsm0rft7" path="res://Scenes/currency_view.tscn" id="5_j7yra"]
+[ext_resource type="Resource" uid="uid://13b7svf3n3yq" path="res://Scripts/Currency/CurrencyResources/Herb.tres" id="6_shqxe"]
 
 [node name="resource_panel_tile" type="PanelContainer"]
 custom_minimum_size = Vector2(397, 100)
@@ -30,15 +31,6 @@ texture = ExtResource("1_0x2dt")
 expand_mode = 1
 stretch_mode = 2
 
-[node name="resource_gain_label" type="Label" parent="Control"]
-layout_mode = 2
-offset_left = 15.0
-offset_top = 43.0
-offset_right = 46.0
-offset_bottom = 66.0
-text = "+1"
-horizontal_alignment = 2
-
 [node name="progress_bar" type="ProgressBar" parent="Control"]
 layout_mode = 2
 offset_top = 72.0
@@ -62,19 +54,19 @@ offset_bottom = 66.0
 text = "10s"
 horizontal_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_direction = 2
-layout_mode = 2
-offset_left = 52.0
-offset_top = 38.0
-offset_right = 84.0
-offset_bottom = 70.0
-size_flags_horizontal = 8
-size_flags_vertical = 4
-texture = ExtResource("2_2ahp7")
-stretch_mode = 2
-
 [node name="resource_timer" type="Timer" parent="Control"]
 wait_time = 1.891
+
+[node name="CurrencyViewHContainer" parent="Control" instance=ExtResource("5_j7yra")]
+layout_mode = 2
+anchor_right = 0.164
+anchor_bottom = 0.302
+offset_left = 16.0
+offset_top = 38.0
+offset_right = 45.892
+offset_bottom = 30.8
+currency = ExtResource("6_shqxe")
+count = 1
+sign = "+"
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

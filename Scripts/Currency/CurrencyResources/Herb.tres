@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://13b7svf3n3yq"]
 
 [ext_resource type="Script" path="res://Scripts/Currency/currency.gd" id="1_sue00"]
-[ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="2_57aum"]
+[ext_resource type="Texture2D" uid="uid://cu2skk3eg2rxj" path="res://Assets/leaf_icon.png" id="2_10gqb"]
 
 [resource]
 script = ExtResource("1_sue00")
 display_name = "Herb"
 count = 0
-texture = ExtResource("2_57aum")
+texture = ExtResource("2_10gqb")
