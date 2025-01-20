@@ -1,5 +1,5 @@
 extends Object
-const complex_cost = preload('res://Scripts/Currency/ComplexCost.gd')
+const complex_cost = preload('res://Scripts/CurrencyOld/ComplexCost.gd')
 
 var unlocked
 var name

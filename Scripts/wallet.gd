@@ -15,12 +15,12 @@ func _ready():
 		wallet[currency] = 0;
 	return 
 	
+	
 func add_currency(currency_name, count):
 	wallet[currency_name] += count
 	Wallet.currency_changed.emit(currency_name, wallet[currency_name])
 	Wallet.currency_added.emit(currency_name, count, wallet[currency_name])
 	return wallet[currency_name]
-	
 	
 	
 func remove_currency(currency_name, count):
@@ -30,6 +30,7 @@ func remove_currency(currency_name, count):
 		Wallet.currency_removed.emit(currency_name, count, wallet[currency_name])
 		return true
 	return false
+
 
 func get_currency_count(currency_name):
 	return wallet[currency_name]
