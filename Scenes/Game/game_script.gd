@@ -3,7 +3,7 @@ var CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var upgrade
 
 @onready var member_list: GridContainer = %MemberList
-var member_button = preload("res://Scenes/member_button.tscn")
+var member_panel = preload("res://Scenes/member_panel.tscn")
 var resource_tile = preload("res://Scenes/resource_generator_tile.tscn")
 var roller = Roller.new()
 @onready var structure_list: GridContainer = %StructureList
@@ -56,12 +56,6 @@ func _on_herb_button_pressed() -> void:
 func _ready() -> void:
 	Wallet.currency_changed.connect(_on_currency_change)
 
-	
-	# Register characters
-	for character in Globals.owned_characters:
-		var new_member_button = member_button.instantiate()
-		new_member_button.character = load("res://Scripts/Character/CharacterResources/Combat/" + character + ".tres")
-		member_list.add_child(new_member_button)
 	# Needs to be dynamic
 	var resource_summary = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer/SummaryPanel")
 	herb_label = Label.new()
@@ -97,8 +91,8 @@ func _ready() -> void:
 		if not currency.ends_with('Coin'):
 			var word_label = Label.new()
 			word_label.text = "{1}: {2}".format({"1" : currency, "2" : str(Wallet.get_currency_count(currency))})
-			resource_container.add_child(word_label)
-			resource_lables[currency] = word_label
+			#resource_container.add_child(word_label)
+			#resource_lables[currency] = word_label
 			
 	for upgrade in Globals.upgrades.keys():
 		var button = Button.new()
@@ -107,8 +101,6 @@ func _ready() -> void:
 				button.hide()
 		button.connect('pressed', _purchase_upgrade.bind(upgrade))
 		button.set_text(Globals.upgrades[upgrade].name + '\n' + str(Globals.upgrades[upgrade].cost[0].amount) + ' ' + Globals.upgrades[upgrade].cost[0].currency + ' | +' + str(Globals.upgrades[upgrade].amplitude))
-		shop_container.add_child(button)
-		shop_buttons.insert(len(shop_buttons), button)
 
 	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 	for character in Globals.owned_characters:

@@ -43,7 +43,6 @@ func _on_resource_timer_tick():
 
 
 func _on_control_gui_input(event: InputEvent) -> void:
-	print(event)
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == true:
 		_toggle_resource_timer()
 	pass # Replace with function body.
