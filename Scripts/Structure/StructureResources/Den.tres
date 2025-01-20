@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://bhw8ctrdscoej"]
+
+[ext_resource type="Script" path="res://Scripts/Structure/structure.gd" id="1_q0yny"]
+[ext_resource type="Resource" uid="uid://bkvb64moujar4" path="res://Scripts/Character/CharacterResources/Thief.tres" id="2_fxoj3"]
+
+[resource]
+script = ExtResource("1_q0yny")
+display_name = "Den"
+description = ""
+locked = true
+unlocked_class = ExtResource("2_fxoj3")
+unlock_requirements = {}

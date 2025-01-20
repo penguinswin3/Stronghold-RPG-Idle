@@ -9,3 +9,5 @@ structure_type = "Tavern"
 display_name = "Entrepreneur"
 description = ""
 primary_skill = "Networking"
+level = 1
+xp = 0

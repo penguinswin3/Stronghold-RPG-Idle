@@ -1,30 +1,33 @@
 [gd_scene load_steps=2 format=3 uid="uid://dt2omg15a5wf8"]
 
-[ext_resource type="Script" path="res://Scenes/member_button.gd" id="1_odosn"]
+[ext_resource type="Script" path="res://Scenes/member_panel.gd" id="1_2usfc"]
 
 [node name="MemberPanel" type="PanelContainer"]
 offset_right = 255.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-script = ExtResource("1_odosn")
+script = ExtResource("1_2usfc")
 
-[node name="MemberPanel" type="HBoxContainer" parent="."]
+[node name="MemberPanelHContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CharacterImage" type="TextureRect" parent="MemberPanel"]
+[node name="CharacterIcon" type="TextureRect" parent="MemberPanelHContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
+expand_mode = 1
 
-[node name="CharacterInformation" type="Label" parent="MemberPanel"]
+[node name="CharacterInformation" type="Label" parent="MemberPanelHContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-horizontal_alignment = 1
+size_flags_stretch_ratio = 2.0
 vertical_alignment = 1
 
 [node name="OnAdventureCoverPanel" type="PanelContainer" parent="."]

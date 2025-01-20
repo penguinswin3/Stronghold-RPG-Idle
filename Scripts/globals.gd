@@ -1,9 +1,19 @@
 extends Node
 
-
+# Preloaded Scripts
 const OptionsEnum = preload('res://Enums/options_enum.gd')
 const Upgrade = preload('res://Scripts/upgrade.gd')
 const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
+
+# Preloaded Scenes
+const member_panel_scene = preload("res://Scenes/member_panel.tscn")
+const sturcture_panel_scene = preload("res://Scenes/structure_panel.tscn")
+
+# Path Strings
+const member_panel_scene_path = "res://Scenes/member_panel.tscn"
+const character_resources_folder_path = "res://Scripts/Character/CharacterResources/"
+const structure_resources_folder_path = "res://Scripts/Structure/StructureResources/"
+const currency_resources_folder_path = "res://Scripts/Currency/CurrencyResources/"
 
 var selected_options = {
 	"background_image" : OptionsEnum.BackgroundImages.FARM_BACKGROUND,
@@ -20,4 +30,27 @@ func _ready():
 	upgrades['enhanced_herbs'] = Upgrade.new(1, 'Enhanced Herbalism', 100, CurrenciesEnum.Currencies.HERB, 0, 2, true, 0, [])
 	upgrades['perfected_herbalism'] = Upgrade.new(0, 'Perfect Herbalism', 500, CurrenciesEnum.Currencies.HERB, 0, 10, false, 0, ['enhanced_herbs'])
 
-var owned_characters = ["Lord", "Fighter"]
+var members_in_party = {
+	"FIRST" : Character,
+	"SECOND" : Character,
+	"THIRD" : Character,
+	"FOURTH" : Character
+}
+var members_on_adventure : bool = false
+
+var owned_characters = ["Lord", "Fighter", "Quartermaster"]
+
+var owned_sturctures = [
+	"Stronghold"
+]
+
+var structures = [
+	"Stronghold",
+	"Warehouse",
+	"Den",
+	"Tower",
+	"Store",
+	"Foundry",
+	"Tavern",
+	"Manor"
+]

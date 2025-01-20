@@ -2,12 +2,15 @@ extends PanelContainer
 
 @export var character : Character
 @onready var character_information: Label = %CharacterInformation
-var member_button = preload("res://Scenes/member_button.tscn")
+@onready var character_icon: TextureRect = %CharacterIcon
+var member_button = Globals.member_panel_scene
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character_information.text = character.display_name + " - " + str(character.level)
+	character_icon.texture = character.icon
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

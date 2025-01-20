@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=4 format=3 uid="uid://dpeepw3lkf6hf"]
+[gd_scene load_steps=5 format=3 uid="uid://dpeepw3lkf6hf"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
 [ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
@@ -145,15 +144,19 @@ columns = 2
 
 [node name="PartyMemberPanel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
+member_number = "FIRST"
 
 [node name="PartyMemberPanel2" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
+member_number = "SECOND"
 
 [node name="PartyMemberPanel3" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
+member_number = "THIRD"
 
 [node name="PartyMemberPanel4" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
+member_number = "FOURTH"
 
 [node name="DetailsVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer"]
 layout_mode = 2
@@ -430,10 +433,14 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel"]
+[node name="StructureScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel"]
 layout_mode = 2
-text = "Stronghold"
-horizontal_alignment = 1
+
+[node name="StructureList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel/StructureScrollableContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="MarketViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
 unique_name_in_owner = true
@@ -542,6 +549,7 @@ layout_mode = 2
 [connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/StrongholdTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_stronghold_tab_button_pressed"]
 [connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/MarketTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_market_tab_button_pressed"]
 [connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/PresetsTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_presets_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/GoButton" to="." method="_on_go_button_pressed"]
 [connection signal="pressed" from="NavBarContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]
 [connection signal="pressed" from="MineButton" to="." method="_on_mine_button_pressed"]
