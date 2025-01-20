@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_shrrs")
 display_name = "Warehouse"
-description = ""
-unlocked = false
+description = "Owned by the Quartermaster"
+locked = true
 unlocked_class = ExtResource("2_o6qvl")
-unlock_requirements = {}
+unlock_requirements = {
+"Gold": 5
+}

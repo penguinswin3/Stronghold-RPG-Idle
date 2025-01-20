@@ -13,6 +13,7 @@ const sturcture_panel_scene = preload("res://Scenes/structure_panel.tscn")
 const member_panel_scene_path = "res://Scenes/member_panel.tscn"
 const character_resources_folder_path = "res://Scripts/Character/CharacterResources/"
 const structure_resources_folder_path = "res://Scripts/Structure/StructureResources/"
+const resource_resources_folder_path = "res://Scripts/Resource/ResourceResources/"
 
 var selected_options = {
 	"background_image" : OptionsEnum.BackgroundImages.FARM_BACKGROUND,

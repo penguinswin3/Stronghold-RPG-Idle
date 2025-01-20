@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnxutjkji4bng"]
+
+[ext_resource type="Script" path="res://Scenes/resource_view.gd" id="1_mo0mc"]
+
+[node name="ResourceViewHContainer" type="HBoxContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_mo0mc")
+
+[node name="ResourceCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "
+"
+
+[node name="ResourceTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 2

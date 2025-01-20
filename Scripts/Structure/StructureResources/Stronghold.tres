@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_47604")
 display_name = "Stronghold"
-description = ""
+description = "Owned by the Lord"
 locked = false
 unlocked_class = ExtResource("2_d3nge")
 unlock_requirements = {}
