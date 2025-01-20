@@ -30,7 +30,11 @@ func _ready():
 	upgrades['enhanced_herbs'] = Upgrade.new(1, 'Enhanced Herbalism', 100, CurrenciesEnum.Currencies.HERB, 0, 2, true, 0, [])
 	upgrades['perfected_herbalism'] = Upgrade.new(0, 'Perfect Herbalism', 500, CurrenciesEnum.Currencies.HERB, 0, 10, false, 0, ['enhanced_herbs'])
 
-var owned_characters = ["Lord", "Fighter"]
+var members_in_party = []
+var members_on_adventure : bool = false
+
+var owned_characters = ["Lord", "Fighter", "Quartermaster"]
+
 var owned_sturctures = [
 	"Stronghold"
 ]
