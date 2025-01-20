@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://dep3sr7qwbn1d"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Scripts/resource_gathering_stat.gd" id="1_w8cls"]
+
+[resource]
+script = ExtResource("1_w8cls")
+name = "Herb"
+wait_time = 0.01
+base_quantity = 1
+multiplier = 1.0

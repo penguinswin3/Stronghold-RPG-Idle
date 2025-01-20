@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://jm8cokgcy0tp"]
 
 [ext_resource type="Script" path="res://Scripts/Structure/structure.gd" id="1_47604"]
-[ext_resource type="Resource" uid="uid://bip61jcxiu1nr" path="res://Scripts/Character/CharacterResources/Lord.tres" id="2_d3nge"]
+[ext_resource type="Resource" path="res://Scripts/Character/CharacterResources/Lord.tres" id="2_d3nge"]
 
 [resource]
 script = ExtResource("1_47604")
