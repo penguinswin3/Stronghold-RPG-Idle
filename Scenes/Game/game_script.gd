@@ -91,7 +91,7 @@ func _ready() -> void:
 		if not Globals.upgrades[upgrade].enabled or Globals.upgrades[upgrade].dependencies.size() > 0:
 				button.hide()
 		button.connect('pressed', _purchase_upgrade.bind(upgrade))
-		button.set_text(Globals.upgrades[upgrade].name + '\n' + str(Globals.upgrades[upgrade].cost[0].amount) + ' ' + Globals.upgrades[upgrade].cost[0].currency + ' | +' + str(Globals.upgrades[upgrade].amplitude))
+		#button.set_text(Globals.upgrades[upgrade].name + '\n' + str(Globals.upgrades[upgrade].cost[0].amount) + ' ' + Globals.upgrades[upgrade].cost[0].currency + ' | +' + str(Globals.upgrades[upgrade].amplitude))
 
 	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 	for character in Globals.owned_characters:

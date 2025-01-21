@@ -1,5 +1,5 @@
 extends Object
-const complex_cost = preload('res://Scripts/CurrencyOld/ComplexCost.gd')
+#const complex_cost = preload('res://Scripts/CurrencyOld/ComplexCost.gd')
 
 var unlocked
 var name
@@ -19,7 +19,7 @@ signal property_changed
 func _init(unlocked, name, cost, cost_currency, count, amplitude, enabled, scale_multiplier, dependencies, max_count=-1, ):
 	self.unlocked = unlocked
 	self.name = name
-	self.cost.append(complex_cost.new(cost, cost_currency)) 
+	#self.cost.append(complex_cost.new(cost, cost_currency)) 
 	self.count = count
 	self.amplitude = amplitude
 	self.enabled = enabled
