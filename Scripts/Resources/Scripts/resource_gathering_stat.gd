@@ -12,3 +12,9 @@ var base_quantity : int
 
 @export
 var multiplier : float
+
+@export
+var description : String
+
+@export
+var modified_gathering : String

@@ -5,6 +5,7 @@ var upgrade
 @onready var member_list: GridContainer = %MemberList
 var member_panel = preload("res://Scenes/member_panel.tscn")
 var resource_tile = preload("res://Scenes/resource_generator_tile.tscn")
+var currency_view = preload("res://Scenes/currency_view.tscn")
 var roller = Roller.new()
 @onready var structure_list: GridContainer = %StructureList
 
@@ -17,6 +18,8 @@ var resource_lables = {}
 var resource_bar
 var resource_container
 var resource_timer
+
+var herb_currency_view
 
 var herb_label
 
@@ -55,12 +58,13 @@ func _on_herb_button_pressed() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Wallet.currency_changed.connect(_on_currency_change)
-
 	# Needs to be dynamic
 	var resource_summary = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer/SummaryPanel")
-	herb_label = Label.new()
-	herb_label.text = "Herbs: {amount}".format({"amount" : str(Wallet.get_currency_count(CurrenciesEnum.Currencies.HERB))})
-	resource_summary.add_child(herb_label)
+	#herb_label = Label.new()
+	#herb_label.text = "Herbs: {amount}".format({"amount" : str(Wallet.get_currency_count(CurrenciesEnum.Currencies.HERB))})
+	herb_currency_view = currency_view.instantiate()
+	herb_currency_view.currency = Wallet.get_currency(CurrenciesEnum.Currencies.HERB)
+	resource_summary.add_child(herb_currency_view)
 
 	# Needs to be dynamic
 	var resource_scrollable_list = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList")
@@ -69,20 +73,7 @@ func _ready() -> void:
 	resource_scrollable_list.add_child(resource_tile.instantiate())
 	resource_scrollable_list.add_child(resource_tile.instantiate())
 	resource_scrollable_list.add_child(resource_tile.instantiate())
-	#resource_timer = Timer.new()
-	#resource_timer.wait_time = 0.01
-	#resource_timer.timeout.connect(_on_resource_timer_tick)
-	#resource_timer.autostart = true
-	#resource_bar = ProgressBar.new()
-	#resource_bar.fill_mode = ProgressBar.FillMode.FILL_BEGIN_TO_END
-	##resource_timer.indeterminate = true
-	#resource_bar.min_value = 0
-	#resource_bar.max_value = 500
-	#resource_bar.step = 1
-	#resource_bar.gui_input.connect(_toggle_resource_timer)
-	#resource_pannel_0.add_child(resource_bar)
-	#resource_pannel_0.add_child(resource_timer)
-	#
+#
 	
 	
 	pass
@@ -114,24 +105,12 @@ func _ready() -> void:
 		new_structure_panel.structure = load(Globals.structure_resources_folder_path + structure + ".tres")
 		structure_list.add_child(new_structure_panel)
 
-
-
-
-
-
 func _on_currency_change(currency_name, new_ammount):
-		herb_label.text = "Herbs: {amount}".format({"amount" : str(Wallet.get_currency_count(CurrenciesEnum.Currencies.HERB))})
+	herb_currency_view._update_text(new_ammount)
 
 
 func _on_upgrade_property_change(upgrade_name):
 	pass
-
-
-func _on_resource_timer_timeout() -> void:
-	Wallet.add_currency(CurrenciesEnum.Currencies.ORE, Globals.upgrades['ore_per_second'].count * Globals.upgrades['ore_per_second'].amplitude)
-	Wallet.add_currency(CurrenciesEnum.Currencies.HERB, Globals.upgrades['herb_per_second'].count * Globals.upgrades['herb_per_second'].amplitude)
-
-	pass # Replace with function body.
 
 
 func _on_go_button_pressed() -> void:
