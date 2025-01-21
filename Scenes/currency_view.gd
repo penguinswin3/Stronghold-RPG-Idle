@@ -10,8 +10,11 @@ class_name CurrencyView
 @export_enum('+', '-', ' ') var sign : String
 
 
+
 func _ready() -> void:
 	currency_count.text = str(count)
 	currency_texture.texture = currency.texture
 	currency_sign.text = str(sign)
 	
+func _update_text(count):
+	currency_count.text = str(count)

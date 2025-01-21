@@ -12,4 +12,4 @@ class_name Currency
 ) var display_name : String
 
 @export var count : int
-@export var texture : Texture
+@export var texture : Texture2D

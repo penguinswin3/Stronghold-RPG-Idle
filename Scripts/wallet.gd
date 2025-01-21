@@ -11,15 +11,15 @@ signal currency_removed(currency_name, amount_removed, new_ammount)
 func _ready():
 	#Registers enumerated currencies globally
 	for currency in CurrenciesEnum.Currencies.values():
-		print('adding currency key: ' + currency)
-		wallet[currency] = 0;
+		wallet[currency] = load(Globals.currency_resources_folder_path + currency + ".tres");
+		print('Added currency key: ' + currency)
 	return 
 	
 	
-func add_currency(currency_name, count):
-	wallet[currency_name] += count
-	Wallet.currency_changed.emit(currency_name, wallet[currency_name])
-	Wallet.currency_added.emit(currency_name, count, wallet[currency_name])
+func add_currency(currency_name, amount):
+	wallet[currency_name].count += amount
+	Wallet.currency_changed.emit(currency_name, wallet[currency_name].count)
+	Wallet.currency_added.emit(currency_name, amount, wallet[currency_name].count)
 	return wallet[currency_name]
 	
 	
@@ -33,6 +33,9 @@ func remove_currency(currency_name, count):
 
 
 func get_currency_count(currency_name):
+	return wallet[currency_name].count
+	
+func get_currency(currency_name) -> Currency:
 	return wallet[currency_name]
 	
 func validate_currency(currency_name, count):
