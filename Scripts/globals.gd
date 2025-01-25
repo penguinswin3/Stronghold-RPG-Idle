@@ -1,10 +1,9 @@
 extends Node
 
-
+# Preloaded Scripts
 const OptionsEnum = preload('res://Enums/options_enum.gd')
 const Upgrade = preload('res://Scripts/Upgrades/Upgrade.gd')
 const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
-
 
 # Preloaded Scenes
 const member_panel_scene = preload("res://Scenes/member_panel.tscn")
@@ -27,7 +26,6 @@ func _ready():
 
 
 ## SAVE GAME DETAILS
-
 var selected_options = {
 	"background_image" : OptionsEnum.BackgroundImages.FARM_BACKGROUND,
 	"number_format" : OptionsEnum.NumberFormat.MILLION_FORMAT
@@ -36,8 +34,6 @@ var selected_options = {
 var gathering_activities = []
 # Called when the node enters the scene tree for the first time.
 
-
-	
 var members_in_party = {
 	"FIRST" : Character,
 	"SECOND" : Character,
@@ -58,6 +54,7 @@ func _set_selected_character(new_character):
 
 var owned_characters = ["Lord", "Fighter", "Quartermaster", "Forester", "Miner"]
 
+
 var owned_sturctures = [
 	"Stronghold"
 ]
@@ -72,6 +69,5 @@ var structures = [
 	"Tavern",
 	"Manor"
 ]
-
 
 var unlocks = {}

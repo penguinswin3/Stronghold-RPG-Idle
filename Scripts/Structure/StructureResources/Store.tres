@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://cjn7trfmurnu8"]
+
+[ext_resource type="Script" path="res://Scripts/Structure/structure.gd" id="1_qx2kr"]
+[ext_resource type="Resource" path="res://Scripts/Character/CharacterResources/Merchant.tres" id="2_06kk5"]
+
+[resource]
+script = ExtResource("1_qx2kr")
+display_name = "Store"
+description = ""
+unlocked = false
+unlocked_class = ExtResource("2_06kk5")
+unlock_requirements = {}

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=5 format=3 uid="uid://bu8nocfy801xf"]
+
+[ext_resource type="Script" path="res://Scripts/Structure/structure.gd" id="1_shrrs"]
+[ext_resource type="Resource" uid="uid://4dh32ae3iiap" path="res://Scripts/Currency/CurrencyResources/Gold Coin.tres" id="2_5ffuj"]
+[ext_resource type="Resource" path="res://Scripts/Character/CharacterResources/Quartermaster.tres" id="2_o6qvl"]
+[ext_resource type="Resource" uid="uid://cowmrec8kot0a" path="res://Scripts/Currency/CurrencyResources/Ore.tres" id="3_2ywvk"]
+
+[resource]
+script = ExtResource("1_shrrs")
+display_name = "Warehouse"
+description = "Owned by the Quartermaster"
+locked = true
+unlocked_class = ExtResource("2_o6qvl")
+unlock_requirements = {
+ExtResource("2_5ffuj"): 5,
+ExtResource("3_2ywvk"): 12
+}

@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://2mjhfdm7hb8i"]
+
+[ext_resource type="Script" path="res://Scenes/structure_panel.gd" id="1_gorp5"]
+[ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="1_pgfk0"]
+
+[node name="StructurePanel" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 200)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_gorp5")
+
+[node name="StructureHContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TexturePanel" type="PanelContainer" parent="StructureHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StructureTexture" type="TextureRect" parent="StructureHContainer/TexturePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_pgfk0")
+stretch_mode = 5
+
+[node name="LockedLabel" type="Label" parent="StructureHContainer/TexturePanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+text = "Locked"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StructureVContainer" type="VBoxContainer" parent="StructureHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="StructureName" type="Label" parent="StructureHContainer/StructureVContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Structure Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StructureDetails" type="RichTextLabel" parent="StructureHContainer/StructureVContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Structure Details"
+
+[node name="UnlockVContainer" type="VBoxContainer" parent="StructureHContainer/StructureVContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="ToUnlockLabel" type="Label" parent="StructureHContainer/StructureVContainer/UnlockVContainer"]
+layout_mode = 2
+text = "Requirements To Unlock Structure:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnlockDetailsVContainer" type="VBoxContainer" parent="StructureHContainer/StructureVContainer/UnlockVContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="UnlockButton" type="Button" parent="StructureHContainer/StructureVContainer/UnlockVContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Unlock"

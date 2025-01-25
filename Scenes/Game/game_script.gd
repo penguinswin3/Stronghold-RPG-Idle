@@ -3,7 +3,12 @@ var CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var upgrade
 
 @onready var member_list: GridContainer = %MemberList
-var member_button = preload("res://Scenes/member_button.tscn")
+var member_panel = preload("res://Scenes/member_panel.tscn")
+var resource_tile = preload("res://Scenes/resource_generator_tile.tscn")
+var currency_view = preload("res://Scenes/currency_view.tscn")
+var roller = Roller.new()
+@onready var structure_list: GridContainer = %StructureList
+
 
 var member_panel = preload("res://Scenes/member_panel.tscn")
 var resource_generator_tile = preload("res://Scenes/resource_generator_tile.tscn")
@@ -22,8 +27,14 @@ var herb_count_number_lable
 var shop_container
 var shop_buttons = []
 var resource_lables = {}
-var resource_timer
+var resource_bar
 var resource_container
+
+var resource_timer
+
+var herb_currency_view
+
+
 var herb_label
 
 
@@ -58,14 +69,17 @@ func _ready() -> void:
 	
 	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 
+	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 	for character in Globals.owned_characters:
-		var new_member_button = member_button.instantiate()
-		new_member_button.character = load("res://Scripts/Character/CharacterResources/Combat/" + character + ".tres")
-		member_list.add_child(new_member_button)
-		
-	pass
-
-
+		var new_member_panel = Globals.member_panel_scene.instantiate()
+		new_member_panel.character = load(Globals.character_resources_folder_path + character + ".tres")
+		member_list.add_child(new_member_panel)
+	
+	# For every structure, instantiate a structure_panel, set properties of panel, and add panel as child to structure_list
+	for structure in Globals.structures:
+		var new_structure_panel = Globals.sturcture_panel_scene.instantiate()
+		new_structure_panel.structure = load(Globals.structure_resources_folder_path + structure + ".tres")
+		structure_list.add_child(new_structure_panel)
 
 
 func _populate_resource_upgrade_panel(selected_character):
@@ -98,4 +112,5 @@ func _populate_gathering_activities():
 		tile.resource_gathering_stats = GlobalResourceLoader.gathering_skills.get(gathering_activity)
 		resource_activities.add_child(tile)
 
-	pass # Replace with function body.
+func _on_go_button_pressed() -> void:
+	Globals.members_on_adventure = true

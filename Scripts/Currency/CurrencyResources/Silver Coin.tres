@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://bssankcpgouj6"]
+
+[ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_4mmw7"]
+[ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="2_g5806"]
+
+[resource]
+script = ExtResource("1_4mmw7")
+display_name = "Silver Coin"
+count = 0
+texture = ExtResource("2_g5806")

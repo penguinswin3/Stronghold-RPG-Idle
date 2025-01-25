@@ -11,6 +11,7 @@ var LootTables = {
 				WeightedOption.new("Exploration - Cave Moss", 45),
 				#WeightedOption.new("Gold Coin", 2),
 				#WeightedOption.new("Rare Signet Ring", 1),
+
 			 ]
 	}
 	

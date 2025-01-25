@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=2 format=3 uid="uid://cqus8lygljrej"]
+
 
 [ext_resource type="Script" path="res://Scenes/member_panel.gd" id="1_2usfc"]
 
@@ -39,3 +41,6 @@ layout_mode = 2
 size_flags_vertical = 1
 text = "On Adventure"
 horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+

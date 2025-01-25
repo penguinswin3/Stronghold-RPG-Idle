@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://dfgx5n6nbabfl"]
+
+[ext_resource type="Script" path="res://Scripts/Structure/structure.gd" id="1_btpv8"]
+[ext_resource type="Resource" path="res://Scripts/Character/CharacterResources/Entrepreneur.tres" id="2_c7bsd"]
+
+[resource]
+script = ExtResource("1_btpv8")
+display_name = "Tavern"
+description = ""
+unlocked = false
+unlocked_class = ExtResource("2_c7bsd")
+unlock_requirements = {}

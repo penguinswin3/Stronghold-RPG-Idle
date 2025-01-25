@@ -42,11 +42,11 @@ func _on_resource_timer_tick():
 		progress_bar.value = 0
 		
 		
+
 func _on_control_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == true:
 		_toggle_resource_timer()
 	pass # Replace with function body.
-	
 	
 func _register_time_input():
 	resource_timer.wait_time = Globals.wait_time
