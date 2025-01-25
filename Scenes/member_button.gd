@@ -23,9 +23,3 @@ func _get_drag_data(at_position):
 	set_drag_preview(preview_member)
 	
 	return character
-
-
-func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == false:
-		Globals.selected_character = character
-	pass # Replace with function body.

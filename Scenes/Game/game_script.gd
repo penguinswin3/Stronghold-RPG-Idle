@@ -9,18 +9,11 @@ var currency_view = preload("res://Scenes/currency_view.tscn")
 var roller = Roller.new()
 @onready var structure_list: GridContainer = %StructureList
 
-
-var member_panel = preload("res://Scenes/member_panel.tscn")
 var resource_generator_tile = preload("res://Scenes/resource_generator_tile.tscn")
 var upgrade_tile = preload('res://Scenes/upgrade_tile.tscn')
-var currency_view = preload("res://Scenes/currency_view.tscn")
 var currency_static_view = preload("res://Scenes/currency_static_view.tscn")
 @onready var resource_summary = %ResourceSummary
 @onready var resource_activities = %ResourcesList
-
-var roller = Roller.new()
-@onready var structure_list: GridContainer = %StructureList
-
 
 var ore_count_number_lable
 var herb_count_number_lable
@@ -56,6 +49,7 @@ func _ready() -> void:
 		# Add that resource to the summary box 
 	Globals.on_selected_character_changed.connect(_populate_resource_upgrade_panel)
 	Globals.on_selected_character_changed.connect(_update_displayed_gathering_activities)
+	print(GlobalResourceLoader._get_all_characters())
 	Globals._set_selected_character(GlobalResourceLoader._get_all_characters()[3])
 	
 

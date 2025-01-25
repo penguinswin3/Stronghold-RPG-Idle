@@ -7,11 +7,11 @@ const CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 
 # Preloaded Scenes
 const member_panel_scene = preload("res://Scenes/member_panel.tscn")
-#const sturcture_panel_scene = preload("res://Scenes/structure_panel.tscn")
+const sturcture_panel_scene = preload("res://Scenes/structure_panel.tscn")
 
 # Path Strings
 const member_panel_scene_path = "res://Scenes/member_panel.tscn"
-const character_resources_folder_path = "res://Scripts/Character/CharacterResources/Combat/"
+const character_resources_folder_path = "res://Scripts/Character/CharacterResources/"
 const structure_resources_folder_path = "res://Scripts/Structure/StructureResources/"
 const currency_resources_folder_path = "res://Scripts/Currency/CurrencyResources/"
 const gathering_activities_folder_path = "res://Scripts/Gathering/Gathering Activities/"

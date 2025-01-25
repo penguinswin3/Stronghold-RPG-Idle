@@ -1,6 +1,7 @@
 extends PanelContainer
 
 var currency_static_view = preload('res://Scenes/currency_static_view.tscn')
+const ResourceGatheringStat = preload('res://Scripts/Gathering/Scripts/resource_gathering_stat.gd')
 
 @onready var product_container = %product_container
 @onready var title_container = %title_container

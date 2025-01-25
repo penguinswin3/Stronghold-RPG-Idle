@@ -19,12 +19,6 @@ func add_currency(currency_id: CurrenciesEnum.CURRENCIES, amount: int) -> Curren
 	return wallet[currency_id]
 
 	
-func add_currency(currency_name, amount):
-	wallet[currency_name].count += amount
-	Wallet.currency_changed.emit(currency_name, wallet[currency_name].count)
-	Wallet.currency_added.emit(currency_name, amount, wallet[currency_name].count)
-	return wallet[currency_name]
-	
 func remove_currency(currency_id: CurrenciesEnum.CURRENCIES, amount: int) -> Currency:
 	if validate_currency(currency_id, amount):
 		wallet[currency_id] -= amount

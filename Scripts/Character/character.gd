@@ -1,6 +1,7 @@
 extends Resource
 class_name Character
 
+const ResourceGatheringStat = preload("res://Scripts/Gathering/Scripts/resource_gathering_stat.gd")
 
 @export var character_id : CharacterEnum.CHARACTERS
 @export_enum(
