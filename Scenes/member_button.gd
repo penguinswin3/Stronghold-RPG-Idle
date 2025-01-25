@@ -5,6 +5,7 @@ extends PanelContainer
 var member_button = preload("res://Scenes/member_button.tscn")
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character_information.text = character.display_name + " - " + str(character.level)
@@ -22,3 +23,9 @@ func _get_drag_data(at_position):
 	set_drag_preview(preview_member)
 	
 	return character
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == false:
+		Globals.selected_character = character
+	pass # Replace with function body.

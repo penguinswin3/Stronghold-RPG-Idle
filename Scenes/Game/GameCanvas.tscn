@@ -300,36 +300,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 2
 size_flags_stretch_ratio = 6.0
 
-[node name="ResourcePanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ResourcePanel2" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ResourcePanel3" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ResourcePanel4" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ResourcePanel5" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="UpgradeManagementPanel" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel"]
 layout_mode = 2
 size_flags_horizontal = 3

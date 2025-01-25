@@ -10,10 +10,7 @@ character_id = 12
 display_name = "Entrepreneur"
 description = ""
 primary_skill = "Networking"
-<<<<<<< Updated upstream:Scripts/Character/CharacterResources/Combat/Entrepreneur.tres
-=======
 level = 1
 xp = 0
 associated_resources = []
 associated_gathering_activities = []
->>>>>>> Stashed changes:Scripts/Character/CharacterResources/Entrepreneur.tres

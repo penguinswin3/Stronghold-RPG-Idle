@@ -28,9 +28,3 @@ func _get_drag_data(at_position):
 func _on_click():
 	
 	pass
-
-
-func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == 1 and event.pressed == false:
-		Globals.selected_character = character
-	pass # Replace with function body.

@@ -10,10 +10,7 @@ character_id = 15
 display_name = "Artificer"
 description = ""
 primary_skill = "Enchantment"
-<<<<<<< Updated upstream:Scripts/Character/CharacterResources/Combat/Artificer.tres
-=======
 level = 1
 xp = 0
 associated_resources = []
 associated_gathering_activities = []
->>>>>>> Stashed changes:Scripts/Character/CharacterResources/Artificer.tres

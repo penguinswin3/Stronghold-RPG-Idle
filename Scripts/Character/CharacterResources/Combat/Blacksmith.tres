@@ -10,10 +10,7 @@ character_id = 18
 display_name = "Blacksmith"
 description = ""
 primary_skill = "Crafting"
-<<<<<<< Updated upstream:Scripts/Character/CharacterResources/Combat/Blacksmith.tres
-=======
 level = 1
 xp = 0
 associated_resources = []
 associated_gathering_activities = []
->>>>>>> Stashed changes:Scripts/Character/CharacterResources/Blacksmith.tres

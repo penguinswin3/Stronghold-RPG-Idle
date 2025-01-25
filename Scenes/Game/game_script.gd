@@ -29,8 +29,6 @@ var herb_label
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	shop_buttons[0].set_text(Globals.upgrades['ore_per_click'].name + '\n' + str(Globals.upgrades['ore_per_click'].cost[0].amount) + ' ' + Globals.upgrades['ore_per_click'].cost[0].currency + ' | +' + str(Globals.upgrades['ore_per_click'].amplitude))
-	shop_buttons[1].set_text(Globals.upgrades['ore_per_second'].name + '\n' + str(Globals.upgrades['ore_per_second'].cost[0].amount) + ' ' + Globals.upgrades['ore_per_second'].cost[0].currency + ' | +' + str(Globals.upgrades['ore_per_second'].amplitude))
 	pass
 
 
@@ -85,8 +83,7 @@ func _populate_resource_upgrade_panel(selected_character):
 		resource_summary.add_child(tracked_resource)
 	pass
 
-func _update_displayed_gathering_activities(selected_character):# hide existing stuff
-	
+func _update_displayed_gathering_activities(selected_character):
 	for child in resource_activities.get_children():
 		if child.resource_gathering_stats.gathering_activity_id in GlobalResourceLoader._get_all_characters()[selected_character.character_id].associated_gathering_activities:
 			child.visible = true
@@ -95,7 +92,6 @@ func _update_displayed_gathering_activities(selected_character):# hide existing 
 
 
 func _populate_gathering_activities():
-
 	#This should be iterating through the list of gathering skill available to the selected party member
 	for gathering_activity in GlobalResourceLoader.gathering_skills:
 		var tile = resource_generator_tile.instantiate()
