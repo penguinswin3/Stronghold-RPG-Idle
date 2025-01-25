@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://df4v2xam48n0t"]
+
+[ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_d4vv6"]
+[ext_resource type="Texture2D" uid="uid://nj35mogm656n" path="res://Assets/Resource Sprites/BirdNestSprite.png" id="2_vq70s"]
+
+[resource]
+script = ExtResource("1_d4vv6")
+currency_id = 6
+display_name = "Bird's Nest"
+count = 0
+texture = ExtResource("2_vq70s")

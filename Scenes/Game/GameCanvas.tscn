@@ -280,19 +280,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="SummaryVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="SummaryLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer"]
+[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/VBoxContainer"]
 layout_mode = 2
 text = "Resource Summary"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="SummaryPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer"]
+[node name="ResourceSummary" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 1
 
 [node name="ResourcesScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer"]
 layout_mode = 2
@@ -300,6 +300,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 
 [node name="ResourcesList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -315,36 +316,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 size_flags_stretch_ratio = 6.0
-
-[node name="UpgradePanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="UpgradePanel2" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="UpgradePanel3" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="UpgradePanel4" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="UpgradePanel5" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="SidebarVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel"]
 layout_mode = 2

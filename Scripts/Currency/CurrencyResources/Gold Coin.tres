@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://4dh32ae3iiap"]
 
 [ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_1mtld"]
-[ext_resource type="Texture2D" uid="uid://d2wyqiapuaopy" path="res://Assets/Coins.png" id="2_xfmsc"]
+[ext_resource type="Texture2D" uid="uid://dtminff17dmjb" path="res://Assets/Resource Sprites/GoldCoins.png" id="2_4j8iu"]
 
 [resource]
 script = ExtResource("1_1mtld")
+currency_id = 4
 display_name = "Gold Coin"
 count = 0
-texture = ExtResource("2_xfmsc")
+texture = ExtResource("2_4j8iu")

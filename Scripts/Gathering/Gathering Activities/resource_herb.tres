@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://dep3sr7qwbn1d"]
+
+[ext_resource type="Script" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_w8cls"]
+
+[resource]
+script = ExtResource("1_w8cls")
+gathering_activity_id = 0
+name = "Herb"
+verb = "Pick"
+max_val = 1000.0
+min_val = 0.0
+step = 1.0
+base_quantity = 1
+multiplier = 1.0
+description = ""
+modified_gathering = 0
+inputs = {
+0: 0
+}
+outputs = {
+2: 1
+}
+character = ""
+unlock_dependencies = []
+upgrade_chain = []

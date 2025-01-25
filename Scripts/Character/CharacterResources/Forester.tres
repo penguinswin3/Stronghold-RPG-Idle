@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://m0nskww2qx84"]
+[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://1p2g3rh8pqco"]
 
 [ext_resource type="Script" path="res://Scripts/Character/exploration_character.gd" id="1_ajxcn"]
 
 [resource]
 script = ExtResource("1_ajxcn")
 tool_type = "Felling Axe"
+character_id = 3
 display_name = "Forester"
 description = ""
 primary_skill = "Woodcutting"
+level = 1
+xp = 0
+associated_resources = [5, 6, 20]
+associated_gathering_activities = [1]

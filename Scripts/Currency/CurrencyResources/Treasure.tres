@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_djtmn")
+currency_id = 3
 display_name = "Treasure"
 count = 0
 texture = ExtResource("2_po40x")

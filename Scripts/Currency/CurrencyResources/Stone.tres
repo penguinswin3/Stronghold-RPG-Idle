@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://c8oxtnixxuane"]
+
+[ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_v557p"]
+[ext_resource type="Texture2D" uid="uid://cy47uecd2lwrq" path="res://Assets/Resource Sprites/StoneSprite.png" id="2_ydqun"]
+
+[resource]
+script = ExtResource("1_v557p")
+currency_id = 7
+display_name = "Stone"
+count = 0
+texture = ExtResource("2_ydqun")

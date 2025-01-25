@@ -1,5 +1,5 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=3 format=3 uid="uid://omtghofft0ox"]
 
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=3 format=3 uid="uid://ifp4ykljrg85"]
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_fhf05"]
 [ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="1_nvvvo"]
 
@@ -7,9 +7,12 @@
 script = ExtResource("1_fhf05")
 tool_type = "Clipboard"
 structure_type = "Warehouse"
+character_id = 2
 display_name = "Quartermaster"
 description = "An OCD Freak"
 icon = ExtResource("1_nvvvo")
 primary_skill = "Organization"
 level = 1
 xp = 0
+associated_resources = []
+associated_gathering_activities = []

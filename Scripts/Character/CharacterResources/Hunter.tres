@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://o40rgve2558h"]
+[gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://cnsj00530t3q6"]
 
 [ext_resource type="Script" path="res://Scripts/Character/exploration_character.gd" id="1_2rua4"]
 
 [resource]
 script = ExtResource("1_2rua4")
 tool_type = "Trap Kit/Bait"
+character_id = 17
 display_name = "Hunter"
 description = ""
 primary_skill = "Hunting"
+level = 1
+xp = 0
+associated_resources = [14, 15, 19]
+associated_gathering_activities = []

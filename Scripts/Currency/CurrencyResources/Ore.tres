@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://cowmrec8kot0a"]
 
 [ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_twcm8"]
-[ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="2_pu68n"]
+
+[ext_resource type="Texture2D" uid="uid://n1so7nvswyi5" path="res://Assets/Resource Sprites/OreSprite.png" id="2_cxn6w"]
 
 [resource]
 script = ExtResource("1_twcm8")
+currency_id = 1
 display_name = "Ore"
 count = 0
-texture = ExtResource("2_pu68n")
+texture = ExtResource("2_cxn6w")
+

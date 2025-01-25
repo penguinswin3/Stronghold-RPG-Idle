@@ -5,6 +5,7 @@ extends PanelContainer
 var member_button = preload("res://Scenes/member_button.tscn")
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character_information.text = character.display_name + " - " + str(character.level)

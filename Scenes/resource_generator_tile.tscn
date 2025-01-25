@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bupe6ebjhc72x"]
+[gd_scene load_steps=3 format=3 uid="uid://egqpvprvveb4"]
 
-[ext_resource type="Texture2D" uid="uid://dd1316mjka6c7" path="res://Assets/clokc_face_icon.png" id="1_0x2dt"]
 [ext_resource type="Script" path="res://Scenes/resource_generator_tile.gd" id="1_7t8jr"]
-[ext_resource type="Resource" uid="uid://dep3sr7qwbn1d" path="res://Scripts/Resources/resource_herb.tres" id="2_462ca"]
-[ext_resource type="PackedScene" uid="uid://phb8hsm0rft7" path="res://Scenes/currency_view.tscn" id="5_j7yra"]
-[ext_resource type="Resource" uid="uid://13b7svf3n3yq" path="res://Scripts/Currency/CurrencyResources/Herb.tres" id="6_shqxe"]
+[ext_resource type="Texture2D" uid="uid://bm5xmc8dn6tg8" path="res://Assets/Timer.png" id="2_n5avx"]
 
 [node name="resource_panel_tile" type="PanelContainer"]
 custom_minimum_size = Vector2(397, 100)
@@ -14,59 +11,68 @@ offset_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7t8jr")
-resource_stats = ExtResource("2_462ca")
 metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="timer_icon" type="TextureRect" parent="Control"]
-layout_mode = 2
-offset_left = 346.0
-offset_top = 38.0
-offset_right = 381.0
-offset_bottom = 76.0
-texture = ExtResource("1_0x2dt")
-expand_mode = 1
-stretch_mode = 2
-
 [node name="progress_bar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 2
 offset_top = 72.0
 offset_right = 397.0
 offset_bottom = 99.0
 mouse_filter = 1
 
-[node name="tile_title" type="Label" parent="Control"]
-layout_mode = 2
-offset_right = 397.0
-offset_bottom = 23.0
-text = "Gather {Resource}"
-horizontal_alignment = 1
+[node name="input_container" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 31.0
+offset_right = 199.0
+offset_bottom = 71.0
 
-[node name="timer_label" type="Label" parent="Control"]
+[node name="time_input_container" type="HBoxContainer" parent="Control/input_container"]
 layout_mode = 2
-offset_left = 291.0
-offset_top = 43.0
-offset_right = 343.0
-offset_bottom = 66.0
+
+[node name="timer_label" type="Label" parent="Control/input_container/time_input_container"]
+layout_mode = 2
 text = "10s"
 horizontal_alignment = 2
 
-[node name="resource_timer" type="Timer" parent="Control"]
+[node name="timer_icon" type="TextureRect" parent="Control/input_container/time_input_container"]
+layout_mode = 2
+texture = ExtResource("2_n5avx")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="resource_timer" type="Timer" parent="Control/input_container/time_input_container"]
+unique_name_in_owner = true
 wait_time = 1.891
 
-[node name="CurrencyViewHContainer" parent="Control" instance=ExtResource("5_j7yra")]
-layout_mode = 2
-anchor_right = 0.164
-anchor_bottom = 0.302
-offset_left = 16.0
-offset_top = 38.0
-offset_right = 45.892
-offset_bottom = 30.8
-currency = ExtResource("6_shqxe")
-count = 1
-sign = "+"
+[node name="title_container" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 31.0
+alignment = 1
 
+[node name="title_verb" type="Label" parent="Control/title_container"]
+layout_mode = 2
+text = "{verb}"
+horizontal_alignment = 1
+
+[node name="title_currency" type="Label" parent="Control/title_container"]
+layout_mode = 2
+
+[node name="product_container" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 199.0
+offset_top = 31.0
+offset_right = 397.0
+offset_bottom = 71.0
+alignment = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

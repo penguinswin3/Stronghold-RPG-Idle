@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://b1ohruxxb3g6h"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://dprwn2gal0045"]
 
 [ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_ihj71"]
 
 [resource]
 script = ExtResource("1_ihj71")
 weapon_type = "Quarterstaff"
+character_id = 19
 display_name = "Occultist"
 description = ""
 primary_skill = "Occult"
+level = 1
+xp = 0
+associated_resources = []
+associated_gathering_activities = []

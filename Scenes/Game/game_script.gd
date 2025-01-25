@@ -9,6 +9,11 @@ var currency_view = preload("res://Scenes/currency_view.tscn")
 var roller = Roller.new()
 @onready var structure_list: GridContainer = %StructureList
 
+var resource_generator_tile = preload("res://Scenes/resource_generator_tile.tscn")
+var upgrade_tile = preload('res://Scenes/upgrade_tile.tscn')
+var currency_static_view = preload("res://Scenes/currency_static_view.tscn")
+@onready var resource_summary = %ResourceSummary
+@onready var resource_activities = %ResourcesList
 
 var ore_count_number_lable
 var herb_count_number_lable
@@ -17,27 +22,17 @@ var shop_buttons = []
 var resource_lables = {}
 var resource_bar
 var resource_container
+
 var resource_timer
 
 var herb_currency_view
 
+
 var herb_label
 
-func _purchase_upgrade(upgrade_name):
-	if(Wallet.remove_currency(Globals.upgrades[upgrade_name].cost[0].currency, Globals.upgrades[upgrade_name].cost[0].amount)):
-		Globals.upgrades[upgrade_name].cost[0].amount = ceil(Globals.upgrades[upgrade_name].cost[0].amount * Globals.upgrades[upgrade_name].scale_multiplier)
-		Globals.upgrades[upgrade_name].count += 1
-		#Remove dependency from all other upgrades if they exist
-		for upgrade in Globals.upgrades.values():
-			upgrade.dependencies.erase(upgrade_name)
-			if upgrade.dependencies.size() == 0:
-				upgrade.enabled = true
-	return
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	pass
 
 
@@ -46,52 +41,27 @@ func _on_back_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_mine_button_pressed() -> void:
-	Wallet.add_currency(CurrenciesEnum.Currencies.ORE, ceil(Globals.upgrades['ore_per_click'].amplitude*Globals.upgrades['ore_per_click'].count))
-	#Wallet.currency_changed.emit()
-	pass # Replace with function body.
-	
-func _on_herb_button_pressed() -> void:
-	Wallet.add_currency(CurrenciesEnum.Currencies.HERB, ceil(Globals.upgrades['herb_per_click'].amplitude*Globals.upgrades['herb_per_click'].count))
-	pass # Replace with function body.
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Wallet.currency_changed.connect(_on_currency_change)
-	# Needs to be dynamic
-	var resource_summary = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer/SummaryPanel")
-	#herb_label = Label.new()
-	#herb_label.text = "Herbs: {amount}".format({"amount" : str(Wallet.get_currency_count(CurrenciesEnum.Currencies.HERB))})
-	herb_currency_view = currency_view.instantiate()
-	herb_currency_view.currency = Wallet.get_currency(CurrenciesEnum.Currencies.HERB)
-	resource_summary.add_child(herb_currency_view)
-
-	# Needs to be dynamic
-	var resource_scrollable_list = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer/ResourcesList")
-	resource_scrollable_list.add_child(resource_tile.instantiate())
-	resource_scrollable_list.add_child(resource_tile.instantiate())
-	resource_scrollable_list.add_child(resource_tile.instantiate())
-	resource_scrollable_list.add_child(resource_tile.instantiate())
-	resource_scrollable_list.add_child(resource_tile.instantiate())
-#
 	
+	_populate_gathering_activities()
+	# For each resource belonging to selected character...
+		# Add that resource to the summary box 
+	Globals.on_selected_character_changed.connect(_populate_resource_upgrade_panel)
+	Globals.on_selected_character_changed.connect(_update_displayed_gathering_activities)
+	print(GlobalResourceLoader._get_all_characters())
+	Globals._set_selected_character(GlobalResourceLoader._get_all_characters()[3])
 	
-	pass
 
-	for currency in CurrenciesEnum.Currencies.values():
-		if not currency.ends_with('Coin'):
-			var word_label = Label.new()
-			word_label.text = "{1}: {2}".format({"1" : currency, "2" : str(Wallet.get_currency_count(currency))})
-			#resource_container.add_child(word_label)
-			#resource_lables[currency] = word_label
-			
-	for upgrade in Globals.upgrades.keys():
-		var button = Button.new()
-		Globals.upgrades[upgrade].property_changed.connect(_on_upgrade_property_change)
-		if not Globals.upgrades[upgrade].enabled or Globals.upgrades[upgrade].dependencies.size() > 0:
-				button.hide()
-		button.connect('pressed', _purchase_upgrade.bind(upgrade))
-		#button.set_text(Globals.upgrades[upgrade].name + '\n' + str(Globals.upgrades[upgrade].cost[0].amount) + ' ' + Globals.upgrades[upgrade].cost[0].currency + ' | +' + str(Globals.upgrades[upgrade].amplitude))
+	
+	var upgrade_scrollable_list = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList")
+	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
+	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
+	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
+	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
+	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
+	
+	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 
 	# For every character in owned_characters, instantiate a member_panel,load the class resource into the panel, and add panel as child to member_list
 	for character in Globals.owned_characters:
@@ -105,13 +75,36 @@ func _ready() -> void:
 		new_structure_panel.structure = load(Globals.structure_resources_folder_path + structure + ".tres")
 		structure_list.add_child(new_structure_panel)
 
-func _on_currency_change(currency_name, new_ammount):
-	herb_currency_view._update_text(new_ammount)
 
+func _populate_resource_upgrade_panel(selected_character):
+	# clear existing stuff
+	for child in resource_summary.get_children():
+		resource_summary.remove_child(child)
+		child.queue_free()
 
-func _on_upgrade_property_change(upgrade_name):
+	# Populate all the stuff based on selected character
+	## TODO only display unlocked currencies
+	for associated_currency in Globals.selected_character.associated_resources:
+		var tracked_resource = currency_view.instantiate()
+		tracked_resource.currency = Wallet.get_currency(associated_currency)
+		Wallet.currency_changed.connect(tracked_resource._update_text)
+		resource_summary.add_child(tracked_resource)
 	pass
 
+func _update_displayed_gathering_activities(selected_character):
+	for child in resource_activities.get_children():
+		if child.resource_gathering_stats.gathering_activity_id in GlobalResourceLoader._get_all_characters()[selected_character.character_id].associated_gathering_activities:
+			child.visible = true
+		else:
+			child.visible = false
+
+
+func _populate_gathering_activities():
+	#This should be iterating through the list of gathering skill available to the selected party member
+	for gathering_activity in GlobalResourceLoader.gathering_skills:
+		var tile = resource_generator_tile.instantiate()
+		tile.resource_gathering_stats = GlobalResourceLoader.gathering_skills.get(gathering_activity)
+		resource_activities.add_child(tile)
 
 func _on_go_button_pressed() -> void:
 	Globals.members_on_adventure = true

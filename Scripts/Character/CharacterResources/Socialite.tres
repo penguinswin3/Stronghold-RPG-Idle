@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://b1e07ap221n7j"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://d1bow7ebqo1io"]
 
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_ogucc"]
 
@@ -6,8 +6,11 @@
 script = ExtResource("1_ogucc")
 tool_type = "Goblet"
 structure_type = "Manor"
+character_id = 21
 display_name = "Socialite"
 description = ""
 primary_skill = "Charisma"
 level = 1
 xp = 0
+associated_resources = []
+associated_gathering_activities = []

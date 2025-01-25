@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://c8576noaf87bn"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://d0xul6iq6joju"]
 
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_tkldo"]
 
@@ -6,8 +6,11 @@
 script = ExtResource("1_tkldo")
 tool_type = "Hammer"
 structure_type = "Foundry"
+character_id = 18
 display_name = "Blacksmith"
 description = ""
 primary_skill = "Crafting"
 level = 1
 xp = 0
+associated_resources = []
+associated_gathering_activities = []
