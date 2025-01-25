@@ -1,10 +1,7 @@
 class_name Currency extends Object
 
-var name
-var icon
-var type
 
-func _init(name = null, icon = null, type = null):
-	self.name = name;
-	self.icon = icon;
-	self.type = type;
+@export var currency_id : CurrenciesEnum.CURRENCIES
+@export var display_name : String
+@export var count : int
+@export var texture : Texture2D

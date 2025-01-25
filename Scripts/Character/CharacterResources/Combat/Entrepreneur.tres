@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://bl4pxvpxyeiiw"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://cqn6p4jn0r7t1"]
 
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_tx3th"]
 
@@ -6,6 +6,14 @@
 script = ExtResource("1_tx3th")
 tool_type = "Quill"
 structure_type = "Tavern"
+character_id = 12
 display_name = "Entrepreneur"
 description = ""
 primary_skill = "Networking"
+<<<<<<< Updated upstream:Scripts/Character/CharacterResources/Combat/Entrepreneur.tres
+=======
+level = 1
+xp = 0
+associated_resources = []
+associated_gathering_activities = []
+>>>>>>> Stashed changes:Scripts/Character/CharacterResources/Entrepreneur.tres

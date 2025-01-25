@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://ot06vwg5kjtm"]
+
+[ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_gyrf6"]
+[ext_resource type="Texture2D" uid="uid://dtob4klkjlokq" path="res://Assets/Resource Sprites/PreciousMetalsSprite.png" id="2_ascqp"]
+
+[resource]
+script = ExtResource("1_gyrf6")
+currency_id = 21
+display_name = "Precious Metals"
+count = 0
+texture = ExtResource("2_ascqp")

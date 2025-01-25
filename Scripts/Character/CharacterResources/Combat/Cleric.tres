@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://cw5vac8ntny0k"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://dualwbp6kq2g"]
 
 [ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_b5vv3"]
 
 [resource]
 script = ExtResource("1_b5vv3")
 weapon_type = "Flail"
+character_id = 10
 display_name = "Cleric"
 description = ""
 primary_skill = "Divine"
+level = 1
+xp = 0
+associated_resources = []
+associated_gathering_activities = []

@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://cwtx45m31i7o3"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://bpmerj81qph0m"]
 
 [ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_2bnng"]
 
 [resource]
 script = ExtResource("1_2bnng")
 weapon_type = "Wand"
+character_id = 7
 display_name = "Mage"
 description = ""
 primary_skill = "Arcane"
+level = 1
+xp = 0
+associated_resources = []
+associated_gathering_activities = []

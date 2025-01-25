@@ -20,6 +20,11 @@ config/icon="res://Assets/icon.svg"
 Globals="*res://Scripts/globals.gd"
 Wallet="*res://Scripts/wallet.gd"
 
+CurrenciesEnum="*res://Enums/currencies_enum.gd"
+GlobalResourceLoader="*res://Scripts/ResourceLoader.gd"
+GatheringActivityEnum="*res://Enums/gathering_activity_enum.gd"
+CharacterEnum="*res://Enums/character_enum.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -31,6 +36,15 @@ window/stretch/scale_mode="integer"
 [dotnet]
 
 project/assembly_name="Basic Idle Game"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Enums/": "orange",
+"res://Scenes/": "yellow",
+"res://Scripts/": "green"
+}
 
 [rendering]
 

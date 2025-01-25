@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://den4viywmxxe0"]
+
+[ext_resource type="Script" path="res://Scenes/currency_static_view.gd" id="1_msa0l"]
+
+[node name="CurrencyViewHContainer" type="HBoxContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_msa0l")
+
+[node name="CurrencySign" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CurrencyCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CurrencyTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 2

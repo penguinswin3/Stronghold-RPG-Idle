@@ -1,0 +1,474 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpeepw3lkf6hf"]
+
+[ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
+[ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
+[ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
+[ext_resource type="PackedScene" uid="uid://cfrjkbbm6lib3" path="res://Scenes/party_member_panel.tscn" id="3_dtbcb"]
+
+[node name="GameCanvas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6jmd")
+
+[node name="MainViewVContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainTabPanel" type="PanelContainer" parent="MainViewVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabHContainer" type="HBoxContainer" parent="MainViewVContainer/MainTabPanel"]
+layout_mode = 2
+script = ExtResource("2_5crb2")
+
+[node name="LogoTabButton" type="Button" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Logo"
+
+[node name="Logo" type="Control" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MainViewVContainer/MainTabPanel/TabHContainer/Logo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Logo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VaultTabButton" type="Button" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vault"
+
+[node name="GearTabButton" type="Button" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gear"
+
+[node name="StrongholdTabButton" type="Button" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stronghold"
+
+[node name="MarketTabButton" type="Button" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Market"
+
+[node name="PresetsTabButton" type="Button" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Presets"
+
+[node name="Currency" type="Control" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MainViewVContainer/MainTabPanel/TabHContainer/Currency"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Currency"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsMenuButton" type="MenuButton" parent="MainViewVContainer/MainTabPanel/TabHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Options"
+item_count = 2
+popup/item_0/text = "Settings"
+popup/item_0/disabled = true
+popup/item_1/text = "Quit"
+popup/item_1/id = 1
+
+[node name="MainViewPanel" type="PanelContainer" parent="MainViewVContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.0
+mouse_filter = 1
+
+[node name="OverviewViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+
+[node name="VaultVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel"]
+layout_mode = 2
+
+[node name="AdventurePanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="PreAdventureHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel"]
+layout_mode = 2
+
+[node name="PartyPanelVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PartyLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Party Setup
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PartyGrid" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+columns = 2
+
+[node name="PartyMemberPanel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
+layout_mode = 2
+member_number = "FIRST"
+
+[node name="PartyMemberPanel2" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
+layout_mode = 2
+member_number = "SECOND"
+
+[node name="PartyMemberPanel3" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
+layout_mode = 2
+member_number = "THIRD"
+
+[node name="PartyMemberPanel4" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
+layout_mode = 2
+member_number = "FOURTH"
+
+[node name="DetailsVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="AdventureSelectLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer"]
+layout_mode = 2
+text = "Adventure Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RegionSelectHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RegionSelectLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/RegionSelectHContainer"]
+layout_mode = 2
+text = "Region:"
+
+[node name="RegionSelectMenu" type="OptionButton" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/RegionSelectHContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Lower Steyrian Mountains"
+popup/item_1/text = "Jyn Steyr"
+popup/item_1/id = 1
+
+[node name="AdventureSelectVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="TilesHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ExplorationButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/TilesHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CombatButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/TilesHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SocialButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/TilesHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PinnacleButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/TilesHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Go!"
+
+[node name="DuringAdventurePanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel"]
+visible = false
+layout_mode = 2
+
+[node name="ResourceUpgradeSection" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MemberListVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FilterVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MemberListLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer"]
+layout_mode = 2
+text = "Party List"
+horizontal_alignment = 1
+
+[node name="FilterHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FilterNameButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="FilterLevelButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level"
+
+[node name="FilteTypeButton" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/FilterVContainer/FilterHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type"
+
+[node name="MemberScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="MemberList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberListVContainer/MemberScrollableContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 6.0
+
+[node name="MemberDetailsPanel" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="ResourcesSummaryVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="SummaryVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SummaryLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer"]
+layout_mode = 2
+text = "Resource Summary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummaryPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/SummaryVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ResourcesScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="ResourcesList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/ResourcesSummaryVContainer/ResourcesScrollableContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 6.0
+
+[node name="UpgradeManagementPanel" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="UpgradesList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 6.0
+
+[node name="SidebarVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SidebarButtonsPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/SidebarVContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="SidebarXPVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/SidebarVContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/SidebarVContainer/SidebarXPVContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="XPTrackerLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/SidebarVContainer/SidebarXPVContainer"]
+layout_mode = 2
+text = "50/100 xp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsAvailableLabel" type="Label" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/SidebarVContainer/SidebarXPVContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "+3 Points Available!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VaultViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/VaultViewPanel"]
+layout_mode = 2
+text = "Vault"
+horizontal_alignment = 1
+
+[node name="GearViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/GearViewPanel"]
+layout_mode = 2
+text = "Gear"
+horizontal_alignment = 1
+
+[node name="StrongholdViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="StructureScrollableContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel"]
+layout_mode = 2
+
+[node name="StructureList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/StrongholdViewPanel/StructureScrollableContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarketViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/MarketViewPanel"]
+layout_mode = 2
+text = "Market"
+horizontal_alignment = 1
+
+[node name="PresetsViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainViewVContainer/MainViewPanel/PresetsViewPanel"]
+layout_mode = 2
+text = "Presets"
+horizontal_alignment = 1
+
+[node name="NavBarContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 94.0
+
+[node name="BackButton" type="Button" parent="NavBarContainer"]
+layout_mode = 2
+text = "Back To Menu"
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 2
+offset_top = 94.0
+offset_right = 209.0
+offset_bottom = 648.0
+color = Color(0.117647, 0.117647, 0.117647, 0.482353)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 897.0
+offset_top = 94.0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.117647, 0.117647, 0.117647, 0.482353)
+
+[node name="MineButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 244.0
+offset_top = 118.0
+offset_right = 856.0
+offset_bottom = 730.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_6lpws")
+
+[node name="Herb Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 242.0
+offset_top = 226.0
+offset_right = 854.0
+offset_bottom = 838.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_6lpws")
+
+[connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/LogoTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_logo_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/VaultTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_vault_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/GearTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_gear_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/StrongholdTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_stronghold_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/MarketTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_market_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/PresetsTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_presets_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/GoButton" to="." method="_on_go_button_pressed"]
+[connection signal="pressed" from="NavBarContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MineButton" to="." method="_on_mine_button_pressed"]
+[connection signal="pressed" from="Herb Button" to="." method="_on_herb_button_pressed"]

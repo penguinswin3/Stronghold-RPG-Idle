@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://dndolt063hxq5"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://cyu2tsov00his"]
 
 [ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_qpnrm"]
 
 [resource]
 script = ExtResource("1_qpnrm")
 weapon_type = "Greataxe"
+character_id = 4
 display_name = "Barbarian"
 description = ""
 primary_skill = "Constitution"
+level = 1
+xp = 0
+associated_resources = []
+associated_gathering_activities = []

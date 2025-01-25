@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://cig6o1es514eb"]
+
+[ext_resource type="Texture2D" uid="uid://dd1316mjka6c7" path="res://Assets/clokc_face_icon.png" id="1_0x2dt"]
+[ext_resource type="Script" path="res://Scenes/resource_generator_tile.gd" id="1_7t8jr"]
+
+[node name="resource_panel_tile" type="PanelContainer"]
+custom_minimum_size = Vector2(397, 100)
+layout_direction = 1
+offset_right = 397.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7t8jr")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="progress_bar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 72.0
+offset_right = 397.0
+offset_bottom = 99.0
+mouse_filter = 1
+
+[node name="input_container" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 31.0
+offset_right = 199.0
+offset_bottom = 71.0
+
+[node name="time_input_container" type="HBoxContainer" parent="Control/input_container"]
+layout_mode = 2
+
+[node name="timer_label" type="Label" parent="Control/input_container/time_input_container"]
+layout_mode = 2
+text = "10s"
+horizontal_alignment = 2
+
+[node name="timer_icon" type="TextureRect" parent="Control/input_container/time_input_container"]
+layout_mode = 2
+texture = ExtResource("1_0x2dt")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="resource_timer" type="Timer" parent="Control/input_container/time_input_container"]
+unique_name_in_owner = true
+wait_time = 1.891
+
+[node name="title_container" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 31.0
+alignment = 1
+
+[node name="title_verb" type="Label" parent="Control/title_container"]
+layout_mode = 2
+text = "{verb}"
+horizontal_alignment = 1
+
+[node name="title_currency" type="Label" parent="Control/title_container"]
+layout_mode = 2
+
+[node name="product_container" type="HBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 199.0
+offset_top = 31.0
+offset_right = 397.0
+offset_bottom = 71.0
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

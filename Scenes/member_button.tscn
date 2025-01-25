@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt2omg15a5wf8"]
+[gd_scene load_steps=2 format=3 uid="uid://dt84f3i5t13rd"]
 
 [ext_resource type="Script" path="res://Scenes/member_button.gd" id="1_odosn"]
 
@@ -36,3 +36,5 @@ layout_mode = 2
 size_flags_vertical = 1
 text = "On Adventure"
 horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

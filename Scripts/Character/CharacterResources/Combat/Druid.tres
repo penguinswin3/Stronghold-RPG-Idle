@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://cmvfu2g2pvv0k"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://dyj6ogqwuxs5l"]
 
 [ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_xux8a"]
 
 [resource]
 script = ExtResource("1_xux8a")
 weapon_type = "Sickle"
+character_id = 13
 display_name = "Druid"
 description = ""
 primary_skill = "Primal"
+level = 1
+xp = 0
+associated_resources = []
+associated_gathering_activities = []

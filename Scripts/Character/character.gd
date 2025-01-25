@@ -1,6 +1,8 @@
 extends Resource
 class_name Character
 
+
+@export var character_id : CharacterEnum.CHARACTERS
 @export_enum(
 	# Combat
 	"Fighter", 
@@ -67,3 +69,7 @@ class_name Character
 
 @export var level : int = 1
 @export var xp : int = 0
+
+@export var current_gather_activity : ResourceGatheringStat
+@export var associated_resources = []
+@export var associated_gathering_activities = []
