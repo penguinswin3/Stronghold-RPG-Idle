@@ -46,6 +46,9 @@ func _load_gathering_skills():
 	
 func _load_gathering_upgrades():
 	pass
+
+func _get_all_structures():
+	return structures
 	
 func _get_all_currencies():
 	return currencies
@@ -55,3 +58,4 @@ func _get_all_characters():
 	
 func _get_all_gathering_skills():
 	return gathering_skills
+	
