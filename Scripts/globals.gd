@@ -23,7 +23,7 @@ const wait_time = 0.01
 signal on_selected_character_changed
 
 # Global Game State
-var selected_character : Character : set = _set_selected_character
+var selected_character : Character = GlobalResourceLoader._get_all_characters().get(0) : set = _set_selected_character 
 
 ## SAVE GAME DETAILS
 var selected_options = {
@@ -40,7 +40,7 @@ var members_in_party = {
 var members_on_adventure : bool = false
 
 
-var owned_characters = ["Lord", "Fighter", "Quartermaster", "Forester", "Miner"]
+var owned_characters = [0,1,3,6]
 
 
 var owned_sturctures = [

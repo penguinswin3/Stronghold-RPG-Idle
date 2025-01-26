@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://dug0jabbewvar"]
+[gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://wqb3xl7wb0jx"]
 
 [ext_resource type="Script" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_vfljr"]
 
@@ -20,6 +20,6 @@ inputs = {
 outputs = {
 5: 1
 }
-character = ""
+character = 3
 unlock_dependencies = []
 upgrade_chain = []
