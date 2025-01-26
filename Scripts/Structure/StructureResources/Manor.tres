@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("1_q3b72")
+structure_id = 2
 display_name = "Manor"
 description = ""
-unlocked = false
+locked = true
 unlocked_class = ExtResource("2_4c5yh")
 unlock_requirements = {}

@@ -1,6 +1,10 @@
 extends Resource
 class_name Structure
 
+const StructuresEnum = preload('res://Enums/structures_enum.gd')
+
+@export var structure_id : StructuresEnum.STRUCTURES
+
 @export_enum(
 	"Stronghold",
 	"Warehouse",

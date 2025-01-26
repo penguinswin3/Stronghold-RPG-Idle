@@ -19,20 +19,17 @@ const gathering_activities_folder_path = "res://Scripts/Gathering/Gathering Acti
 # Game Tick Speed
 const wait_time = 0.01
 
-func _ready():
+# Global Signals
+signal on_selected_character_changed
 
-	pass
-	
-
+# Global Game State
+var selected_character : Character : set = _set_selected_character
 
 ## SAVE GAME DETAILS
 var selected_options = {
 	"background_image" : OptionsEnum.BackgroundImages.FARM_BACKGROUND,
 	"number_format" : OptionsEnum.NumberFormat.MILLION_FORMAT
 }
-
-var gathering_activities = []
-# Called when the node enters the scene tree for the first time.
 
 var members_in_party = {
 	"FIRST" : Character,
@@ -41,15 +38,6 @@ var members_in_party = {
 	"FOURTH" : Character
 }
 var members_on_adventure : bool = false
-
-signal on_selected_character_changed
-
-var selected_character : Character : set = _set_selected_character
-
-func _set_selected_character(new_character):
-	selected_character = new_character
-	on_selected_character_changed.emit(selected_character)
-		
 
 
 var owned_characters = ["Lord", "Fighter", "Quartermaster", "Forester", "Miner"]
@@ -71,3 +59,13 @@ var structures = [
 ]
 
 var unlocks = {}
+
+
+func _ready():
+	pass
+	
+
+func _set_selected_character(new_character):
+	selected_character = new_character
+	on_selected_character_changed.emit(selected_character)
+		
