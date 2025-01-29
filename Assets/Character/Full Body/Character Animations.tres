@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://d3olyls4guup1"]
+
+[ext_resource type="Texture2D" uid="uid://hmeyvtal5wnm" path="res://Assets/Character/Full Body/Thief.png" id="5_ox463"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svo1u"]
+atlas = ExtResource("5_ox463")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0j54"]
+atlas = ExtResource("5_ox463")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bajpb"]
+atlas = ExtResource("5_ox463")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl4ud"]
+atlas = ExtResource("5_ox463")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8g7h"]
+atlas = ExtResource("5_ox463")
+region = Rect2(136, 0, 34, 34)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svo1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0j54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bajpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl4ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8g7h")
+}],
+"loop": true,
+"name": &"Thief",
+"speed": 5.0
+}]

@@ -1,9 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpeepw3lkf6hf"]
+[gd_scene load_steps=27 format=3 uid="uid://dpeepw3lkf6hf"]
 
 [ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
 [ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
 [ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
 [ext_resource type="PackedScene" uid="uid://cfrjkbbm6lib3" path="res://Scenes/party_member_panel.tscn" id="3_dtbcb"]
+[ext_resource type="Texture2D" uid="uid://sy5swfrw0pvn" path="res://Assets/Frame/Wooden Frame.png" id="4_4fkv2"]
+[ext_resource type="Texture2D" uid="uid://hxclmltawtqt" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background_layer_1.png" id="4_l7a2e"]
+[ext_resource type="Texture2D" uid="uid://5rs58qy3v548" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background_layer_2.png" id="5_v3tj3"]
+[ext_resource type="Texture2D" uid="uid://bsodggf07xrpn" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/TX Chest Animation.png" id="5_y2afu"]
+[ext_resource type="Texture2D" uid="uid://bwxupu31rj4ea" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background_layer_3.png" id="6_0wv7j"]
+[ext_resource type="Texture2D" uid="uid://b22xje6qlu37r" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background1.png" id="8_2dh1g"]
+[ext_resource type="Texture2D" uid="uid://crm7qwt25cff3" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/oak_woods_tileset.png" id="8_3ocg4"]
+[ext_resource type="Texture2D" uid="uid://b6idw488t3v3e" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background2.png" id="9_p0xie"]
+[ext_resource type="Texture2D" uid="uid://dwfmswnd2cxue" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background3.png" id="10_h5x7a"]
+[ext_resource type="Texture2D" uid="uid://bfdj18unc8xwy" path="res://Assets/Adventure/Lower Steyrian Mountains/Lower Plateau/Backgrounds/background4a.png" id="11_amuue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wctni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1bxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3kvmk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vslmm"]
+texture = ExtResource("4_4fkv2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="Theme" id="Theme_x1k5t"]
+Panel/styles/panel = SubResource("StyleBoxTexture_vslmm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7f3bh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaa0m"]
+atlas = ExtResource("5_y2afu")
+region = Rect2(20, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkecc"]
+atlas = ExtResource("5_y2afu")
+region = Rect2(84, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1773b"]
+atlas = ExtResource("5_y2afu")
+region = Rect2(148, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8w74"]
+atlas = ExtResource("5_y2afu")
+region = Rect2(212, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahwg3"]
+atlas = ExtResource("5_y2afu")
+region = Rect2(276, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6ytv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaa0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkecc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1773b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8w74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahwg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GameCanvas" type="Control"]
 layout_mode = 3
@@ -109,11 +180,13 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 12.0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wctni")
 
 [node name="OverviewViewPanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m1bxk")
 
 [node name="VaultVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel"]
 layout_mode = 2
@@ -122,8 +195,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3kvmk")
 
 [node name="PreAdventureHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PartyPanelVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer"]
@@ -146,19 +221,18 @@ columns = 2
 
 [node name="PartyMemberPanel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-member_number = "FIRST"
 
 [node name="PartyMemberPanel2" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-member_number = "SECOND"
+member_index = 1
 
 [node name="PartyMemberPanel3" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-member_number = "THIRD"
+member_index = 2
 
 [node name="PartyMemberPanel4" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/PartyPanelVContainer/PartyGrid" instance=ExtResource("3_dtbcb")]
 layout_mode = 2
-member_number = "FOURTH"
+member_index = 3
 
 [node name="DetailsVContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer"]
 layout_mode = 2
@@ -218,9 +292,176 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Go!"
 
-[node name="DuringAdventurePanel" type="PanelContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel"]
+[node name="DuringAdventureHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+
+[node name="PartyHContainer" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="DetailsPanel" type="Panel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_x1k5t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/DetailsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AdventureEventScrollContainer" type="ScrollContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/DetailsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="AdventureTextGrid" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/DetailsPanel/VBoxContainer/AdventureEventScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/DetailsPanel/VBoxContainer/AdventureEventScrollContainer/AdventureTextGrid"]
+layout_mode = 2
+text = "fafafasas"
+
+[node name="Abandon" type="Button" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/DetailsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Abandon"
+metadata/_edit_use_anchors_ = true
+
+[node name="EncounterPanel" type="Panel" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7f3bh")
+
+[node name="Control" type="Control" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/EncounterPanel"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 127.0
+offset_top = 109.0
+offset_right = 127.0
+offset_bottom = 109.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/EncounterPanel/Control"]
+position = Vector2(-0.0883789, 26.0883)
+scale = Vector2(1.56526, 1.56526)
+sprite_frames = SubResource("SpriteFrames_f6ytv")
+
+[node name="Party1" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-5, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Party1"]
+position = Vector2(0, 7.15256e-07)
+scale = Vector2(1.21111, 1.21111)
+texture = ExtResource("4_l7a2e")
+centered = false
+
+[node name="Party2" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Party2"]
+position = Vector2(0, 7.15256e-07)
+scale = Vector2(1.21111, 1.21111)
+texture = ExtResource("5_v3tj3")
+centered = false
+
+[node name="Party3" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Party3"]
+position = Vector2(0, 7.15256e-07)
+scale = Vector2(1.21111, 1.21111)
+texture = ExtResource("6_0wv7j")
+centered = false
+
+[node name="Party4" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(80, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Party4"]
+position = Vector2(40.054, 200)
+scale = Vector2(1.29206, 1.58333)
+texture = ExtResource("8_3ocg4")
+hframes = 8
+vframes = 15
+frame = 58
+
+[node name="Encounter1" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Encounter1"]
+position = Vector2(844, 0)
+scale = Vector2(0.454167, 0.45625)
+texture = ExtResource("8_2dh1g")
+centered = false
+
+[node name="Encounter2" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Encounter2"]
+position = Vector2(844, 0)
+scale = Vector2(0.454167, 0.45625)
+texture = ExtResource("9_p0xie")
+centered = false
+
+[node name="Encounter3" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Encounter3"]
+position = Vector2(844, 0)
+scale = Vector2(0.454167, 0.45625)
+texture = ExtResource("10_h5x7a")
+centered = false
+
+[node name="Encounter4" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Encounter4"]
+position = Vector2(844, 0)
+scale = Vector2(0.454167, 0.45625)
+texture = ExtResource("11_amuue")
+centered = false
+
+[node name="Encounter5" type="Parallax2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer"]
+show_behind_parent = true
+repeat_size = Vector2(80, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/Encounter5"]
+position = Vector2(1239, 200)
+scale = Vector2(1.29206, 1.58333)
+texture = ExtResource("8_3ocg4")
+hframes = 8
+vframes = 15
+frame = 58
 
 [node name="ResourceUpgradeSection" type="HBoxContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer"]
 layout_mode = 2
@@ -469,7 +710,9 @@ texture_normal = ExtResource("2_6lpws")
 [connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/StrongholdTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_stronghold_tab_button_pressed"]
 [connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/MarketTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_market_tab_button_pressed"]
 [connection signal="pressed" from="MainViewVContainer/MainTabPanel/TabHContainer/PresetsTabButton" to="MainViewVContainer/MainTabPanel/TabHContainer" method="_on_presets_tab_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/TilesHContainer/ExplorationButton" to="." method="_on_exploration_button_pressed"]
 [connection signal="pressed" from="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/PreAdventureHContainer/DetailsVContainer/AdventureSelectVContainer/GoButton" to="." method="_on_go_button_pressed"]
+[connection signal="pressed" from="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/AdventurePanel/DuringAdventureHContainer/DetailsPanel/VBoxContainer/Abandon" to="." method="_on_abandon_pressed"]
 [connection signal="pressed" from="NavBarContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MineButton" to="." method="_on_mine_button_pressed"]
 [connection signal="pressed" from="Herb Button" to="." method="_on_herb_button_pressed"]

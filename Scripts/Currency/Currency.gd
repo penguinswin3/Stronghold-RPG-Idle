@@ -5,4 +5,6 @@ class_name Currency
 @export var display_name : String
 
 @export var count : int
+
+@export_category("Properties")
 @export var texture : Texture2D

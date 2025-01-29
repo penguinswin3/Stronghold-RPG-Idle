@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Arc" load_steps=4 format=3 uid="uid://cpx7offo41uce"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_378c6"]
+[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_co37r"]
+[ext_resource type="Resource" uid="uid://bgpf6aj268yof" path="res://Scripts/Adventure/AdventureResources/Lower Plateau.tres" id="2_wptvx"]
+
+[resource]
+script = ExtResource("2_co37r")
+display_name = "Lower Steyerian Mountains"
+description = "Lower mountains"
+adventures = Array[ExtResource("1_378c6")]([ExtResource("2_wptvx")])

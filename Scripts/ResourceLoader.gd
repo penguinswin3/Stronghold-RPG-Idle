@@ -13,6 +13,8 @@ func _ready():
 	_load_characters()
 	_load_gathering_skills()
 	_load_gathering_upgrades()
+	
+	_configure_character_skill_order()
 	return true
 
 func _load_currencies():
@@ -51,3 +53,12 @@ func _get_all_characters():
 	
 func _get_all_gathering_skills():
 	return gathering_skills
+	
+func _configure_character_skill_order():
+	print("\nCharacter Skill Orders")
+	for character in characters:
+		var character_resource = characters[character] as Character
+		var skill_order : Array[SkillsEnum.SKILLS] 
+		skill_order.append_array(CharacterDetails.skill_orders[character_resource.character_id] as Array[SkillsEnum.SKILLS])
+		characters[character].set_skills_order(skill_order)
+		print("\tInitialized %-15s Skill Order: %s" % [character_resource.display_name, str(skill_order)])

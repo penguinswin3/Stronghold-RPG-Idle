@@ -1,6 +1,56 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://bng11nxvj2p88"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=11 format=3 uid="uid://qhgihsuslfhu"]
 
+[ext_resource type="Texture2D" uid="uid://11lfbv3tnfpm" path="res://Assets/Character/Full Body/Archer.png" id="1_4w4ho"]
 [ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_vofdv"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_b6exb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqxho"]
+atlas = ExtResource("1_4w4ho")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68evf"]
+atlas = ExtResource("1_4w4ho")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv34n"]
+atlas = ExtResource("1_4w4ho")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2wk8"]
+atlas = ExtResource("1_4w4ho")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6rv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqxho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68evf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv34n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2wk8")
+}],
+"loop": true,
+"name": &"Archer",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_kt2me"]
+script = ExtResource("2_b6exb")
+skill_id = 5
+quantity = 1
+magnitude = 8
+
+[sub_resource type="Resource" id="Resource_gdfuk"]
+script = ExtResource("2_b6exb")
+skill_id = 7
+quantity = 1
+magnitude = 6
 
 [resource]
 script = ExtResource("1_vofdv")
@@ -8,8 +58,16 @@ weapon_type = "Bow"
 character_id = 16
 display_name = "Archer"
 description = ""
-primary_skill = "Ranged"
+picture = SubResource("SpriteFrames_w6rv6")
+skills = Array[ExtResource("2_b6exb")]([SubResource("Resource_kt2me"), SubResource("Resource_gdfuk")])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = true
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 10
+health = 10
 associated_resources = []
 associated_gathering_activities = []

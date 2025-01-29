@@ -1,6 +1,20 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://c3rl4prm2s24k"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=6 format=3 uid="uid://c3rl4prm2s24k"]
 
+[ext_resource type="SpriteFrames" uid="uid://d3olyls4guup1" path="res://Assets/Character/Full Body/Character Animations.tres" id="1_hs3pi"]
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_ss6ng"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_j6wx2"]
+
+[sub_resource type="Resource" id="Resource_ley3t"]
+script = ExtResource("2_j6wx2")
+skill_id = 16
+quantity = 1
+magnitude = 8
+
+[sub_resource type="Resource" id="Resource_b21cb"]
+script = ExtResource("2_j6wx2")
+skill_id = 5
+quantity = 1
+magnitude = 6
 
 [resource]
 script = ExtResource("1_ss6ng")
@@ -9,8 +23,16 @@ structure_type = "Den"
 character_id = 8
 display_name = "Thief"
 description = ""
-primary_skill = "Thievery"
+picture = ExtResource("1_hs3pi")
+skills = Array[ExtResource("2_j6wx2")]([SubResource("Resource_ley3t"), SubResource("Resource_b21cb")])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = true
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 8
+health = 8
 associated_resources = []
 associated_gathering_activities = []

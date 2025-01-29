@@ -19,6 +19,12 @@ const gathering_activities_folder_path = "res://Scripts/Gathering/Gathering Acti
 # Game Tick Speed
 const wait_time = 0.01
 
+signal unlock_character
+signal adventure_started
+signal adventure_ended
+signal update_character
+signal add_adventure_text
+
 func _ready():
 
 	pass
@@ -49,11 +55,6 @@ var selected_character : Character : set = _set_selected_character
 func _set_selected_character(new_character):
 	selected_character = new_character
 	on_selected_character_changed.emit(selected_character)
-		
-
-
-var owned_characters = ["Lord", "Fighter", "Quartermaster", "Forester", "Miner"]
-
 
 var owned_sturctures = [
 	"Stronghold"

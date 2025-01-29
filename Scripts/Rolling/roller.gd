@@ -1,11 +1,7 @@
 extends Node
-class_name Roller
 
+var weighted_option = preload("res://Scripts/Rolling/WeightedOption.gd")
 var rng = RandomNumberGenerator.new()
-
-func _ready():
-	return 
-
 
 func _die_roll(quantity, magnitude):
 	if quantity <= 0 or magnitude <= 0:
@@ -22,9 +18,14 @@ func _roll_attack_versus_defend(attack_quantity, attack_magnitude, defend_quanti
 	
 func _attack_versus_defend(attack_roll, defend_roll):
 	# Returns the difference in value of the attack-defend roll. 
-	# Anything less than or equal to 0 is set to 0 and considered a 'miss'.
-	# The returned number can be used to calculate damage or degree of success
-	return max(0, attack_roll - defend_roll)
+	# Anything less than 0 is set to 0 and considered a 'miss'.
+	# If the attacks are equal, result is set to 1 so attacker wins.
+	# The returned number can be used to calculate damage or degree of success.
+	var result = attack_roll - defend_roll
+	if result == 0:
+		return 1
+	
+	return max(0, result)
 	
 
 # Takes in a list of WeightedOptions, as well as a quantity of options to pick, if provided

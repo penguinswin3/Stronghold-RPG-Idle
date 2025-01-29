@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Encounter" load_steps=6 format=3 uid="uid://dvrg8b8ht6dnp"]
+
+[ext_resource type="Resource" uid="uid://uj13qw6f615c" path="res://Scripts/Character/CharacterResources/Merchant.tres" id="1_5208b"]
+[ext_resource type="Script" path="res://Scripts/Encounter/Encounter.gd" id="1_wp08p"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="3_8udio"]
+
+[sub_resource type="Resource" id="Resource_asv56"]
+script = ExtResource("3_8udio")
+skill_id = 19
+quantity = 1
+magnitude = 6
+
+[sub_resource type="Resource" id="Resource_cfd62"]
+script = ExtResource("3_8udio")
+skill_id = 8
+quantity = 1
+magnitude = 8
+
+[resource]
+script = ExtResource("1_wp08p")
+display_name = "Stranded Traveller"
+description = "Broken wagon wheel"
+general_type = 2
+specific_type = 0
+skill_check_type = 0
+max_health = 0
+health = 0
+blocker = false
+encounter_time_in_seconds = 2
+success_count = 0
+reward_items = {}
+reward_currencies = {}
+reward_member = ExtResource("1_5208b")
+skills = Array[ExtResource("3_8udio")]([SubResource("Resource_asv56"), SubResource("Resource_cfd62")])

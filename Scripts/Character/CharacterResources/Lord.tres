@@ -1,6 +1,57 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://kq7t3w3wqdxw"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=11 format=3 uid="uid://kq7t3w3wqdxw"]
 
+[ext_resource type="Texture2D" uid="uid://cukqx4ehj37ev" path="res://Assets/Character/Full Body/Lord.png" id="1_brw3v"]
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_glee1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbuxf"]
+atlas = ExtResource("1_brw3v")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miikq"]
+atlas = ExtResource("1_brw3v")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2ulh"]
+atlas = ExtResource("1_brw3v")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhrow"]
+atlas = ExtResource("1_brw3v")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j8oh"]
+atlas = ExtResource("1_brw3v")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8avb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbuxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miikq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2ulh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhrow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j8oh")
+}],
+"loop": true,
+"name": &"Lord",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_p7v68"]
+script = ExtResource("2_glee1")
+skill_id = 14
+quantity = 1
+magnitude = 8
 
 [resource]
 script = ExtResource("1_vqbg1")
@@ -9,8 +60,16 @@ structure_type = "Stronghold"
 character_id = 0
 display_name = "Lord"
 description = ""
-primary_skill = "Construction"
+picture = SubResource("SpriteFrames_s8avb")
+skills = Array[ExtResource("2_glee1")]([SubResource("Resource_p7v68")])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = true
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 6
+health = 6
 associated_resources = [4]
 associated_gathering_activities = []
