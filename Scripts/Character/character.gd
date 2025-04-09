@@ -74,3 +74,11 @@ const ResourceGatheringStat = preload("res://Scripts/Gathering/Scripts/resource_
 @export var current_gather_activity : ResourceGatheringStat
 @export var associated_resources = []
 @export var associated_gathering_activities = []
+
+@export var myFunc : Callable
+
+
+func _apply_upgrade():
+	print(myFunc.call(level, xp))
+		
+	

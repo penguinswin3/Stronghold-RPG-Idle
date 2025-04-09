@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yal66tqv6b5b"]
 
-[ext_resource type="Script" path="res://Scenes/structure_panel.gd" id="1_gorp5"]
+[ext_resource type="Script" uid="uid://c8tvytab44b01" path="res://Scenes/structure_panel.gd" id="1_gorp5"]
 [ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="1_pgfk0"]
 
 [node name="StructurePanel" type="PanelContainer"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LumberMultiplier" load_steps=2 format=3 uid="uid://cjpcap73iptgi"]
+
+[ext_resource type="Script" uid="uid://dc7coqxk5t4j5" path="res://Scripts/Upgrades/Upgrade Resources/Upgrade Resource Scripts/LumberMultiplier.gd" id="1_nxvkn"]
+
+[resource]
+script = ExtResource("1_nxvkn")
+upgrade_id = 0
+upgrade_name = "Lumber Multiplier"
+quantity = 1
+order_type = 1
+associated_gathering_activity = 1

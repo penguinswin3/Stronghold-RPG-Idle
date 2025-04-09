@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://cjn7trfmurnu8"]
 
-[ext_resource type="Script" path="res://Scripts/Structure/structure.gd" id="1_qx2kr"]
-[ext_resource type="Resource" path="res://Scripts/Character/CharacterResources/Merchant.tres" id="2_06kk5"]
+[ext_resource type="Script" uid="uid://c6r5gnd26w74r" path="res://Scripts/Structure/structure.gd" id="1_qx2kr"]
+[ext_resource type="Resource" uid="uid://uj13qw6f615c" path="res://Scripts/Character/CharacterResources/Merchant.tres" id="2_06kk5"]
 
 [resource]
 script = ExtResource("1_qx2kr")

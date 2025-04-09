@@ -8,34 +8,24 @@ const CharacterEnum = preload("res://Enums/character_enum.gd")
 
 @export
 var gathering_activity_id : GatheringActivityEnum.GATHERING_ACTIVITIES
-
 @export
 var name : String
-
 @export
 var verb : String
-
 @export
 var max_val : float = 100
-
 @export
 var min_val : float
-
 @export
 var step : float = 1
-
 @export
 var base_quantity : int
-
 @export
 var multiplier : float
-
 @export
 var description : String
-
 @export
 var modified_gathering : int
-
 # This is a list of ComplexCosts?
 @export
 var inputs : Dictionary

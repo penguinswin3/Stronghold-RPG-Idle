@@ -9,12 +9,14 @@ var member_panel = preload("res://Scenes/member_panel.tscn")
 var resource_tile = preload("res://Scenes/resource_generator_tile.tscn")
 var currency_view = preload("res://Scenes/currency_view.tscn")
 @onready var structure_list: GridContainer = %StructureList
+var complex_cost_display = preload('res://Scenes/ComplexCostDisplay.tscn')
 
 var resource_generator_tile = preload("res://Scenes/resource_generator_tile.tscn")
 var upgrade_tile = preload('res://Scenes/upgrade_tile.tscn')
 var currency_static_view = preload("res://Scenes/currency_static_view.tscn")
 @onready var resource_summary = %ResourceSummary
 @onready var resource_activities = %ResourcesList
+@onready var upgrades_list = %UpgradesList
 
 @onready var gold_summary_tab = %CurrencyTab
 
@@ -49,26 +51,15 @@ func _ready() -> void:
 	_populate_character_panel()
 	_populate_gathering_activities()
 	_populate_structures_panel()
+	_populate_upgrades_panel()
+	_populate_top_bar_currency()
 
-	var cview = currency_view.instantiate()
-	cview.currency=Wallet.get_currency(CurrenciesEnum.CURRENCIES.GOLD_COIN)
-	Wallet.currency_changed.connect(cview._update_text)
-	gold_summary_tab.add_child(cview)
-
-	Globals.on_selected_character_changed.connect(_populate_resource_upgrade_panel)
-	Globals.on_selected_character_changed.connect(_update_displayed_gathering_activities)
+	SignalBus.on_selected_character_changed.connect(_populate_resource_summary)
+	SignalBus.on_selected_character_changed.connect(_update_displayed_gathering_activities)
+	SignalBus.on_selected_character_changed.connect(_update_displayed_upgrades)
 	# This can later load from the saved state 
 	Globals._set_selected_character(GlobalResourceLoader._get_all_characters().get(0))
 	
-	
-	var upgrade_scrollable_list = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList")
-	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
-	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
-	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
-	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
-	upgrade_scrollable_list.add_child(upgrade_tile.instantiate())
-	
-
 	
 	
 func _populate_character_panel():
@@ -87,7 +78,7 @@ func  _populate_structures_panel():
 		new_structure_panel.structure = GlobalResourceLoader._get_all_structures()[structure_id]
 		structure_list.add_child(new_structure_panel)
 
-func _populate_resource_upgrade_panel(selected_character):
+func _populate_resource_summary(selected_character):
 	# clear existing stuff
 	for child in resource_summary.get_children():
 		resource_summary.remove_child(child)
@@ -113,10 +104,28 @@ func _update_displayed_gathering_activities(selected_character):
 func _populate_gathering_activities():
 	#This should be iterating through the list of gathering skill available to the selected party member
 	for gathering_activity in GlobalResourceLoader.gathering_skills:
-		print(gathering_activity)
 		var tile = resource_generator_tile.instantiate()
 		tile.resource_gathering_stats = GlobalResourceLoader.gathering_skills.get(gathering_activity)
 		resource_activities.add_child(tile)
+
+func _populate_upgrades_panel():
+	for upgrade in GlobalResourceLoader.upgrade_list:
+		var tile = upgrade_tile.instantiate()
+		#var complex_cost_display = complex_cost_display.instantiate()
+		tile.associated_gathering_activity = GlobalResourceLoader.upgrade_list[upgrade].associated_gathering_activity
+		tile.cost.append_array([ComplexCost.new(1,CurrenciesEnum.CURRENCIES.GOLD_COIN), ComplexCost.new(1,CurrenciesEnum.CURRENCIES.LUMBER)])
+		tile.upgrade_name = GlobalResourceLoader.upgrade_list.get(upgrade).upgrade_name
+		upgrades_list.add_child(tile)
+	pass
+	
+func _update_displayed_upgrades(selected_character):
+	pass
+
+func _populate_top_bar_currency():
+	var cview = currency_view.instantiate()
+	cview.currency=Wallet.get_currency(CurrenciesEnum.CURRENCIES.GOLD_COIN)
+	Wallet.currency_changed.connect(cview._update_text)
+	gold_summary_tab.add_child(cview)
 
 func _on_go_button_pressed() -> void:
 	Globals.members_on_adventure = true

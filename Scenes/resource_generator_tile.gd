@@ -35,11 +35,17 @@ func _toggle_resource_timer():
 	else:
 		resource_timer.paused = !resource_timer.paused
 	
+	
+# This will do the bulk of the resource generation determinations 
 func _on_resource_timer_tick():
+	
 	progress_bar.value += progress_bar.step
 	if progress_bar.value >= progress_bar.max_value:
+		var base_return = resource_gathering_stats.base_quantity
+		for upgrade in Globals.unlocked_upgrades:
+			base_return = GlobalResourceLoader.upgrade_list.get(upgrade)._apply_upgrade(base_return)
 		for key in resource_gathering_stats.outputs.keys():
-			Wallet.add_currency(key, resource_gathering_stats.outputs.get(key))
+			Wallet.add_currency(key, base_return)
 		progress_bar.value = 0
 		
 		

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://rabgxtrandhb"]
+
+[ext_resource type="Script" uid="uid://bf5y318nj8klw" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_qut8e"]
+
+[resource]
+script = ExtResource("1_qut8e")
+gathering_activity_id = 3
+name = "Bird's Nest"
+verb = "Yoink"
+max_val = 1500.0
+min_val = 0.0
+step = 1.0
+base_quantity = 1
+multiplier = 1.0
+description = "Yoink a birdnest. Meanie."
+modified_gathering = 0
+inputs = {}
+outputs = {
+6: 1
+}
+character = 3
+unlock_dependencies = []
+upgrade_chain = []

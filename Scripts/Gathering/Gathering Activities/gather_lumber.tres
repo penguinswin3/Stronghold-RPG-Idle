@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://wqb3xl7wb0jx"]
 
-[ext_resource type="Script" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_vfljr"]
+[ext_resource type="Script" uid="uid://bf5y318nj8klw" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_vfljr"]
 
 [resource]
 script = ExtResource("1_vfljr")
 gathering_activity_id = 1
 name = "Lumber"
 verb = "Chop"
-max_val = 1000.0
+max_val = 100.0
 min_val = 0.0
 step = 1.0
 base_quantity = 1

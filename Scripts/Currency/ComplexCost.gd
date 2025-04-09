@@ -1,9 +1,8 @@
-extends Node
+class_name ComplexCost
 
+var currency_id : CurrenciesEnum.CURRENCIES
+var amount : int
 
-var currency
-var amount
-
-func _init(amount, currency_name):
+func _init(amount, currency_id):
 	self.amount = amount
-	self.currency = currency_name
+	self.currency_id = currency_id
