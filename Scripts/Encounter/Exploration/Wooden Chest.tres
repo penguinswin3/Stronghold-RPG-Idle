@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Encounter" load_steps=5 format=3 uid="uid://d28alc5vyv2fg"]
+
+[ext_resource type="Script" path="res://Scripts/Encounter/Encounter.gd" id="1_ghlf4"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_7hsw6"]
+
+[sub_resource type="Resource" id="Resource_4ri0g"]
+script = ExtResource("2_7hsw6")
+skill_id = 16
+quantity = 1
+magnitude = 6
+
+[sub_resource type="Resource" id="Resource_jh0ed"]
+script = ExtResource("2_7hsw6")
+skill_id = 0
+quantity = 1
+magnitude = 8
+
+[resource]
+script = ExtResource("1_ghlf4")
+display_name = "Wooden Chest"
+description = "A weak wooden chest"
+general_type = 0
+specific_type = 0
+skill_check_type = 0
+max_health = 0
+health = 0
+blocker = false
+encounter_time_in_seconds = 6
+success_count = 0
+reward_items = {}
+reward_currencies = {}
+skills = Array[ExtResource("2_7hsw6")]([SubResource("Resource_4ri0g"), SubResource("Resource_jh0ed")])

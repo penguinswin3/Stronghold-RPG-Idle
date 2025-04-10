@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Encounter" load_steps=4 format=3 uid="uid://bsvojb7uhtfsc"]
+
+[ext_resource type="Script" path="res://Scripts/Encounter/Encounter.gd" id="1_kx2kg"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_vbtjy"]
+
+[sub_resource type="Resource" id="Resource_c0osw"]
+script = ExtResource("2_vbtjy")
+skill_id = 0
+quantity = 1
+magnitude = 6
+
+[resource]
+script = ExtResource("1_kx2kg")
+display_name = "Rocks Fall"
+description = "Everyone dies"
+general_type = 0
+specific_type = 0
+skill_check_type = 3
+max_health = 0
+health = 0
+blocker = false
+encounter_time_in_seconds = 2
+success_count = 0
+reward_items = {}
+reward_currencies = {}
+skills = Array[ExtResource("2_vbtjy")]([SubResource("Resource_c0osw")])

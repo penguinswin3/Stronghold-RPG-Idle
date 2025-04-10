@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://b7amq743cqdpp"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_b1bqa"]
+
+[resource]
+script = ExtResource("1_b1bqa")
+adventure_id = 7
+display_name = "Avian Ritual Grounds"
+description = "They summonin"
+type = 3
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

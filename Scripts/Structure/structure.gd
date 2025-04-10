@@ -24,3 +24,6 @@ const StructuresEnum = preload('res://Enums/structures_enum.gd')
 @export var unlocked_class : Character
 @export var unlock_requirements = {
 }
+
+func get_display_name():
+	return display_name

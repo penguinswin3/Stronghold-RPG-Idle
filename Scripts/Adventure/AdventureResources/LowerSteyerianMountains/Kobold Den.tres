@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=3 format=3 uid="uid://bhq777wv21o2u"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_cxvr0"]
+[ext_resource type="Resource" uid="uid://ct5lusoyc1h76" path="res://Scripts/Encounter/Combat/Red Kobold.tres" id="1_yvw6c"]
+
+[resource]
+script = ExtResource("1_cxvr0")
+adventure_id = 1
+display_name = "Kobold Den"
+description = "They red"
+type = 1
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {
+ExtResource("1_yvw6c"): 100
+}
+completed = false
+completed_count = 0
+next_adventure_id = 2

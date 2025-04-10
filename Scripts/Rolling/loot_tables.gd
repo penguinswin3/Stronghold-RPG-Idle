@@ -1,5 +1,5 @@
 extends Node
-const WeightedOption = preload("res://Scripts/Rolling/WeightedOption.gd")
+#const WeightedOption = preload("res://Scripts/Rolling/WeightedOption.gd")
 
 var LootTables = {
 	"monsters" : {

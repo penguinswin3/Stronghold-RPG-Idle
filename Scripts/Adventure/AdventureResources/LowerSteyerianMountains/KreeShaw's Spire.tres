@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=3 format=3 uid="uid://chlnsbxll4bjq"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_fpc3c"]
+[ext_resource type="Resource" uid="uid://bsvojb7uhtfsc" path="res://Scripts/Encounter/Exploration/Falling Rocks.tres" id="1_vu5vb"]
+
+[resource]
+script = ExtResource("1_fpc3c")
+adventure_id = 3
+display_name = "KreeShaw's Spire"
+description = "It tall"
+type = 3
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {
+ExtResource("1_vu5vb"): 100
+}
+completed = false
+completed_count = 0
+next_adventure_id = 4

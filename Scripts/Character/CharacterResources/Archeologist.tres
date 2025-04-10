@@ -1,5 +1,50 @@
 [gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://dvu7quhfrfxgh"]
 
+[ext_resource type="Texture2D" uid="uid://bxlocw3fg4m5v" path="res://Assets/Character/Full Body/Archeologist.png" id="1_f5y4p"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_xo6b5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67rpw"]
+atlas = ExtResource("1_f5y4p")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6oof"]
+atlas = ExtResource("1_f5y4p")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfih6"]
+atlas = ExtResource("1_f5y4p")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75csi"]
+atlas = ExtResource("1_f5y4p")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxq2k"]
+atlas = ExtResource("1_f5y4p")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vp4j6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67rpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6oof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfih6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75csi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxq2k")
+}],
+"loop": true,
+"name": &"Archeologist",
+"speed": 5.0
+}]
 [ext_resource type="Script" uid="uid://b5gcb0moagmky" path="res://Scripts/Character/exploration_character.gd" id="1_i43r3"]
 
 [resource]
@@ -8,9 +53,17 @@ tool_type = "Trowel"
 character_id = 11
 display_name = "Archeologist"
 description = ""
-primary_skill = "Archeology"
+picture = SubResource("SpriteFrames_vp4j6")
+skills = Array[ExtResource("2_xo6b5")]([])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = false
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 0
+health = 0
 associated_resources = [10, 11, 24]
 associated_gathering_activities = []
 myFunc = Callable()

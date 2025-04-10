@@ -1,5 +1,56 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://d4frxfmqqbtmq"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=12 format=3 uid="uid://b8ngv3uscq2v"]
 
+[ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="1_lost3"]
+[ext_resource type="Texture2D" uid="uid://bu3ikyqy2c3aa" path="res://Assets/Character/Full Body/Fighter.png" id="2_rnjgo"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="3_d0bwi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3rsb"]
+atlas = ExtResource("2_rnjgo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mfhh"]
+atlas = ExtResource("2_rnjgo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38cs5"]
+atlas = ExtResource("2_rnjgo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh25c"]
+atlas = ExtResource("2_rnjgo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6ogr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3rsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mfhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38cs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh25c")
+}],
+"loop": true,
+"name": &"Fighter",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_cx68y"]
+script = ExtResource("3_d0bwi")
+skill_id = 0
+quantity = 1
+magnitude = 8
+
+[sub_resource type="Resource" id="Resource_lbrjp"]
+script = ExtResource("3_d0bwi")
+skill_id = 5
+quantity = 1
+magnitude = 6
 [ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_0e6hy"]
 
 [resource]
@@ -8,9 +59,18 @@ weapon_type = "Sword & Shield"
 character_id = 1
 display_name = "Fighter"
 description = ""
-primary_skill = "Melee"
+icon = ExtResource("1_lost3")
+picture = SubResource("SpriteFrames_q6ogr")
+skills = Array[ExtResource("3_d0bwi")]([SubResource("Resource_cx68y"), SubResource("Resource_lbrjp")])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = true
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 20
+health = 20
 associated_resources = []
 associated_gathering_activities = []
 myFunc = Callable()

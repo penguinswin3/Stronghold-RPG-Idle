@@ -1,5 +1,50 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://uj13qw6f615c"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=10 format=3 uid="uid://uj13qw6f615c"]
 
+[ext_resource type="Texture2D" uid="uid://dxoainfj823gb" path="res://Assets/Character/Full Body/Merchant.png" id="1_g4ewa"]
+[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="3_wcb0g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l46r5"]
+atlas = ExtResource("1_g4ewa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwa6s"]
+atlas = ExtResource("1_g4ewa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb5wj"]
+atlas = ExtResource("1_g4ewa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2kgy"]
+atlas = ExtResource("1_g4ewa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sutcm"]
+atlas = ExtResource("1_g4ewa")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6fmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l46r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwa6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb5wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2kgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sutcm")
+}],
+"loop": true,
+"name": &"Lord",
+"speed": 5.0
+}]
 [ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_oq111"]
 
 [resource]
@@ -9,9 +54,17 @@ structure_type = "Store"
 character_id = 5
 display_name = "Merchant"
 description = ""
-primary_skill = "Trading"
+picture = SubResource("SpriteFrames_y6fmi")
+skills = Array[ExtResource("3_wcb0g")]([])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = false
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 0
+health = 0
 associated_resources = []
 associated_gathering_activities = []
 myFunc = Callable()

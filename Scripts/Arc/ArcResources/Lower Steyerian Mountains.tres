@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://cpx7offo41uce"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_378c6"]
+[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_co37r"]
+[ext_resource type="Resource" uid="uid://bgpf6aj268yof" path="res://Scripts/Adventure/AdventureResources/LowerSteyerianMountains/Lower Plateau.tres" id="2_xmfw8"]
+[ext_resource type="Resource" uid="uid://bhq777wv21o2u" path="res://Scripts/Adventure/AdventureResources/LowerSteyerianMountains/Kobold Den.tres" id="3_ij58l"]
+[ext_resource type="Resource" uid="uid://t4imhfqbvr2j" path="res://Scripts/Adventure/AdventureResources/LowerSteyerianMountains/Ridgehold.tres" id="4_v5tog"]
+[ext_resource type="Resource" uid="uid://chlnsbxll4bjq" path="res://Scripts/Adventure/AdventureResources/LowerSteyerianMountains/KreeShaw's Spire.tres" id="5_g18kb"]
+
+[resource]
+script = ExtResource("2_co37r")
+arc_id = 0
+display_name = "Lower Steyerian Mountains"
+description = "Lower mountains"
+adventures = Array[ExtResource("1_378c6")]([ExtResource("2_xmfw8"), ExtResource("3_ij58l"), ExtResource("4_v5tog"), ExtResource("5_g18kb")])
+next_arc = 1

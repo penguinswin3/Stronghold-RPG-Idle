@@ -24,6 +24,16 @@ Wallet="*res://Scripts/wallet.gd"
 CurrenciesEnum="*res://Enums/currencies_enum.gd"
 GatheringActivityEnum="*res://Enums/gathering_activity_enum.gd"
 CharacterEnum="*res://Enums/character_enum.gd"
+AdventureController="*res://Scripts/Globals/adventure_controller.gd"
+SkillsEnum="*res://Enums/skills_enum.gd"
+Roller="*res://Scripts/Rolling/roller.gd"
+EncounterEnums="*res://Enums/encounter_enums.gd"
+TimerController="*res://Scripts/Globals/timer_controller.gd"
+SkillDetails="*res://Scripts/Globals/skill_details.gd"
+CharacterDetails="*res://Scripts/Globals/character_details.gd"
+SaveManager="*res://Scripts/Saving/save_manager.gd"
+AdventureEnum="*res://Enums/adventure_enum.gd"
+ArcEnum="*res://Enums/arc_enum.gd"
 
 [display]
 
@@ -36,6 +46,10 @@ window/stretch/scale_mode="integer"
 [dotnet]
 
 project/assembly_name="Basic Idle Game"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [file_customization]
 

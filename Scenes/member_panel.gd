@@ -8,7 +8,7 @@ var member_panel = Globals.member_panel_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	character_information.text = character.display_name + " - " + str(character.level)
+	character_information.text = character.get_display_name() + " - " + str(character.level)
 	character_icon.texture = character.icon
 
 

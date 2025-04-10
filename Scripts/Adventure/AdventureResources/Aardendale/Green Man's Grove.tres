@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://b8hc101qiagbx"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_4eejy"]
+
+[resource]
+script = ExtResource("1_4eejy")
+adventure_id = 16
+display_name = "Green Man's Grove"
+description = "Gassy"
+type = 0
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

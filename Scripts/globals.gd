@@ -15,6 +15,23 @@ const character_resources_folder_path = "res://Scripts/Character/CharacterResour
 const structure_resources_folder_path = "res://Scripts/Structure/StructureResources/"
 const currency_resources_folder_path = "res://Scripts/Currency/CurrencyResources/"
 const gathering_activities_folder_path = "res://Scripts/Gathering/Gathering Activities/"
+const arc_folder_path = "res://Scripts/Arc/ArcResources/"
+
+signal unlock_character
+signal adventure_started
+signal adventure_ended
+signal update_character
+signal add_adventure_text
+signal adventure_panel_clicked
+signal arc_unlocked
+signal refresh_adventure_panels
+
+func _ready():
+
+	pass
+	
+# Global Signals
+signal on_selected_character_changed
 const gathering_upgrades_folder_path = "res://Scripts/Upgrades/Upgrade Resources/Resources/"
 # Game Tick Speed
 const wait_time = 0.01
@@ -38,6 +55,11 @@ var members_in_party = {
 var members_on_adventure : bool = false
 
 
+var selected_character : Character : set = _set_selected_character
+
+func _set_selected_character(new_character):
+	selected_character = new_character
+	on_selected_character_changed.emit(selected_character)
 var owned_characters = [0,1,3,6]
 
 

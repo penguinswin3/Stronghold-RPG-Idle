@@ -1,0 +1,721 @@
+extends Node
+
+var skill_orders = {
+	CharacterEnum.CHARACTERS.ARCHEOLOGIST : [
+		# +2
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# -1
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.FIREMAKING,
+	],
+	CharacterEnum.CHARACTERS.ARCHER : [
+		# +2
+		SkillsEnum.SKILLS.RANGED,
+		
+		# +1
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.NETWORKING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# -1
+		SkillsEnum.SKILLS.ARCANE,
+	],
+	CharacterEnum.CHARACTERS.ARTIFICER : [
+		# +2
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.BARBARIAN : [
+		# +2
+		SkillsEnum.SKILLS.CONSTITUTION,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.TRADING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.BARD : [
+		# +2
+		SkillsEnum.SKILLS.CHARMING,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.NETWORKING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# -1
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+	],
+	CharacterEnum.CHARACTERS.BLACKSMITH : [
+		# +2
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		
+		# +/-0
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.NETWORKING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# -1
+		SkillsEnum.SKILLS.HUNTING,
+	],
+	CharacterEnum.CHARACTERS.CLERIC : [
+		# +2
+		SkillsEnum.SKILLS.DIVINE,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# -1
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.THIEVERY,
+	],
+	CharacterEnum.CHARACTERS.DIVINER : [
+		# +2
+		SkillsEnum.SKILLS.RITUAL,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.DRUID : [
+		# +2
+		SkillsEnum.SKILLS.PRIMAL,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		
+		# +/-0
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.ENTREPRENEUR : [
+		# +2
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# +/-0
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.FIREMAKING,
+	],
+	CharacterEnum.CHARACTERS.FIGHTER : [
+		# +2
+		SkillsEnum.SKILLS.MELEE,
+		
+		# +1
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		
+		# +/-0
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.FORESTER : [
+		# +2
+		SkillsEnum.SKILLS.WOODCUTTING,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.TRADING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.HUNTER : [
+		# +2
+		SkillsEnum.SKILLS.HUNTING,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.LORD : [
+		# +2
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		# +1
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.NETWORKING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# -1
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.THIEVERY,
+	],
+	CharacterEnum.CHARACTERS.MAGE : [
+		# +2
+		SkillsEnum.SKILLS.ARCANE,
+		
+		# +1
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+	],
+	CharacterEnum.CHARACTERS.MERCHANT : [
+		# +2
+		SkillsEnum.SKILLS.TRADING,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# +/-0
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.MINING,
+	],
+	CharacterEnum.CHARACTERS.MINER : [
+		# +2
+		SkillsEnum.SKILLS.MINING,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.TRADING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.OCCULTIST : [
+		# +2
+		SkillsEnum.SKILLS.OCCULT,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		
+		# +/-0
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.PYROMANCER : [
+		# +2
+		SkillsEnum.SKILLS.FIREMAKING,
+		
+		# +1
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		
+		# +/-0
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+	CharacterEnum.CHARACTERS.QUARTERMASTER : [
+		# +2
+		SkillsEnum.SKILLS.ORGANIZATION,
+		
+		# +1
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.NETWORKING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# -1
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.RANGED,
+	],
+	CharacterEnum.CHARACTERS.SOCIALITE : [
+		# +2
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# +1
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# +/-0
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		
+		# -1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+	],
+	CharacterEnum.CHARACTERS.THIEF : [
+		# +2
+		SkillsEnum.SKILLS.THIEVERY,
+		
+		# +1
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.CHARISMA,
+		
+		# +/-0
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.NETWORKING,
+		
+		# -1
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.ORGANIZATION,
+	],
+}
+
+""" TEMPLATE
+	CharacterEnum.CHARACTERS. : [
+		# +2
+		
+		# +1
+		
+		# +/-0
+		
+		# -1
+		
+		
+		SkillsEnum.SKILLS.MELEE,
+		SkillsEnum.SKILLS.ARCANE,
+		SkillsEnum.SKILLS.DIVINE,
+		SkillsEnum.SKILLS.PRIMAL,
+		SkillsEnum.SKILLS.CONSTITUTION,
+		SkillsEnum.SKILLS.RANGED,
+		SkillsEnum.SKILLS.OCCULT,
+		SkillsEnum.SKILLS.HUNTING,
+		SkillsEnum.SKILLS.CHARMING,
+		SkillsEnum.SKILLS.ARCHEOLOGY,
+		SkillsEnum.SKILLS.FIREMAKING,
+		SkillsEnum.SKILLS.MINING,
+		SkillsEnum.SKILLS.WOODCUTTING,
+		SkillsEnum.SKILLS.RITUAL,
+		SkillsEnum.SKILLS.CONSTRUCTION,
+		SkillsEnum.SKILLS.ORGANIZATION,
+		SkillsEnum.SKILLS.THIEVERY,
+		SkillsEnum.SKILLS.ENCHANTMENT,
+		SkillsEnum.SKILLS.TRADING,
+		SkillsEnum.SKILLS.CRAFTING,
+		SkillsEnum.SKILLS.NETWORKING,
+		SkillsEnum.SKILLS.CHARISMA,
+	],
+"""
