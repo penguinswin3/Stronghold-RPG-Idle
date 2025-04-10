@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://dyj6ogqwuxs5l"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=3 format=3 uid="uid://dyj6ogqwuxs5l"]
 
 [ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_xux8a"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="2_qkel4"]
 
 [resource]
 script = ExtResource("1_xux8a")
@@ -8,9 +9,16 @@ weapon_type = "Sickle"
 character_id = 13
 display_name = "Druid"
 description = ""
-primary_skill = "Primal"
+skills = Array[ExtResource("2_qkel4")]([null])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = false
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 0
+health = 0
 associated_resources = []
 associated_gathering_activities = []
 myFunc = Callable()

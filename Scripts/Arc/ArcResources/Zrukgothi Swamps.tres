@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://irmvnn5sb5xv"]
 
-[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_vp20t"]
+[ext_resource type="Script" uid="uid://3oywplpu5yfl" path="res://Scripts/Adventure/Adventure.gd" id="1_vp20t"]
 [ext_resource type="Resource" uid="uid://bpqr0beuudmat" path="res://Scripts/Adventure/AdventureResources/Zrukgothi Swamps/Eastern Fen.tres" id="2_v58uq"]
-[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_y41sm"]
+[ext_resource type="Script" uid="uid://18j6qoa7e8mw" path="res://Scripts/Arc/Arc.gd" id="2_y41sm"]
 [ext_resource type="Resource" uid="uid://cgi55qsasu64c" path="res://Scripts/Adventure/AdventureResources/Zrukgothi Swamps/Western Bog.tres" id="3_estdc"]
 [ext_resource type="Resource" uid="uid://dc10sfvusvrjk" path="res://Scripts/Adventure/AdventureResources/Zrukgothi Swamps/Lordly Estates.tres" id="4_234la"]
 [ext_resource type="Resource" uid="uid://2w27yet0rc2" path="res://Scripts/Adventure/AdventureResources/Zrukgothi Swamps/Brackish Vents.tres" id="5_wb3fr"]

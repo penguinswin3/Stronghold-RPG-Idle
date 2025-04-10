@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Encounter" load_steps=6 format=3 uid="uid://dvrg8b8ht6dnp"]
 
 [ext_resource type="Resource" uid="uid://uj13qw6f615c" path="res://Scripts/Character/CharacterResources/Merchant.tres" id="1_5208b"]
-[ext_resource type="Script" path="res://Scripts/Encounter/Encounter.gd" id="1_wp08p"]
-[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="3_8udio"]
+[ext_resource type="Script" uid="uid://dufq1g8cydirp" path="res://Scripts/Encounter/Encounter.gd" id="1_wp08p"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="3_8udio"]
 
 [sub_resource type="Resource" id="Resource_asv56"]
 script = ExtResource("3_8udio")

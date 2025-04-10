@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://dkajcg00hyjjw"]
 
-[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_hsst0"]
-[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_eoqkd"]
+[ext_resource type="Script" uid="uid://3oywplpu5yfl" path="res://Scripts/Adventure/Adventure.gd" id="1_hsst0"]
+[ext_resource type="Script" uid="uid://18j6qoa7e8mw" path="res://Scripts/Arc/Arc.gd" id="2_eoqkd"]
 [ext_resource type="Resource" uid="uid://b8hc101qiagbx" path="res://Scripts/Adventure/AdventureResources/Aardendale/Green Man's Grove.tres" id="2_r055u"]
 [ext_resource type="Resource" uid="uid://bu2qcqftafbqy" path="res://Scripts/Adventure/AdventureResources/Aardendale/Darksalt Shoals.tres" id="3_nxd6h"]
 [ext_resource type="Resource" uid="uid://btqvj4css376w" path="res://Scripts/Adventure/AdventureResources/Aardendale/Harvest Festival.tres" id="4_x0ois"]

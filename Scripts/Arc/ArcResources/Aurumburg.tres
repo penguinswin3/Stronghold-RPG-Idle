@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://c1rv474wffsiv"]
 
-[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_66k2q"]
-[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_3f8et"]
+[ext_resource type="Script" uid="uid://3oywplpu5yfl" path="res://Scripts/Adventure/Adventure.gd" id="1_66k2q"]
+[ext_resource type="Script" uid="uid://18j6qoa7e8mw" path="res://Scripts/Arc/Arc.gd" id="2_3f8et"]
 [ext_resource type="Resource" uid="uid://dvnlcvmk3lutf" path="res://Scripts/Adventure/AdventureResources/Aurumburg/River Aurum.tres" id="2_mhq7t"]
 [ext_resource type="Resource" uid="uid://csa20e2ik62lv" path="res://Scripts/Adventure/AdventureResources/Aurumburg/Tomb of the Dragon.tres" id="3_perif"]
 [ext_resource type="Resource" uid="uid://0dc1lgbi7ucp" path="res://Scripts/Adventure/AdventureResources/Aurumburg/Company Town.tres" id="4_ewww5"]

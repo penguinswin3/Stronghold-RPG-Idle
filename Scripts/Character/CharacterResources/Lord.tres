@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://cvs47xeixhffg"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=11 format=3 uid="uid://cvs47xeixhffg"]
 
 [ext_resource type="Texture2D" uid="uid://cukqx4ehj37ev" path="res://Assets/Character/Full Body/Lord.png" id="1_brw3v"]
-[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_glee1"]
+[ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="2_glee1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbuxf"]
 atlas = ExtResource("1_brw3v")
@@ -51,7 +52,6 @@ script = ExtResource("2_glee1")
 skill_id = 14
 quantity = 1
 magnitude = 8
-[ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
 
 [resource]
 script = ExtResource("1_vqbg1")

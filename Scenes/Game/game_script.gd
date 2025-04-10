@@ -73,7 +73,7 @@ func _ready() -> void:
 	Wallet.currency_changed.connect(cview._update_text)
 	gold_summary_tab.add_child(cview)
 
-	Globals.on_selected_character_changed.connect(_populate_resource_upgrade_panel)
+	#Globals.on_selected_character_changed.connect(_populate_resource_upgrade_panel)
 	Globals.on_selected_character_changed.connect(_update_displayed_gathering_activities)
 	print(GlobalResourceLoader._get_all_characters())
 	Globals.unlock_character.connect(_update_character_list)

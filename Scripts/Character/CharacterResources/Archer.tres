@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="CombatCharacter" load_steps=11 format=3 uid="uid://qhgihsuslfhu"]
 
 [ext_resource type="Texture2D" uid="uid://11lfbv3tnfpm" path="res://Assets/Character/Full Body/Archer.png" id="1_4w4ho"]
-[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_b6exb"]
+[ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_vofdv"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="2_b6exb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqxho"]
 atlas = ExtResource("1_4w4ho")
@@ -50,7 +51,6 @@ script = ExtResource("2_b6exb")
 skill_id = 7
 quantity = 1
 magnitude = 6
-[ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_vofdv"]
 
 [resource]
 script = ExtResource("1_vofdv")

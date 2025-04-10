@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="SocialCharacter" load_steps=6 format=3 uid="uid://c3rl4prm2s24k"]
 
 [ext_resource type="SpriteFrames" uid="uid://d3olyls4guup1" path="res://Assets/Character/Full Body/Character Animations.tres" id="1_hs3pi"]
-[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_j6wx2"]
+[ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_ss6ng"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="2_j6wx2"]
 
 [sub_resource type="Resource" id="Resource_ley3t"]
 script = ExtResource("2_j6wx2")
@@ -14,7 +15,6 @@ script = ExtResource("2_j6wx2")
 skill_id = 5
 quantity = 1
 magnitude = 6
-[ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_ss6ng"]
 
 [resource]
 script = ExtResource("1_ss6ng")

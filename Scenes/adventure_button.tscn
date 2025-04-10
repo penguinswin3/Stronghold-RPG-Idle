@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cb843yjc8x65n"]
 
-[ext_resource type="Script" path="res://Scenes/adventure_button.gd" id="1_owam0"]
+[ext_resource type="Script" uid="uid://c1c6fxkfsuv7c" path="res://Scenes/adventure_button.gd" id="1_owam0"]
 
 [node name="AdventureButton" type="Button"]
 anchors_preset = 15

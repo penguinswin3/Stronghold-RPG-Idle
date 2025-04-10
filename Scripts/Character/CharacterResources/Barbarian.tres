@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=2 format=3 uid="uid://cyu2tsov00his"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=3 format=3 uid="uid://cyu2tsov00his"]
 
 [ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_qpnrm"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="2_av7ud"]
 
 [resource]
 script = ExtResource("1_qpnrm")
@@ -8,9 +9,16 @@ weapon_type = "Greataxe"
 character_id = 4
 display_name = "Barbarian"
 description = ""
-primary_skill = "Constitution"
+skills = Array[ExtResource("2_av7ud")]([])
+skills_order = Array[int]([])
+upgrades = []
+unlocked = false
+unlock_roll_weight = 0
+on_adventure = false
 level = 1
 xp = 0
+max_health = 0
+health = 0
 associated_resources = []
 associated_gathering_activities = []
 myFunc = Callable()

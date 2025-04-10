@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="CombatCharacter" load_steps=4 format=3 uid="uid://cw5vac8ntny0k"]
+[gd_resource type="Resource" script_class="CombatCharacter" load_steps=3 format=3 uid="uid://cw5vac8ntny0k"]
 
-[ext_resource type="Texture2D" uid="uid://d2wyqiapuaopy" path="res://Assets/Coins.png" id="1_hr8qb"]
-[ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="3_wq1cq"]
 [ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_b5vv3"]
+[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="3_wq1cq"]
 
 [resource]
 script = ExtResource("1_b5vv3")
@@ -10,7 +9,6 @@ weapon_type = "Flail"
 character_id = 10
 display_name = "Cleric"
 description = ""
-icon = ExtResource("1_hr8qb")
 skills = Array[ExtResource("3_wq1cq")]([])
 skills_order = Array[int]([])
 upgrades = []

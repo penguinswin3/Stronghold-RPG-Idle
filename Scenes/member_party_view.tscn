@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://brflj6qrfk56h"]
 
-[ext_resource type="Script" path="res://Scenes/member_party_view.gd" id="1_6n7dc"]
+[ext_resource type="Script" uid="uid://efrsrqhli5oh" path="res://Scenes/member_party_view.gd" id="1_6n7dc"]
 [ext_resource type="SpriteFrames" uid="uid://d3olyls4guup1" path="res://Assets/Character/Full Body/Character Animations.tres" id="1_lvb3c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_213go"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://c3cafpbnsigec"]
 
-[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_trge8"]
-[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_n5nig"]
+[ext_resource type="Script" uid="uid://3oywplpu5yfl" path="res://Scripts/Adventure/Adventure.gd" id="1_trge8"]
+[ext_resource type="Script" uid="uid://18j6qoa7e8mw" path="res://Scripts/Arc/Arc.gd" id="2_n5nig"]
 [ext_resource type="Resource" uid="uid://bu0tpwp5qqffg" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Tribelands.tres" id="2_wn54s"]
 [ext_resource type="Resource" uid="uid://dir2ihvk0ixll" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Avian Lodge Shadow Monastery.tres" id="3_qqpcf"]
 [ext_resource type="Resource" uid="uid://c6wx308klqyya" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Goliath Village.tres" id="4_6s03v"]

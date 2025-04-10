@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bsvojb7uhtfsc" path="res://Scripts/Encounter/Exploration/Falling Rocks.tres" id="2_vka4q"]
 [ext_resource type="Resource" uid="uid://d28alc5vyv2fg" path="res://Scripts/Encounter/Exploration/Wooden Chest.tres" id="3_bejmi"]
 [ext_resource type="Resource" uid="uid://dvrg8b8ht6dnp" path="res://Scripts/Encounter/Social/Broken Down Traveller.tres" id="4_yw4vc"]
-[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="5_txngn"]
+[ext_resource type="Script" uid="uid://3oywplpu5yfl" path="res://Scripts/Adventure/Adventure.gd" id="5_txngn"]
 
 [resource]
 script = ExtResource("5_txngn")
@@ -14,9 +14,9 @@ description = "Plateau under the mountains"
 type = 0
 unlocked = true
 base_number_of_encounters = 6
-variance_number_of_encounter = {
-"magnitude": 4,
-"quantity": 1
+variance_number_of_encounters = {
+&"magnitude": 4,
+&"quantity": 1
 }
 encounters = {
 ExtResource("1_4y3hy"): 6,
