@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxoainfj823gb" path="res://Assets/Character/Full Body/Merchant.png" id="1_g4ewa"]
 [ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_oq111"]
-[ext_resource type="Script" uid="uid://th34fw0k33is" path="res://Scripts/Skill/Skill.gd" id="3_wcb0g"]
+[ext_resource type="Script" uid="uid://dtrn1aul8i1f6" path="res://Scripts/Skill/Skill.gd" id="3_wcb0g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l46r5"]
 atlas = ExtResource("1_g4ewa")

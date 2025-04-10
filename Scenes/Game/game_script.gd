@@ -1,8 +1,6 @@
 extends Node
 var CurrenciesEnum = preload('res://Enums/currencies_enum.gd')
 var upgrade
-var roller = Roller.new()
-
 
 @onready var member_list: GridContainer = %MemberList
 var member_panel = preload("res://Scenes/member_panel.tscn")
