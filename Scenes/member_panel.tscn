@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqus8lygljrej"]
 
-[ext_resource type="Script" path="res://Scenes/member_panel.gd" id="1_2usfc"]
+[ext_resource type="Script" uid="uid://cq1guqg6oiegs" path="res://Scenes/member_panel.gd" id="1_2usfc"]
 
 [node name="MemberPanel2" type="PanelContainer"]
 offset_right = 255.0

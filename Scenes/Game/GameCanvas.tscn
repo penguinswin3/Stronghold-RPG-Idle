@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://dpeepw3lkf6hf"]
 
-[ext_resource type="Script" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
-[ext_resource type="Script" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
+[ext_resource type="Script" uid="uid://qwtc2os7686" path="res://Scenes/Game/game_script.gd" id="1_q6jmd"]
+[ext_resource type="Script" uid="uid://d1yq20m3dnbsr" path="res://Scenes/Game/main_tab_controller.gd" id="2_5crb2"]
 [ext_resource type="Texture2D" uid="uid://1sdr0g5qe07j" path="res://Assets/pickaxe.jpg" id="2_6lpws"]
 [ext_resource type="PackedScene" uid="uid://cfrjkbbm6lib3" path="res://Scenes/party_member_panel.tscn" id="3_dtbcb"]
 [ext_resource type="Texture2D" uid="uid://sy5swfrw0pvn" path="res://Assets/Frame/Wooden Frame.png" id="4_4fkv2"]
@@ -573,6 +573,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="UpgradesList" type="GridContainer" parent="MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2

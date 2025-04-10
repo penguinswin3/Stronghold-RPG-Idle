@@ -17,9 +17,6 @@ const currency_resources_folder_path = "res://Scripts/Currency/CurrencyResources
 const gathering_activities_folder_path = "res://Scripts/Gathering/Gathering Activities/"
 const arc_folder_path = "res://Scripts/Arc/ArcResources/"
 
-# Game Tick Speed
-const wait_time = 0.01
-
 signal unlock_character
 signal adventure_started
 signal adventure_ended
@@ -35,6 +32,10 @@ func _ready():
 	
 # Global Signals
 signal on_selected_character_changed
+const gathering_upgrades_folder_path = "res://Scripts/Upgrades/Upgrade Resources/Resources/"
+# Game Tick Speed
+const wait_time = 0.01
+
 
 # Global Game State
 var selected_character : Character = GlobalResourceLoader._get_all_characters().get(0) : set = _set_selected_character 
@@ -80,11 +81,16 @@ var structures = [
 var unlocks = {}
 
 
+# Key = resource value = list of upgrade ids?
+var unlocked_upgrades = []
+
+
+
 func _ready():
 	pass
 	
 
 func _set_selected_character(new_character):
 	selected_character = new_character
-	on_selected_character_changed.emit(selected_character)
+	SignalBus.on_selected_character_changed.emit(selected_character)
 		

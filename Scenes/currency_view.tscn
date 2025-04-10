@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdvlqrlntgopi"]
 
-[ext_resource type="Script" path="res://Scenes/currency_view.gd" id="1_kvvmf"]
+[ext_resource type="Script" uid="uid://c3h55r7j6ofq4" path="res://Scenes/currency_view.gd" id="1_kvvmf"]
 
 [node name="CurrencyViewHContainer" type="HBoxContainer"]
 size_flags_horizontal = 4

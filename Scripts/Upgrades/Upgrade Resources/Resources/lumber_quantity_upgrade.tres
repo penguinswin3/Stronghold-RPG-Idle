@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HerbQuantity" load_steps=2 format=3 uid="uid://rju4k1gw8jyo"]
+
+[ext_resource type="Script" uid="uid://d1l8cm8se6o2t" path="res://Scripts/Upgrades/Upgrade Resources/Upgrade Resource Scripts/LumberQuantity.gd" id="1_yf2m3"]
+
+[resource]
+script = ExtResource("1_yf2m3")
+upgrade_id = 4
+upgrade_name = "Additional Lumber"
+quantity = 1
+order_type = 0
+associated_gathering_activity = 1

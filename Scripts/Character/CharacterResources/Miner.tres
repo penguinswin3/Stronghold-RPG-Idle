@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ExplorationCharacter" load_steps=2 format=3 uid="uid://dmthil5q7uxh4"]
 
-[ext_resource type="Script" path="res://Scripts/Character/exploration_character.gd" id="1_ennd1"]
+[ext_resource type="Script" uid="uid://b5gcb0moagmky" path="res://Scripts/Character/exploration_character.gd" id="1_ennd1"]
 
 [resource]
 script = ExtResource("1_ennd1")
@@ -13,3 +13,4 @@ level = 1
 xp = 0
 associated_resources = [7, 1, 21]
 associated_gathering_activities = []
+myFunc = Callable()

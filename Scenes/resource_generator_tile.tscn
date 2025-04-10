@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://egqpvprvveb4"]
 
-[ext_resource type="Script" path="res://Scenes/resource_generator_tile.gd" id="1_7t8jr"]
+[ext_resource type="Script" uid="uid://sj7b10s8whpr" path="res://Scenes/resource_generator_tile.gd" id="1_7t8jr"]
 [ext_resource type="Texture2D" uid="uid://bm5xmc8dn6tg8" path="res://Assets/Timer.png" id="2_n5avx"]
 
 [node name="resource_panel_tile" type="PanelContainer"]

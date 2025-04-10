@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://dwutptiycpe7u"]
 
-[ext_resource type="Script" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_on1s4"]
+[ext_resource type="Script" uid="uid://bf5y318nj8klw" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_on1s4"]
 
 [resource]
 script = ExtResource("1_on1s4")
 gathering_activity_id = 2
-name = "Gold"
-verb = "Beg for"
+name = "Small Loan"
+verb = "Take Out a"
 max_val = 100.0
 min_val = 0.0
 step = 1.0
@@ -18,6 +18,6 @@ inputs = {}
 outputs = {
 4: 1
 }
-character = ""
+character = 0
 unlock_dependencies = []
 upgrade_chain = []

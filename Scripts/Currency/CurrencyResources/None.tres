@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Currency" load_steps=3 format=3 uid="uid://jjuxcwf22bgg"]
 
-[ext_resource type="Script" path="res://Scripts/Currency/Currency.gd" id="1_pcwwe"]
+[ext_resource type="Script" uid="uid://c2ctx6e5tvxhb" path="res://Scripts/Currency/Currency.gd" id="1_pcwwe"]
 [ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="2_3b6aj"]
 
 [resource]

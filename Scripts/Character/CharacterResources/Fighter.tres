@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="CombatCharacter" load_steps=12 format=3 uid="uid://b8ngv3uscq2v"]
 
-[ext_resource type="Script" path="res://Scripts/Character/combat_character.gd" id="1_0e6hy"]
 [ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="1_lost3"]
 [ext_resource type="Texture2D" uid="uid://bu3ikyqy2c3aa" path="res://Assets/Character/Full Body/Fighter.png" id="2_rnjgo"]
 [ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="3_d0bwi"]
@@ -52,6 +51,7 @@ script = ExtResource("3_d0bwi")
 skill_id = 5
 quantity = 1
 magnitude = 6
+[ext_resource type="Script" uid="uid://dfd06l2xno0yw" path="res://Scripts/Character/combat_character.gd" id="1_0e6hy"]
 
 [resource]
 script = ExtResource("1_0e6hy")
@@ -73,3 +73,4 @@ max_health = 20
 health = 20
 associated_resources = []
 associated_gathering_activities = []
+myFunc = Callable()

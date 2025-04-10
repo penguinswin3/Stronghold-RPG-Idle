@@ -1,6 +1,6 @@
-
 [gd_resource type="Resource" script_class="SocialCharacter" load_steps=3 format=3 uid="uid://ifp4ykljrg85"]
-[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_fhf05"]
+
+[ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_fhf05"]
 [ext_resource type="Texture2D" uid="uid://pebnqows4weh" path="res://Assets/icon.svg" id="1_nvvvo"]
 
 [resource]
@@ -16,3 +16,4 @@ level = 1
 xp = 0
 associated_resources = []
 associated_gathering_activities = []
+myFunc = Callable()

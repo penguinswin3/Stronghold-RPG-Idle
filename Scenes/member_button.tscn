@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcqtgjeps07ad"]
 
-[ext_resource type="Script" path="res://Scenes/member_button.gd" id="1_odosn"]
+[ext_resource type="Script" uid="uid://ch7qpat7rt4qm" path="res://Scenes/member_button.gd" id="1_odosn"]
 
 [node name="MemberPanel" type="PanelContainer"]
 offset_right = 255.0

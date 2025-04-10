@@ -153,3 +153,10 @@ func get_first_combat_skill_enum() -> SkillsEnum.SKILLS:
 func reset():
 	health = max_health
 		
+@export var myFunc : Callable
+
+
+func _apply_upgrade():
+	print(myFunc.call(level, xp))
+		
+	

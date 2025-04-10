@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://cvs47xeixhffg"]
 
 [ext_resource type="Texture2D" uid="uid://cukqx4ehj37ev" path="res://Assets/Character/Full Body/Lord.png" id="1_brw3v"]
-[ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
 [ext_resource type="Script" path="res://Scripts/Skill/Skill.gd" id="2_glee1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbuxf"]
@@ -52,6 +51,7 @@ script = ExtResource("2_glee1")
 skill_id = 14
 quantity = 1
 magnitude = 8
+[ext_resource type="Script" uid="uid://bety40xeblgvk" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
 
 [resource]
 script = ExtResource("1_vqbg1")
@@ -73,3 +73,4 @@ max_health = 6
 health = 6
 associated_resources = [4]
 associated_gathering_activities = [2]
+myFunc = Callable()

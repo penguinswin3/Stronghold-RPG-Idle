@@ -4,9 +4,9 @@ var currencies = {}
 var structures = {}
 var characters = {}
 var gathering_skills = {}
-var gathering_skill_timers = {}
 var gathering_upgrades = {}
 var arcs = {}
+var upgrade_list = {}
 
 func _ready():
 	_load_currencies()
@@ -44,8 +44,10 @@ func _load_gathering_skills():
 	for file in DirAccess.get_files_at(Globals.gathering_activities_folder_path):
 		var gathering = load(Globals.gathering_activities_folder_path + file)
 		gathering_skills[gathering.gathering_activity_id] = gathering
+		#Globals.unlocked_upgrades.get_or_add(gathering.gathering_activity_id)
+		#Globals.unlocked_upgrades[gathering.gathering_activity_id] = []
 		print("Registered gathering activity: " + gathering.verb + " " + gathering.name + " with ID: " + str(gathering.gathering_activity_id))
-
+	print(Globals.unlocked_upgrades)
 	pass
 
 func _load_arcs():
@@ -56,7 +58,20 @@ func _load_arcs():
 	print(arcs)
 	
 func _load_gathering_upgrades():
+	for file in DirAccess.get_files_at(Globals.gathering_upgrades_folder_path):
+		var upgrade = load(Globals.gathering_upgrades_folder_path + file)
+		upgrade_list[upgrade.upgrade_id] = upgrade
+		if gathering_upgrades.get(upgrade.associated_gathering_activity) == null:
+			gathering_upgrades[upgrade.associated_gathering_activity] = []
+		gathering_upgrades[upgrade.associated_gathering_activity].append(upgrade.upgrade_id)
+		
+	for upgrade_key in gathering_upgrades:
+		#gathering_upgrades[upgrade_key].sort_custom(_sort_by_upgrade_order)
+		gathering_upgrades[upgrade_key].sort()
+		for upgrade in gathering_upgrades[upgrade_key]:
+			print("Registered " + upgrade_list[upgrade].upgrade_name +" upgrade for resource: " + str(upgrade_key) + " with upgrade order: " + str(gathering_upgrades[upgrade_key]))
 	pass
+	
 
 func _get_all_structures():
 	return structures
@@ -81,3 +96,9 @@ func _configure_character_skill_order():
 		skill_order.append_array(CharacterDetails.skill_orders[character_resource.character_id] as Array[SkillsEnum.SKILLS])
 		characters[character].set_skills_order(skill_order)
 		print("\tInitialized %-15s Skill Order: %s" % [character_resource.get_display_name(), str(skill_order)])
+		
+func _get_upgrade_detials_from_upgrade_id(upgrade_id):
+	return upgrade_list.get(upgrade_id)
+	
+	
+	

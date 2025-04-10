@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ResourceGatheringStat" load_steps=2 format=3 uid="uid://dep3sr7qwbn1d"]
 
-[ext_resource type="Script" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_w8cls"]
+[ext_resource type="Script" uid="uid://bf5y318nj8klw" path="res://Scripts/Gathering/Scripts/resource_gathering_stat.gd" id="1_w8cls"]
 
 [resource]
 script = ExtResource("1_w8cls")
@@ -20,6 +20,6 @@ inputs = {
 outputs = {
 2: 1
 }
-character = ""
+character = 0
 unlock_dependencies = []
 upgrade_chain = []
