@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnuvkjq7u18mw"]
+[gd_scene load_steps=2 format=3 uid="uid://82vntipmc5r0"]
 
-[ext_resource type="Script" path="res://Scenes/character_view.gd" id="1_5tk25"]
+[ext_resource type="Script" uid="uid://dumn6u4nxgi5e" path="res://Scenes/character_view.gd" id="1_5tk25"]
 
 [node name="CharacterViewHContainer" type="HBoxContainer"]
 size_flags_horizontal = 4

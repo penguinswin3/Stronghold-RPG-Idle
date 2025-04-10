@@ -33,16 +33,12 @@ func _roll_weighted(options, quantity=1):
 	var selected_options = {}
 	# Sort by ascending weights
 	options.sort_custom(func sort(a,b): if a.weight < b.weight: return true else: return false)
-	
 	for option in options:
-		#print(option.option, " ", str(option.weight))
 		total_weight += option.weight
 		selected_options[option.option] = 0	
-		#print("Total Weight ", str(total_weight))
 	var rolled_values = []
 	for i in quantity:
 		rolled_values.append(rng.randi_range(0, total_weight))
-	#rolled_values.sort()
 	var consumed_weight = 0
 	for option in options:
 		selected_options[option.option] = rolled_values.filter(_is_less_than_equal.bind(option.weight+consumed_weight)).size()
