@@ -3,6 +3,8 @@ class_name ResourceGatheringStat
 
 const ComplexCost = preload("res://Scripts/Currency/ComplexCost.gd")
 
+const CharacterEnum = preload("res://Enums/character_enum.gd")
+
 
 @export
 var gathering_activity_id : GatheringActivityEnum.GATHERING_ACTIVITIES
@@ -43,7 +45,7 @@ var inputs : Dictionary
 var outputs : Dictionary
 
 @export
-var character : String
+var character : CharacterEnum.CHARACTERS
 
 @export
 var unlock_dependencies = []

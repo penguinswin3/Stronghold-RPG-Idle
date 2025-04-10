@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SocialCharacter" load_steps=11 format=3 uid="uid://kq7t3w3wqdxw"]
+[gd_resource type="Resource" script_class="SocialCharacter" load_steps=2 format=3 uid="uid://cvs47xeixhffg"]
 
 [ext_resource type="Texture2D" uid="uid://cukqx4ehj37ev" path="res://Assets/Character/Full Body/Lord.png" id="1_brw3v"]
 [ext_resource type="Script" path="res://Scripts/Character/social_character.gd" id="1_vqbg1"]
@@ -72,4 +72,4 @@ xp = 0
 max_health = 6
 health = 6
 associated_resources = [4]
-associated_gathering_activities = []
+associated_gathering_activities = [2]

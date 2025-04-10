@@ -25,6 +25,10 @@ func _load_currencies():
 	return
 	
 func _load_structures():
+	for file in DirAccess.get_files_at(Globals.structure_resources_folder_path):
+		var structure = load(Globals.structure_resources_folder_path + file)
+		structures[structure.structure_id] = structure
+		print("Registered structure: " + structure.display_name + " with ID: " + str(structure.structure_id))
 	pass
 	
 func _load_characters():
@@ -44,6 +48,9 @@ func _load_gathering_skills():
 	
 func _load_gathering_upgrades():
 	pass
+
+func _get_all_structures():
+	return structures
 	
 func _get_all_currencies():
 	return currencies

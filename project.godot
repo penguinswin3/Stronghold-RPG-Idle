@@ -17,10 +17,10 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
+GlobalResourceLoader="*res://Scripts/ResourceLoader.gd"
 Globals="*res://Scripts/globals.gd"
 Wallet="*res://Scripts/wallet.gd"
 CurrenciesEnum="*res://Enums/currencies_enum.gd"
-GlobalResourceLoader="*res://Scripts/ResourceLoader.gd"
 GatheringActivityEnum="*res://Enums/gathering_activity_enum.gd"
 CharacterEnum="*res://Enums/character_enum.gd"
 AdventureController="*res://Scripts/Globals/adventure_controller.gd"
