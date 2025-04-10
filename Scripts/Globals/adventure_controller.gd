@@ -1,6 +1,6 @@
 extends Node
 
-var current_arc : Arc = preload("res://Scripts/Arc/ArcResources/Lower Steyerian Mountains.tres")
+var current_arc : Arc = load("res://Scripts/Arc/ArcResources/Lower Steyerian Mountains.tres")
 var current_adventure_index : int = 0
 var current_items_gained : Array[Object]
 var current_currencies_gained : Array[Currency]

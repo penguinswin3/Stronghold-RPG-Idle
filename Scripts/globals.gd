@@ -54,12 +54,6 @@ var members_in_party = {
 }
 var members_on_adventure : bool = false
 
-
-var selected_character : Character : set = _set_selected_character
-
-func _set_selected_character(new_character):
-	selected_character = new_character
-	on_selected_character_changed.emit(selected_character)
 var owned_characters = [0,1,3,6]
 
 
@@ -84,11 +78,6 @@ var unlocks = {}
 # Key = resource value = list of upgrade ids?
 var unlocked_upgrades = []
 
-
-
-func _ready():
-	pass
-	
 
 func _set_selected_character(new_character):
 	selected_character = new_character
