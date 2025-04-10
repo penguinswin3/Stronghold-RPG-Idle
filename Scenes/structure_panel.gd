@@ -15,7 +15,7 @@ var character_view = preload("res://Scenes/character_view.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	structure_name.text = structure.display_name
+	structure_name.text = structure.get_display_name()
 	structure_details.text = structure.description
 	
 	if structure.locked:

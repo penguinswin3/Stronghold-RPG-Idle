@@ -31,6 +31,8 @@ TimerController="*res://Scripts/Globals/timer_controller.gd"
 SkillDetails="*res://Scripts/Globals/skill_details.gd"
 CharacterDetails="*res://Scripts/Globals/character_details.gd"
 SaveManager="*res://Scripts/Saving/save_manager.gd"
+AdventureEnum="*res://Enums/adventure_enum.gd"
+ArcEnum="*res://Enums/arc_enum.gd"
 
 [display]
 

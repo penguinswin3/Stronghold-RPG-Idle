@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://cj1gfgrfs0v0b"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_5adhh"]
+[ext_resource type="Resource" uid="uid://csbalkpks2e8e" path="res://Scripts/Adventure/AdventureResources/PrimordialSands/The First Sea.tres" id="2_cjh5h"]
+[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_q2c5w"]
+[ext_resource type="Resource" uid="uid://c1ibqdcew1yqb" path="res://Scripts/Adventure/AdventureResources/PrimordialSands/Temple of Fulmor.tres" id="3_k4glg"]
+[ext_resource type="Resource" uid="uid://ddauiu6a6bcb7" path="res://Scripts/Adventure/AdventureResources/PrimordialSands/Fusemont Bastille.tres" id="4_clito"]
+[ext_resource type="Resource" uid="uid://dikr1veen5pow" path="res://Scripts/Adventure/AdventureResources/PrimordialSands/Ruins of Chalcedony.tres" id="5_rpsl3"]
+
+[resource]
+script = ExtResource("2_q2c5w")
+arc_id = 3
+display_name = "Primordial Sands"
+description = "Its rough, and its coarse, and it gets everywhere"
+adventures = Array[ExtResource("1_5adhh")]([ExtResource("2_cjh5h"), ExtResource("3_k4glg"), ExtResource("4_clito"), ExtResource("5_rpsl3")])
+next_arc = 4

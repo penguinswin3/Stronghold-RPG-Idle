@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://dkug30tf2uhgw"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_ltg2s"]
+[ext_resource type="Resource" uid="uid://cffgqvquqcsrv" path="res://Scripts/Adventure/AdventureResources/JynSteyr/Eastern Roads.tres" id="2_su33s"]
+[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_u8lus"]
+[ext_resource type="Resource" uid="uid://brmcmpofpd7d4" path="res://Scripts/Adventure/AdventureResources/JynSteyr/Thieves’ Guild.tres" id="3_jfibt"]
+[ext_resource type="Resource" uid="uid://dqtsocpyqvhwx" path="res://Scripts/Adventure/AdventureResources/JynSteyr/Lil Lightningbug Inn.tres" id="4_wbvb5"]
+[ext_resource type="Resource" uid="uid://dv1k4awy0rxjd" path="res://Scripts/Adventure/AdventureResources/JynSteyr/Chimera Den.tres" id="5_ox6jm"]
+
+[resource]
+script = ExtResource("2_u8lus")
+arc_id = 2
+display_name = "Jyn Steyr"
+description = "With a J"
+adventures = Array[ExtResource("1_ltg2s")]([ExtResource("2_su33s"), ExtResource("3_jfibt"), ExtResource("4_wbvb5"), ExtResource("5_ox6jm")])
+next_arc = 3

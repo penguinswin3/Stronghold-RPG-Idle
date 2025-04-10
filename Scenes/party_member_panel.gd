@@ -31,7 +31,7 @@ func _drop_data(_pos, data):
 	character = data
 	AdventureController.add_member_to_party(member_index, data)
 	#Globals.members_in_party[member_number] = character
-	character_information.text = character.display_name + " - " + str(character.level)
+	character_information.text = character.get_display_name() + " - " + str(character.level)
 
 
 func _on_clear_button_pressed() -> void:

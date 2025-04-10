@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=3 format=3 uid="uid://t4imhfqbvr2j"]
+
+[ext_resource type="Resource" uid="uid://d28alc5vyv2fg" path="res://Scripts/Encounter/Exploration/Wooden Chest.tres" id="1_7cu8l"]
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_wgjbs"]
+
+[resource]
+script = ExtResource("1_wgjbs")
+adventure_id = 2
+display_name = "Ridgehold"
+description = "Edging"
+type = 2
+unlocked = false
+base_number_of_encounters = 2
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {
+ExtResource("1_7cu8l"): 100
+}
+completed = false
+completed_count = 0
+next_adventure_id = 3

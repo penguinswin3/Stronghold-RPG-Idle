@@ -6,6 +6,7 @@ var characters = {}
 var gathering_skills = {}
 var gathering_skill_timers = {}
 var gathering_upgrades = {}
+var arcs = {}
 
 func _ready():
 	_load_currencies()
@@ -13,6 +14,7 @@ func _ready():
 	_load_characters()
 	_load_gathering_skills()
 	_load_gathering_upgrades()
+	_load_arcs()
 	
 	_configure_character_skill_order()
 	return true
@@ -35,7 +37,7 @@ func _load_characters():
 	for file in DirAccess.get_files_at(Globals.character_resources_folder_path):
 		var character = load(Globals.character_resources_folder_path + file)
 		characters[character.character_id] = character
-		print('Registered character key: ' + character.display_name)
+		print('Registered character key: ' + character.get_display_name())
 	pass
 	
 func _load_gathering_skills():
@@ -45,6 +47,13 @@ func _load_gathering_skills():
 		print("Registered gathering activity: " + gathering.verb + " " + gathering.name + " with ID: " + str(gathering.gathering_activity_id))
 
 	pass
+
+func _load_arcs():
+	for file in DirAccess.get_files_at(Globals.arc_folder_path):
+		var arc = load(Globals.arc_folder_path + file)
+		arcs[arc.arc_id] = arc
+	
+	print(arcs)
 	
 func _load_gathering_upgrades():
 	pass
@@ -60,6 +69,9 @@ func _get_all_characters():
 	
 func _get_all_gathering_skills():
 	return gathering_skills
+
+func _get_arcs():
+	return arcs
 	
 func _configure_character_skill_order():
 	print("\nCharacter Skill Orders")
@@ -68,4 +80,4 @@ func _configure_character_skill_order():
 		var skill_order : Array[SkillsEnum.SKILLS] 
 		skill_order.append_array(CharacterDetails.skill_orders[character_resource.character_id] as Array[SkillsEnum.SKILLS])
 		characters[character].set_skills_order(skill_order)
-		print("\tInitialized %-15s Skill Order: %s" % [character_resource.display_name, str(skill_order)])
+		print("\tInitialized %-15s Skill Order: %s" % [character_resource.get_display_name(), str(skill_order)])

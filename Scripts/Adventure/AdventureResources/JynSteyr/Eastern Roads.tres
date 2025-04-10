@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://cffgqvquqcsrv"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_vd3d1"]
+
+[resource]
+script = ExtResource("1_vd3d1")
+adventure_id = 8
+display_name = "Eastern Roadway"
+description = "Vroom vroom"
+type = 0
+unlocked = true
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

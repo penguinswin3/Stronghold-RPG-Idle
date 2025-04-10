@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://c3cafpbnsigec"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_trge8"]
+[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_n5nig"]
+[ext_resource type="Resource" uid="uid://bu0tpwp5qqffg" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Tribelands.tres" id="2_wn54s"]
+[ext_resource type="Resource" uid="uid://dir2ihvk0ixll" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Avian Lodge Shadow Monastery.tres" id="3_qqpcf"]
+[ext_resource type="Resource" uid="uid://c6wx308klqyya" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Goliath Village.tres" id="4_6s03v"]
+[ext_resource type="Resource" uid="uid://b7amq743cqdpp" path="res://Scripts/Adventure/AdventureResources/UpperSteyerianMountains/Avian Ritual Grounds.tres" id="5_ei6un"]
+
+[resource]
+script = ExtResource("2_n5nig")
+arc_id = 1
+display_name = "Upper Steyerian Mountains"
+description = "They upper"
+adventures = Array[ExtResource("1_trge8")]([ExtResource("2_wn54s"), ExtResource("3_qqpcf"), ExtResource("4_6s03v"), ExtResource("5_ei6un")])
+next_arc = 2

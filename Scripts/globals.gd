@@ -15,6 +15,7 @@ const character_resources_folder_path = "res://Scripts/Character/CharacterResour
 const structure_resources_folder_path = "res://Scripts/Structure/StructureResources/"
 const currency_resources_folder_path = "res://Scripts/Currency/CurrencyResources/"
 const gathering_activities_folder_path = "res://Scripts/Gathering/Gathering Activities/"
+const arc_folder_path = "res://Scripts/Arc/ArcResources/"
 
 # Game Tick Speed
 const wait_time = 0.01
@@ -24,6 +25,9 @@ signal adventure_started
 signal adventure_ended
 signal update_character
 signal add_adventure_text
+signal adventure_panel_clicked
+signal arc_unlocked
+signal refresh_adventure_panels
 
 func _ready():
 

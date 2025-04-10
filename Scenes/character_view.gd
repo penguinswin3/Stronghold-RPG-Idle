@@ -7,5 +7,5 @@ class_name ClassView
 @onready var class_texture: TextureRect = %Texture
 
 func _ready() -> void:
-	character_display_name.text = character.display_name
+	character_display_name.text = character.get_display_name()
 	class_texture.texture = character.icon

@@ -61,12 +61,15 @@ const ResourceGatheringStat = preload("res://Scripts/Gathering/Scripts/resource_
 @export var associated_gathering_activities = []
 
 
+func get_display_name():
+	return display_name
+
 func calculate_skill_roll(skill_id : SkillsEnum.SKILLS) -> int:
 	var member_skill : Skill = Skill.new()
 	member_skill.construct(skill_id, 1, 4)
 	
 	for skill in skills:
-		if skill.skill_id == skill_id:
+		if skill.get_skill_id() == skill_id:
 			member_skill = skill
 	
 	print("\t[character.gd] %s rolled %s check" % [display_name, skill_id])
@@ -84,9 +87,9 @@ func roll_skill(roll_skill_id: SkillsEnum.SKILLS):
 	print(skills)
 	for skill in skills:
 		print(skill)
-		if skill.id == roll_skill_id:
-			quantity = skill.quantity
-			magnitude = skill.magnitude
+		if skill.get_skill_id() == roll_skill_id:
+			quantity = skill.get_quantity()
+			magnitude = skill.get_magnitude()
 			break
 	
 	return Roller._die_roll(quantity, magnitude)
@@ -107,6 +110,7 @@ func get_skills_order() -> Array:
 	
 func unlock_member():
 	print("[Character.gd] %s was unlocked!" % display_name)
+	Globals.add_adventure_text.emit("%s was unlocked!" % display_name)
 	unlocked = true
 	Globals.unlock_character.emit()
 

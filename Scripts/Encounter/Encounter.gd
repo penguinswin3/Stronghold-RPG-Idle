@@ -28,7 +28,7 @@ class_name Encounter
 
 func get_first_combat_skill_enum() -> SkillsEnum.SKILLS:
 	for skill in skills:
-		match skill.skill_id:
+		match skill.get_skill_id():
 			SkillsEnum.SKILLS.MELEE:
 				return SkillsEnum.SKILLS.MELEE
 			
@@ -66,6 +66,10 @@ func check_valid() -> bool:
 	
 	# If no member, return valid
 	return true
+
+
+func get_display_name():
+	return display_name
 	
 
 func get_skill_quantity(skill):
@@ -94,7 +98,7 @@ func calculate_skill_roll(skill_id : SkillsEnum.SKILLS) -> int:
 	encounter_skill.construct(skill_id, 1, 4)
 	
 	for skill in skills:
-		if skill.skill_id == skill_id:
+		if skill.get_skill_id() == skill_id:
 			encounter_skill = skill
 	
 	return encounter_skill.calculate_roll_result()

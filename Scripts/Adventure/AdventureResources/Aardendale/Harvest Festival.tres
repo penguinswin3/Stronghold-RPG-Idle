@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://btqvj4css376w"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_8kn3k"]
+
+[resource]
+script = ExtResource("1_8kn3k")
+adventure_id = 18
+display_name = "Harvest Festival"
+description = "Rewards"
+type = 2
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://0dc1lgbi7ucp"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_rg1w3"]
+
+[resource]
+script = ExtResource("1_rg1w3")
+adventure_id = 22
+display_name = "Company Town"
+description = "Buildings"
+type = 2
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

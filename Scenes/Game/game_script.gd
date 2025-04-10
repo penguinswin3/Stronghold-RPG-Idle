@@ -20,6 +20,13 @@ var member_party_view = preload("res://Scenes/member_party_view.tscn")
 @onready var during_adventure_h_container: HBoxContainer = %DuringAdventureHContainer
 @onready var party_h_container: HBoxContainer = %PartyHContainer
 @onready var adventure_text_grid: GridContainer = %AdventureTextGrid
+@onready var repeat_check_button: CheckButton = %RepeatCheckButton
+
+@onready var combat_adventure_button: Button = %CombatAdventureButton
+@onready var exploration_adventure_button: Button = %ExplorationAdventureButton
+@onready var social_adventure_button: Button = %SocialAdventureButton
+@onready var pinnacle_adventure_button: Button = %PinnacleAdventureButton
+@onready var region_select_menu: OptionButton = %RegionSelectMenu
 
 
 
@@ -72,6 +79,9 @@ func _ready() -> void:
 	Globals.add_adventure_text.connect(_add_adventure_text)
 	# This can later load from the saved state 
 	Globals._set_selected_character(GlobalResourceLoader._get_all_characters().get(0))
+	Globals.adventure_panel_clicked.connect(_adventure_panel_clicked)
+	Globals.arc_unlocked.connect(_arc_choice_unlocked)
+	Globals.refresh_adventure_panels.connect(_refresh_adventure_panels)
 	
 	
 	var upgrade_scrollable_list = get_node("MainViewVContainer/MainViewPanel/OverviewViewPanel/VaultVContainer/ResourceUpgradeSection/MemberDetailsPanel/UpgradeManagementPanel/UpgradesList")
@@ -99,6 +109,8 @@ func  _populate_structures_panel():
 		var new_structure_panel = Globals.sturcture_panel_scene.instantiate()
 		new_structure_panel.structure = GlobalResourceLoader._get_all_structures()[structure_id]
 		structure_list.add_child(new_structure_panel)
+		
+	update_adventure_boxes()
 
 
 func _update_character_list():
@@ -135,8 +147,6 @@ func _create_party():
 		view.character = member		
 		
 		party_h_container.add_child(view)
-	
-	_add_adventure_text("Party has set off!")
 
 
 func _update_character(character):
@@ -188,11 +198,39 @@ func _on_go_button_pressed() -> void:
 	AdventureController.start_adventure()
 
 
-func _on_exploration_button_pressed() -> void:
-	AdventureController.current_adventure_index = 0
-	pass # Replace with function body.
+func _adventure_panel_clicked(type : AdventureEnum.ADVENTURE_TYPE) -> void:
+	AdventureController.current_adventure_index = type
+	print(AdventureController.get_current_arc().get_adventures()[AdventureController.current_adventure_index].get_display_name())
 
+
+func _arc_choice_unlocked(arc : ArcEnum.ARC):
+	region_select_menu.set_item_disabled(arc, false)
+
+func _refresh_adventure_panels():
+	combat_adventure_button.refresh()
+	exploration_adventure_button.refresh()
+	social_adventure_button.refresh()
+	pinnacle_adventure_button.refresh()
 
 func _on_abandon_pressed() -> void:
+	AdventureController.repeat_adventure = false
 	AdventureController.adventure_status = AdventureController.ADVENTURE_STATUS.ABANDONED
-	pass # Replace with function body.
+
+
+func _on_repeat_check_button_pressed() -> void:
+	AdventureController.repeat_adventure = repeat_check_button.button_pressed
+
+
+func _on_region_select_menu_item_selected(index: int) -> void:
+	AdventureController.change_current_arc(index)
+	update_adventure_boxes()
+	
+	
+func update_adventure_boxes():
+	var current_arc : Arc = AdventureController.get_current_arc()
+	var current_adventures : Array[Adventure] = current_arc.get_adventures()
+	
+	combat_adventure_button.adventure = current_adventures[1]
+	exploration_adventure_button.adventure = current_adventures[0]
+	social_adventure_button.adventure = current_adventures[2]
+	pinnacle_adventure_button.adventure = current_adventures[3]

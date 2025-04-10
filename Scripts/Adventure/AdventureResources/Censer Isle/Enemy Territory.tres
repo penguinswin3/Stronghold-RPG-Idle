@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://d32wiekt6d2t2"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_xluxv"]
+
+[resource]
+script = ExtResource("1_xluxv")
+adventure_id = 29
+display_name = "Enemy Territory"
+description = "Enemies"
+type = 1
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

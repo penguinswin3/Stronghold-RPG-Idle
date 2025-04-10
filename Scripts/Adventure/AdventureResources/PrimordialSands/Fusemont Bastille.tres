@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=2 format=3 uid="uid://ddauiu6a6bcb7"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_roul3"]
+
+[resource]
+script = ExtResource("1_roul3")
+adventure_id = 14
+display_name = "Fusemont Bastille"
+description = "Crazy"
+type = 2
+unlocked = false
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {}
+completed = false
+completed_count = 0

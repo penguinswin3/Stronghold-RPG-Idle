@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Arc" load_steps=7 format=3 uid="uid://c6wlgtlkchifx"]
+
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_orucx"]
+[ext_resource type="Script" path="res://Scripts/Arc/Arc.gd" id="2_3kge0"]
+[ext_resource type="Resource" uid="uid://hgk3drpvtrm3" path="res://Scripts/Adventure/AdventureResources/Censer Isle/Isle of the First Sea.tres" id="2_ywgl1"]
+[ext_resource type="Resource" uid="uid://d32wiekt6d2t2" path="res://Scripts/Adventure/AdventureResources/Censer Isle/Enemy Territory.tres" id="3_o16ap"]
+[ext_resource type="Resource" uid="uid://dcf77tomy1d2e" path="res://Scripts/Adventure/AdventureResources/Censer Isle/Western Settlement.tres" id="4_17nna"]
+[ext_resource type="Resource" uid="uid://ce45e27yb8k03" path="res://Scripts/Adventure/AdventureResources/Censer Isle/Volcano.tres" id="5_ls2sn"]
+
+[resource]
+script = ExtResource("2_3kge0")
+arc_id = 7
+display_name = "Censer Isle"
+description = "Diddy's or Epstein's?"
+adventures = Array[ExtResource("1_orucx")]([ExtResource("2_ywgl1"), ExtResource("3_o16ap"), ExtResource("4_17nna"), ExtResource("5_ls2sn")])

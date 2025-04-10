@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Adventure" load_steps=3 format=3 uid="uid://bu0tpwp5qqffg"]
+
+[ext_resource type="Resource" uid="uid://ct5lusoyc1h76" path="res://Scripts/Encounter/Combat/Red Kobold.tres" id="1_7505l"]
+[ext_resource type="Script" path="res://Scripts/Adventure/Adventure.gd" id="1_qfwyd"]
+
+[resource]
+script = ExtResource("1_qfwyd")
+adventure_id = 4
+display_name = "Tribelands"
+description = "Tribes"
+type = 0
+unlocked = true
+base_number_of_encounters = 0
+variance_number_of_encounter = {
+"magnitude": 4,
+"quantity": 1
+}
+encounters = {
+ExtResource("1_7505l"): 100
+}
+completed = false
+completed_count = 0
+next_adventure_id = 5

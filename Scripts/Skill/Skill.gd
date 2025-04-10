@@ -15,6 +15,15 @@ func get_display_name():
 
 func get_description():
 	return SkillDetails.skills[str(skill_id)]["description"]
+
+func get_skill_id():
+	return skill_id
+
+func get_quantity():
+	return quantity
+
+func get_magnitude():
+	return magnitude
 	
 func calculate_roll_result(upgrades: Array = []) -> int:
 	var roll = Roller._die_roll(quantity, magnitude)
